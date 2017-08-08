@@ -7,6 +7,7 @@
 5. run `source myprojectenv/bin/activate`
 6. run `pip install django psycopg2`
 7. config database in `/config/settings.py`
+	
 	1.
 	```
 		default': {
