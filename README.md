@@ -17,7 +17,7 @@
         	'PORT': '5000'
     	}
 	```
-	1.in console pgsql 
+	1. in console pgsql 
 		1. `CREATE DATABASE coup_development;` 
 		2. `CREATE USER myprojectuser WITH PASSWORD 'password';`
 		3. `GRANT ALL PRIVILEGES ON DATABASE coup_development TO myprojectuser;`
