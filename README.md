@@ -15,8 +15,7 @@
         		'PASSWORD': 'password',
         		'HOST': 'localhost',
         		'PORT': '5000'
-    		}
-	  ```
+    		}```
 	2.in console pgsql 
 		1. `CREATE DATABASE coup_development;` 
 		2. `CREATE USER myprojectuser WITH PASSWORD 'password';`
