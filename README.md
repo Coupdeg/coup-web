@@ -6,16 +6,20 @@
 4. run `virtualenv myprojectenv`
 5. run `source myprojectenv/bin/activate`
 6. run `pip install django psycopg2`
-7. config database in `/config/settings.py`
+7. create config database in `/config/local_setting.py`
 	```
-	default': {
-        	'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        	'NAME': 'coup_development',
-        	'USER': 'myprojectuser',
-        	'PASSWORD': 'password',
-        	'HOST': 'localhost',
-        	'PORT': '5000'
-    	}
+	from settings import *
+
+	DATABASES = {
+	    'default': {
+		'ENGINE': 'django.db.backends.postgresql_psycopg2',
+	      	'NAME': 'coup_development',
+	      	'USER': 'myprojectuser',
+	      	'PASSWORD': 'password',
+	      	'HOST': 'localhost',
+	      	'PORT': '5000'
+	    }
+	}
 	```
 	1. in console pgsql 
 		1. `CREATE DATABASE coup_development;` 
