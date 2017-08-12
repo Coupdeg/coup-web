@@ -26,4 +26,6 @@
 		2. `CREATE USER myprojectuser WITH PASSWORD 'password';`
 		3. `GRANT ALL PRIVILEGES ON DATABASE coup_development TO myprojectuser;`
 	2. run `python manage.py makemigrations`
-	3. run `python manage.py migrate`	
+	3. run `python manage.py migrate`
+8. run `npm install`
+9. run `python manage.py collectstatic`
