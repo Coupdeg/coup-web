@@ -32,3 +32,4 @@
 
 # Tools used in the project
 - jquery v.3.2.1
+- bootstrap v4.0.0-beta
