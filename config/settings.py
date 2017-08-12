@@ -114,6 +114,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'coupdeg'))
+JQUERY = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'node_modules'))
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
@@ -121,6 +122,7 @@ STATIC_URL = '/static/'
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
+    ('js', os.path.join(JQUERY, 'jQuery/dist/')),
 )
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 

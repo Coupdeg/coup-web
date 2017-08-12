@@ -1,2 +1,2 @@
 console.log("eiei")
-console.log('asdasads')
+console.log($('body'))

@@ -9,3 +9,5 @@ local_setting.py
 db.sqlite3
 myprojectenv/
 staticfiles/
+node_modules/
+yarn.lock
