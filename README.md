@@ -29,3 +29,6 @@
 	3. run `python manage.py migrate`
 8. run `npm install`
 9. run `python manage.py collectstatic`
+
+# Tools used in the project
+- jquery v.3.2.1
