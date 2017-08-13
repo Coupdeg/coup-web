@@ -33,3 +33,9 @@
 # Tools used in the project
 - jquery v.3.2.1
 - bootstrap v4.0.0-beta
+- dj-database-url==0.4.2
+- Django==1.11.4
+- gunicorn==19.7.1
+- psycopg2==2.7.3
+- pytz==2017.2
+- whitenoise==3.3.0
