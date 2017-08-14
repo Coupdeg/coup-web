@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Coup</title>		
+	{% include "shared/_head.html" %}
+	{% include "shared/_tools.html" %}
+	{% include "shared/_fonts.html" %}
+	{% include "shared/_app_css.html" %}
+</head>
+<body>
+	{% include "shared/_navbar.html" %}
+	{% block content %}{% endblock %}    			
+	{% include "shared/_footer.html" %}
+	{% include "shared/_app_js.html" %}
+</body>
+</html>
