@@ -1,9 +1,16 @@
-<nav class="navbar navbar-light bg-faded">
-	<div class="col-1 text-center">Home</div>
-	<div class="col-2 text-center">Products</div>
-	<div class="col-1 text-center">About us</div>
-	<div class="col-4 text-center">Coup</div>
-	<div class="col-1 text-left">icon</div>
-	<div class="col-1 text-right">login</div>
-	<div class="col-2 text-center">icon</div>	
+<nav class="navbar navbar-light bg-faded navbar-style navbar-color-head">
+	<div class="col-1 text-center navbar-menu">Home</div>
+	<div class="col-2 text-center navbar-menu">Products</div>
+	<div class="col-1 text-center navbar-menu">About us</div>
+	<div class="col-4 text-center navbar-menu">
+		{% load static %}
+		<img src='{% static "images/navbar_logo.png" %}'>
+	</div>
+	<div class="col-1 text-left navbar-menu i-search">
+		<i class="fa fa-search" aria-hidden="true"></i>			
+	</div>
+	<div class="col-1 text-right navbar-menu">login</div>
+	<div class="col-2 text-center navbar-menu">
+		<i class="fa fa-shopping-cart i-cart" aria-hidden="true" ></i>			
+	</div>	
 </nav>

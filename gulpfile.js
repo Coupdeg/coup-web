@@ -6,7 +6,7 @@ var sass = require('gulp-sass');
 gulp.task('scss', function () {
 	setInterval(function() {			
 		gulp.src('./coupdeg/static/scss/app.scss')
-		.pipe(sass())
+		.pipe(sass().on('error', sass.logError))
 		.pipe(gulp.dest('./coupdeg/static/css'));
 	}, 5000)	
 });
