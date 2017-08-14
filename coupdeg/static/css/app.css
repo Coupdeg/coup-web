@@ -1,7 +1,7 @@
 .navbar-style {
   height: 80px;
   color: #FFFFFF;
-  font-family:  'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 24px; }
   .navbar-style .i-search {
     font-size: 20px; }
@@ -16,6 +16,13 @@
 
 .navbar-color-head {
   background-color: rgba(0, 0, 0, 0.07); }
+
+a.navbar-color-text:hover {
+  color: #3f3f3f !important; }
+
+.navbar-color-text {
+  color: black;
+  text-decoration: none !important; }
 
 .navbar-color-slide {
   background-color: #737373; }
