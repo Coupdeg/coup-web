@@ -122,7 +122,7 @@ STATIC_URL = '/static/'
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
-    ('js', os.path.join(NODE_MODULES_ROOT, 'jQuery/dist/')),
+    ('js', os.path.join(NODE_MODULES_ROOT, 'jquery/dist/')),
     ('css', os.path.join(NODE_MODULES_ROOT, 'bootstrap-v4-master/dist/css')),
 )
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'

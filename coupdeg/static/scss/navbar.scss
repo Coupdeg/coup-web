@@ -1,0 +1,25 @@
+.navbar-style {
+	height: 80px;
+	color:#FFFFFF;
+	font-family: 'Open Sans Condensed', sans-serif;	
+	font-size: 24px;
+	.i-search {
+		font-size: 20px;
+	}
+	.i-cart {
+		font-size: 25px;
+	}
+	img {
+		height:65px;
+		width:65px;
+	}
+}
+.navbar-menu {
+	align-self: center;
+}
+.navbar-color-head {
+	background-color: rgba(0,0,0,0.07);	
+}
+.navbar-color-slide {
+	background-color: #737373;
+}
