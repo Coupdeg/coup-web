@@ -27,5 +27,14 @@ a.navbar-color-text:hover {
 .navbar-color-slide {
   background-color: #737373; }
 
+footer {
+  color: #888888; }
+  footer img.image-logo {
+    height: 65px;
+    width: 65px; }
+  footer img.image-social-icon {
+    height: 45px;
+    width: 45px; }
+
 body {
   background-color: darkcyan; }
