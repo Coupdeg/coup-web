@@ -29,6 +29,7 @@ a.navbar-color-text:hover {
 
 footer {
   color: #888888;
+  border-top: 1px solid;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
