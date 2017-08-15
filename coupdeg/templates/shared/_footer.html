@@ -1,10 +1,12 @@
 {% load static %}
 <footer class = "">
-    <div class = "col-6 mr-auto" >
-        <img src='{% static "images/foooter/coup_logo.png" %}'>
-    </div>
-    <div class = "col-6 ml-auto" >
-        <img src='{% static "images/footer/icon_facebook_grey.png" %}'>
-        <img src='{% static "images/footer/icon_instagram_grey.png" %}'>
+    <div class = "row">
+        <div class = "col-6 mr-auto text-left" >
+            <img class = "image-logo" src='{% static "images/footer/coup_logo.png" %}'>
+        </div>
+        <div class = "col-6 ml-auto text-right" >
+            <img class = "image-social-icon" src='{% static "images/footer/icon_facebook_grey.png" %}'>
+            <img class = "image-social-icon" src='{% static "images/footer/icon_instagram_grey.png" %}'>
+        </div>
     </div>
 </footer>
