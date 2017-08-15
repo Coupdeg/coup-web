@@ -1,5 +1,18 @@
 footer {
     color: #888888;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .5rem 1rem;
     img.image-logo {
 		height:65px;
 		width:65px;
@@ -7,5 +20,22 @@ footer {
     img.image-social-icon {
 		height:45px;
 		width:45px;
+    }
+    img.image-license {
+		height:23spx;
+		width:200px;
 	}
 }
+.footer-size{
+    height: 90px;
+    margin-top: -90px;
+}
+.footer-center{
+    align-self: center;
+}
+.footer-image-center{
+    display: block;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+

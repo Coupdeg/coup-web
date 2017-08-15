@@ -1,12 +1,21 @@
 {% load static %}
-<footer class = "">
-    <div class = "row">
-        <div class = "col-6 mr-auto text-left" >
-            <img class = "image-logo" src='{% static "images/footer/coup_logo.png" %}'>
+<footer class = "footer footer-size">
+    <div class = "col-6 mr-auto text-left footer-center" >
+        <div class = "row ">
+            <div class = "col-2 footer-center">
+                <img class = "image-logo" src='{% static "images/footer/coup_logo.png" %}'>
+            </div>
+            <div class = "col-3 footer-center">
+                tel	: xx-xxxx-xxxx             
+            </div>
+            <div class = "col-4 footer-center">
+                email : test_coup@gmail.com
+            </div>
         </div>
-        <div class = "col-6 ml-auto text-right" >
-            <img class = "image-social-icon" src='{% static "images/footer/icon_facebook_grey.png" %}'>
-            <img class = "image-social-icon" src='{% static "images/footer/icon_instagram_grey.png" %}'>
-        </div>
+    </div>
+    <div class = "col-6 ml-auto text-right footer-center" >
+        <img class = "footer-center image-license" src='{% static "images/footer/footer_license.png" %}'>
+        <img class = "footer-center image-social-icon" src='{% static "images/footer/icon_facebook_grey.png" %}'>
+        <img class = "footer-center image-social-icon" src='{% static "images/footer/icon_instagram_grey.png" %}'>
     </div>
 </footer>
