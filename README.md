@@ -39,3 +39,9 @@
 - psycopg2==2.7.3
 - pytz==2017.2
 - whitenoise==3.3.0
+- Pillow==4.2.1
+
+# Create superuser for manage database
+1. `python manage.py createsuperuser`
+2. fill in username and password
+3. url localhost/admin
