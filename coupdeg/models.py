@@ -29,7 +29,7 @@ class Image(models.Model):
 		('0', 'user'),
 		('1', 'product')
 	)
-	Image = models.ImageField(blank=True)
+	image = models.ImageField(blank=True)
 	image_types = models.CharField(max_length=1, choices=types)
 	type_id = models.IntegerField()
 	role = models.IntegerField(default=0)
