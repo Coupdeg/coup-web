@@ -29,7 +29,6 @@ a.navbar-color-text:hover {
 
 footer {
   color: #888888;
-  font-family: 'Raleway', sans-serif;
   border-top: 1px solid;
   position: relative;
   display: -webkit-box;
@@ -43,7 +42,8 @@ footer {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: .5rem 1rem; }
+  padding: .5rem 1rem;
+  font-family: 'Raleway', sans-serif; }
   footer img.image-logo {
     height: 65px;
     width: 65px; }
