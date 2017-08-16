@@ -21,5 +21,16 @@ class Product(models.Model):
 	)
 	name = models.CharField(max_length=50)
 	details = models.CharField(max_length=150)
-	product_type = models.CharField(max_length=1, choices=types)
+	product_types = models.CharField(max_length=1, choices=types)
 	price = models.IntegerField()
+
+class Image(models.Model):
+	types = (
+		('0', 'user'),
+		('1', 'product')
+	)
+	Image = models.ImageField()
+	image_types = models.CharField(max_length=1, choices=types)
+	type_id = models.IntegerField(blank=True)
+	role = models.IntegerField(default=0)
+
