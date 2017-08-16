@@ -29,8 +29,12 @@ class Image(models.Model):
 		('0', 'user'),
 		('1', 'product')
 	)
+	types_role = (
+		('0', 'main image'),
+		('1', 'sub image')
+	)
 	image = models.ImageField(blank=True)
 	image_types = models.CharField(max_length=1, choices=types)
 	type_id = models.IntegerField()
-	role = models.IntegerField(default=0)
+	role = models.CharField(max_length=1, choices=types_role, default=0)
 
