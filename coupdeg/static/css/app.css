@@ -80,7 +80,7 @@ footer {
   min-height: 100%; }
 
 .landing-background-title {
-  background: url(http://www.planwallpaper.com/static/images/Cool-Wallpapers-Background-HD-Wallpaper.jpg);
+  background: url("../images/landing/landing_title.png");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 800px;
