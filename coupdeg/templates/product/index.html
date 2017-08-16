@@ -1,4 +1,7 @@
 {% extends "../layout/application.html" %}
 {% block content %}
 	<h1>Hello Product Page</h1>
+	{% for image in all_images %}
+		<img src="{{ image.Image.url }}" alt="" style="width:400px;height:400px;">
+	{% endfor %}
 {% endblock %}
