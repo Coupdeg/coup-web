@@ -9,9 +9,7 @@
 </head>
 <body>
 	{% include "shared/_navbar.html" %}
-	<div class = "content">
-		{% block content %}{% endblock %}    			
-	</div>
+	{% block content %}{% endblock %}    			
 	{% include "shared/_footer.html" %}
 	{% include "shared/_app_js.html" %}
 </body>
