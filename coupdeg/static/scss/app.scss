@@ -1,6 +1,6 @@
 @import 'navbar.scss';
 @import 'footer.scss';
-@import 'landing-page.scss';
+@import 'footer.scss';
 // body{ background-color: darkcyan; }
 html, body {
     height: 100%;
@@ -8,7 +8,10 @@ html, body {
     background-color: white; 
 }
 .content {
-    padding: 20px;
+    background: url(http://www.planwallpaper.com/static/images/Cool-Wallpapers-Background-HD-Wallpaper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 90px;
     min-height: 100%;
     margin: 0 auto -90px;
 }
