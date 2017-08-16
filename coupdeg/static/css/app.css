@@ -91,10 +91,28 @@ footer {
 .line {
   width: 1px;
   height: 70px;
-  margin: 30px auto;
+  margin: 60px auto;
   position: relative;
   overflow: hidden;
   background: grey; }
+
+.text-heading {
+  margin-bottom: 20px; }
+
+img.newarrivals-images {
+  height: 300px;
+  width: 300px;
+  margin: 50px; }
+
+img.speacial-promotion-big-branner {
+  height: 400px;
+  width: 1050px;
+  margin: 50px; }
+
+img.speacial-promotion-small-branner {
+  height: 400px;
+  width: 505px;
+  margin: 20px; }
 
 html, body {
   height: 100%;
