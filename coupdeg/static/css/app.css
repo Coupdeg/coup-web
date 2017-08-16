@@ -65,6 +65,17 @@ footer {
   margin: 0 auto;
   padding: 0 auto; }
 
+.footer-items-space {
+  margin: 0 20px; }
+
+.footer-item-head {
+  margin-left: 50px;
+  margin-right: 20px; }
+
+.footer-item-tail {
+  margin-right: 50px;
+  margin-left: 20px; }
+
 html, body {
   height: 100%;
   margin: 0;
