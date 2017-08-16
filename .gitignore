@@ -9,8 +9,9 @@ local_setting.py
 db.sqlite3
 myprojectenv/
 staticfiles/
+css/
+staticmedia/
 node_modules/
 yarn.lock
 
 .DS_Store
-css/
