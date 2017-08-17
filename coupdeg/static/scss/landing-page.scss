@@ -1,43 +1,50 @@
 .content {
     min-height: 100%;
-    font-family:  'Raleway', sans-serif;	
+    font-family: 'Raleway', sans-serif;
 }
-.landing-background-title{
-    background: url("../images/landing/landing_title.png");
+
+.landing-background-title {
+    background: url("../images/landing/landing_title.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 875px;
     margin-top: -90px;
-    padding:90px;
+    padding: 90px;
 }
+
 .line {
     width: 1px;
-    height: 70px ;
+    height: 70px;
     margin: 60px auto;
     position: relative;
     overflow: hidden;
     background: grey;
 }
-.text-heading{
+
+.text-heading {
     margin-bottom: 20px;
 }
-img.newarrivals-images{
+
+img.newarrivals-images {
     height: 300px;
     width: 300px;
     margin: 50px;
     margin-bottom: 20px;
 }
-img.speacial-promotion-big-branner{
+
+img.speacial-promotion-big-branner {
     height: 400px;
     width: 1050px;
     margin: 20px;
 }
-img.speacial-promotion-small-branner{
+
+img.speacial-promotion-small-branner {
     height: 400px;
     width: 505px;
     margin: 20px;
 }
-img.find-products{
+
+img.find-products {
     height: 200px;
     width: 200px;
     margin: 10px;
