@@ -124,6 +124,7 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
     ('js', os.path.join(NODE_MODULES_ROOT, 'jquery/dist/')),
     ('css', os.path.join(NODE_MODULES_ROOT, 'bootstrap-v4-master/dist/css')),
+    ('js', os.path.join(NODE_MODULES_ROOT, 'bootstrap-v4-master/dist/js')),
 )
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
