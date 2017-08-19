@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^$', main_views.landing, name="landing"),
     url(r'^product/$', main_views.product, name="product"),
     url(r'^about/$', main_views.about, name="about"),
+    url(r'^login/$', main_views.login, name="login")
 ]
 
 if settings.DEBUG:
