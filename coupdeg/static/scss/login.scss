@@ -52,6 +52,13 @@
 			cursor: pointer;
 			background-color: whitesmoke;
 		}
+		img {
+			width: 20px;
+			height: 20px;
+			margin-left: -10px;
+			margin-right: 10px;
+			vertical-align: sub;
+		}
 	}
 	.line-border {
 		box-sizing: border-box;

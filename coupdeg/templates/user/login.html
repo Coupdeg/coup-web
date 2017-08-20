@@ -15,9 +15,19 @@
 			<div class="line-border"></div>
 			<div class="login-by group-button">Login by</div>
 			<div class="group-button">
-					<button class="button-submit">Facebook</button>
-					<button class="button-submit">Gmail+</button>
-					<button class="button-submit">Twitter</button>					
+					{% load static %}
+					<button class="button-submit">
+						<img src='{% static "images/login/facebook.png" %}' href="#">
+						Facebook
+					</button>
+					<button class="button-submit">
+						<img src='{% static "images/login/gmail.png" %}' href="#">							
+						Gmail+
+					</button>
+					<button class="button-submit">
+						<img src='{% static "images/login/twitter.png" %}' href="#">														
+						Twitter
+					</button>					
 			</div>
 		</div>
 	</div>
