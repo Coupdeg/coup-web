@@ -1,6 +1,6 @@
 .content {
     min-height: 100%;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'News Cycle', sans-serif;
 }
 
 .landing-background-title {
@@ -138,4 +138,8 @@ img.find-products {
     filter: alpha(opacity=100);
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+}
+
+h3.text-heading {
+    font-size: 36px;
 }
