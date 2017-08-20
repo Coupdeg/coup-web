@@ -122,8 +122,8 @@ img.find-products {
     color: #FFF;
     padding: 1em 0;
     opacity: 0;
-    border: solid 1px;
     padding: 5px;
+    margin: 50px 0px;
     filter: alpha(opacity=0);
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
     transition: opacity 0.35s, transform 0.35s;
@@ -142,4 +142,8 @@ img.find-products {
 
 h3.text-heading {
     font-size: 36px;
+}
+
+.link-size {
+    font-size: 25px;
 }
