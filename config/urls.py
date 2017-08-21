@@ -15,8 +15,18 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
+from coupdeg import views as main_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', include('coupdeg.urls')),    
+    url(r'^$', main_views.landing, name="landing"),
+    url(r'^product/$', main_views.product, name="product"),
+    url(r'^about/$', main_views.about, name="about"),
+    url(r'^user/login', main_views.login, name="login")
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

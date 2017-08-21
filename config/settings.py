@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import dj_database_url
 
 
 # Quick-start development settings - unsuitable for production
@@ -73,12 +74,6 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'coup_development',
-        'USER': 'myprojectuser',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '5000'
     }
 }
 
@@ -119,7 +114,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'coupdeg'))
+NODE_MODULES_ROOT = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'node_modules'))
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
@@ -127,19 +124,32 @@ STATIC_URL = '/static/'
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
+    ('js', os.path.join(NODE_MODULES_ROOT, 'jquery/dist/')),
+    ('css', os.path.join(NODE_MODULES_ROOT, 'bootstrap-v4-master/dist/css')),
+    ('js', os.path.join(NODE_MODULES_ROOT, 'bootstrap-v4-master/dist/js')),
 )
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-import dj_database_url
-DATABASES['default'] = dj_database_url.config()
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'staticmedia')
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# import dj_database_url
+# DATABASES['default'] = dj_database_url.config()
 
-ALLOWED_HOSTS = ['*']
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-DEBUG = False
+# ALLOWED_HOSTS = ['*']
+
+# DEBUG = False
 
 try:
-    from .local_settings import *
+    from .local_setting import *
+    ALLOWED_HOSTS = ["localhost", "192.168.0.121", "127.0.0.1"]
 except ImportError:
     pass
+    STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+    DATABASES['default'] = dj_database_url.config()
+
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+    ALLOWED_HOSTS = ['*']

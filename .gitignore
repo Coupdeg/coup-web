@@ -2,8 +2,15 @@
 *.log
 *.pyc
 __pycache__/
-local_settings.py
+local_setting.py
 
 .env
 db.sqlite3
 myprojectenv/
+staticfiles/
+css/
+staticmedia/
+node_modules/
+yarn.lock
+
+.DS_Store
