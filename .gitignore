@@ -7,9 +7,6 @@ local_setting.py
 .env
 db.sqlite3
 myprojectenv/
-staticfiles/
-css/
-staticmedia/
 node_modules/
 yarn.lock
 

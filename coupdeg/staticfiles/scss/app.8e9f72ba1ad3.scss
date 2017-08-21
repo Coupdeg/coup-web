@@ -1,0 +1,15 @@
+@import 'navbar.scss';
+@import 'footer.scss';
+// body{ background-color: darkcyan; }
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: white; 
+}
+.content {
+    padding: 20px;
+    min-height: 100%;
+    margin: 0 auto -90px;
+}
+  
+
