@@ -1,6 +1,6 @@
 .content {
     min-height: 100%;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'News Cycle', sans-serif;
 }
 
 .landing-background-title {
@@ -75,6 +75,7 @@ img.find-products {
     -webkit-transform: scale(0, 1);
     -ms-transform: scale(0, 1);
     transform: scale(0, 1);
+    // padding: 1rem 0rem;
 }
 
 .hovereffect:hover .overlay {
@@ -120,13 +121,14 @@ img.find-products {
     color: #FFF;
     padding: 1em 0;
     opacity: 0;
-    border: solid 1px;
-    padding: 5px;
+    padding: 2px 35px;
+    margin: 50px 0px;
     filter: alpha(opacity=0);
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
     transition: opacity 0.35s, transform 0.35s;
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
+    border: solid 1px;
 }
 
 .hovereffect:hover a,
@@ -136,4 +138,12 @@ img.find-products {
     filter: alpha(opacity=100);
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+}
+
+h3.text-heading {
+    font-size: 36px;
+}
+
+.link-size {
+    font-size: 25px;
 }
