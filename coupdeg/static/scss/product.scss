@@ -1,6 +1,29 @@
 .content {
     font-family: 'Marvel', sans-serif;
+    padding: 0px 90px
 }
 .text-head-title{
     margin: 70px 0px;
+}
+.row-nav-product{
+    border-top : solid 1px;
+    border-bottom : solid 1px;
+    padding: 15px 0px;
+}
+a.nav-button{
+    margin: 0px 60px;
+    font-size: 25px;
+    color: black;
+}
+a:hover{
+    color : gray;
+    text-decoration: none !important;
+}
+.line {
+    width: 1px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    background: grey;
+    margin: 0px;
 }

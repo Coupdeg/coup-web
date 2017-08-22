@@ -1,7 +1,24 @@
 {% extends "../layout/application.html" %}
 {% block content %}
-	<h1 class = "text-center text-head-title">ALL PRODUCTS</h1>
 	{% for image in all_images %}
 		<img src="{{ image.Image.url }}" alt="" style="width:400px;height:400px;">
 	{% endfor %}
+	<div class = "content">
+		<h1 class = "text-center text-head-title">ALL PRODUCTS</h1>
+		<div class = "row-nav-product d-flex justify-content-center">
+			<a class = "nav-button text-center d-flex align-items-center" href = "#">ALL</a>
+			<div class="line"></div>
+			<a class = "nav-button text-center d-flex align-items-center" href = "#">BAG</a>
+			<div class="line"></div>
+			<a class = "nav-button text-center d-flex align-items-center" href = "#">Soaps</a>
+			<div class="line"></div>
+			<a class = "nav-button text-center d-flex align-items-center" href = "#">Dresses</a>
+			<div class="line"></div>
+			<a class = "nav-button text-center d-flex align-items-center" href = "#">Shirts</a>
+			<div class="line"></div>
+			<a class = "nav-button text-center d-flex align-items-center" href = "#">Scarves</a>
+			<div class="line"></div>
+			<a class = "nav-button text-center d-flex align-items-center" href = "#">Accessories</a>
+		</div>
+	</div>
 {% endblock %}
