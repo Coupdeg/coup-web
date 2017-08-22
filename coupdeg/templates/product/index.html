@@ -1,4 +1,5 @@
 {% extends "../layout/application.html" %}
+{% load static %}
 {% block content %}
 	{% for image in all_images %}
 		<img src="{{ image.Image.url }}" alt="" style="width:400px;height:400px;">
@@ -20,15 +21,123 @@
 			<div class="line"></div>
 			<a class = "nav-button text-center d-flex align-items-center" href = "#">Accessories</a>
 		</div>
-		<div class="btn-group">
-			<button class="btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				12 / page <span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu">
-				<li><a href="#">12 / page</a></li>
-				<li><a href="#">30 / page</a></li>
-				<li><a href="#">60 / page</a></li>
-			</ul>
+		<div class = "space-small d-flex justify-content-center">
+			<div class="btn-group">
+				<button class="btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					12 / page <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href="#"> 12 / page </a></li>
+					<li><a href="#"> 30 / page </a></li>
+					<li><a href="#"> 60 / page </a></li>
+				</ul>
+			</div>
+		</div>
+		<div class = "content-image-product">
+			<div class = "row space-medium">
+				<div class = "col-4 d-flex justify-content-center">
+					<div class = "product-content">
+						<img class = "img-responsive image-product" src='{% static "images/landing/find_products_01.jpg" %}'>
+						<h4 class = "text-center">Sleev Over Size Tops<br>
+							Lace Cotton Soi-Fah.<br>
+							690.00฿</h4>
+					</div>
+				</div>
+				<div class = "col-4 d-flex justify-content-center">
+					<div class = "product-content">
+						<img class="img-responsive image-product" src='{% static "images/landing/find_products_01.jpg" %}'>
+						<h4 class = "text-center">Eco Bags Crossbody Bags Hand Woven<br> 
+								and botanical dyed Cotton<br>
+								Little Tan Midi Natural Color.<br>
+								1,700.00฿</h4>
+					</div>
+				</div>
+				<div class = "col-4 d-flex justify-content-center">
+					<div class = "product-content">
+						<img class="img-responsive image-product" src='{% static "images/landing/find_products_01.jpg" %}'>
+						<h4 class = "text-center">Crossbody Bags Little Tan Extra Tan Color.<br>
+							2,200.00฿</h4>
+					</div>
+				</div>
+			</div>
+			<div class = "row space-medium">
+				<div class = "col-4 d-flex justify-content-center">
+					<div class = "product-content">
+						<img class = "img-responsive image-product" src='{% static "images/landing/find_products_01.jpg" %}'>
+						<h4 class = "text-center">Sleev Over Size Tops<br>
+							Lace Cotton Soi-Fah.<br>
+							690.00฿</h4>
+					</div>
+				</div>
+				<div class = "col-4 d-flex justify-content-center">
+					<div class = "product-content">
+						<img class="img-responsive image-product" src='{% static "images/landing/find_products_01.jpg" %}'>
+						<h4 class = "text-center">Eco Bags Crossbody Bags Hand Woven<br> 
+								and botanical dyed Cotton<br>
+								Little Tan Midi Natural Color.<br>
+								1,700.00฿</h4>
+					</div>
+				</div>
+				<div class = "col-4 d-flex justify-content-center">
+					<div class = "product-content">
+						<img class="img-responsive image-product" src='{% static "images/landing/find_products_01.jpg" %}'>
+						<h4 class = "text-center">Crossbody Bags Little Tan Extra Tan Color.<br>
+							2,200.00฿</h4>
+					</div>
+				</div>
+			</div>
+			<div class = "row space-medium">
+				<div class = "col-4 d-flex justify-content-center">
+					<div class = "product-content">
+						<img class = "img-responsive image-product" src='{% static "images/landing/find_products_01.jpg" %}'>
+						<h4 class = "text-center">Sleev Over Size Tops<br>
+							Lace Cotton Soi-Fah.<br>
+							690.00฿</h4>
+					</div>
+				</div>
+				<div class = "col-4 d-flex justify-content-center">
+					<div class = "product-content">
+						<img class="img-responsive image-product" src='{% static "images/landing/find_products_01.jpg" %}'>
+						<h4 class = "text-center">Eco Bags Crossbody Bags Hand Woven<br> 
+								and botanical dyed Cotton<br>
+								Little Tan Midi Natural Color.<br>
+								1,700.00฿</h4>
+					</div>
+				</div>
+				<div class = "col-4 d-flex justify-content-center">
+					<div class = "product-content">
+						<img class="img-responsive image-product" src='{% static "images/landing/find_products_01.jpg" %}'>
+						<h4 class = "text-center">Crossbody Bags Little Tan Extra Tan Color.<br>
+							2,200.00฿</h4>
+					</div>
+				</div>
+			</div>
+			<div class = "row space-medium">
+				<div class = "col-4 d-flex justify-content-center">
+					<div class = "product-content">
+						<img class = "img-responsive image-product" src='{% static "images/landing/find_products_01.jpg" %}'>
+						<h4 class = "text-center">Sleev Over Size Tops<br>
+							Lace Cotton Soi-Fah.<br>
+							690.00฿</h4>
+					</div>
+				</div>
+				<div class = "col-4 d-flex justify-content-center">
+					<div class = "product-content">
+						<img class="img-responsive image-product" src='{% static "images/landing/find_products_01.jpg" %}'>
+						<h4 class = "text-center">Eco Bags Crossbody Bags Hand Woven<br> 
+								and botanical dyed Cotton<br>
+								Little Tan Midi Natural Color.<br>
+								1,700.00฿</h4>
+					</div>
+				</div>
+				<div class = "col-4 d-flex justify-content-center">
+					<div class = "product-content">
+						<img class="img-responsive image-product" src='{% static "images/landing/find_products_01.jpg" %}'>
+						<h4 class = "text-center">Crossbody Bags Little Tan Extra Tan Color.<br>
+							2,200.00฿</h4>
+					</div>
+				</div>
+			</div>
 		</div>
 			  
 	</div>
