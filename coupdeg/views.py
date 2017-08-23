@@ -2,6 +2,7 @@ from django.http import Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Image
 from .models import User
+from passlib.hash import django_pbkdf2_sha256 as handler
 
 def landing(request):
  	return render(request, 'landing/index.html')
@@ -27,8 +28,9 @@ def user(request):
 		password = request.POST['password']
 		re_password = request.POST['re-password']
 
-		if password == re_password:
+		if password == re_password and password != '':
 			email = request.POST['email']
+			password = handler.hash(password)
 			first_name = request.POST['firstname']
 			last_name = request.POST['lastname']
 			address = request.POST['address']
@@ -36,8 +38,7 @@ def user(request):
 			state = request.POST['state']
 			country = request.POST['country']
 			zip_code = request.POST['zip']
-			user = User(email=email, first_name=first_name, last_name=last_name,
+			user = User(email=email, password=password,first_name=first_name, last_name=last_name,
 									address=address, city=city, state=state, country=country, zip_code=zip_code)
 			user.save()
-			return redirect('/user/login')
-	
+			return redirect('/user/login')	
