@@ -1,0 +1,90 @@
+.product-content {
+    font-family: 'Marvel', sans-serif;
+    padding: 0px 90px;
+}
+.text-head-title{
+    margin: 70px 0px;
+}
+.row-nav-product{
+    border-top : solid 1px;
+    border-bottom : solid 1px;
+    padding: 15px 0px;
+}
+a.nav-button{
+    margin: 0px 60px;
+    font-size: 25px;
+    color: black;
+}
+a:hover{
+    color : gray;
+    text-decoration: none !important;
+}
+.line-v {
+    width: 1px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    background: grey;
+    margin: 0px;
+}
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 0px !important;
+    padding: .5rem .5rem;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #292b2c;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: .25rem;
+    width: 100%;    
+}
+a.dropdown-page{
+    color : black;
+}
+.space-extra-small-h{
+    margin: 15px 0px;
+}
+.space-small-h{
+    margin: 30px 0px;
+}
+.space-medium-h{
+    margin: 60px 0px;
+}
+.space-extra-small-v{
+    margin: 0px 15px;
+}
+.space-small-v{
+    margin: 0px 30px;
+}
+.image-product{
+    max-width: 400px;
+}
+.page-button{
+    border-top: solid 1px;
+    padding: 30px;
+}
+.btn-light{
+    color: #111;
+    background-color: white;
+    border-color: white;
+    font-size: 20px;
+}
+.btn-light:hover{
+    color: #111;
+    background-color: #e2e6ea;
+    border-color: #dae0e5
+}
+.btn-light-active{
+    border: solid 1px;
+    border-radius: 0px;
+}
