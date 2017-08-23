@@ -1,0 +1,35 @@
+{% extends "../layout/application.html" %}
+{% block content %}
+	<div class="container">
+		<div class="text-center">Register page</div>
+		<div>- User information</div>
+		<div>-</div>
+		<div>
+			<input type="email" placeholder="Email*">
+		</div>
+		<div>
+			<input type="password" placeholder="Password*">
+		</div>
+		<div>
+			<input type="password" placeholder="Re-enter Password*">
+		</div>
+		<div>- Personal information</div>
+		<div>-</div>
+		<div>
+			<input type="text" placeholder="Firstname*">
+			<input type="text" name="" placeholder="Lastname*">
+		</div>
+		<div>
+			<textarea name="" id="" cols="30"placeholder="Address*"></textarea>
+		</div>
+		<div>
+			<input type="text" name="" placeholder="City*">
+			<input type="text" placeholder="State*">
+		</div>
+		<div>
+			<input type="text" placeholder="Country/Region*">
+			<input type="text" placeholder="Zip/Postal Code*">
+		</div>
+		<button>SUBMIT</button>
+	</div>
+{% endblock %}

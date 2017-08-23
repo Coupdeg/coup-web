@@ -17,3 +17,10 @@ def about(request):
 
 def login(request):
 	return render(request, 'user/login.html')
+
+def register(request):
+	return render(request, 'user/register.html')
+
+# def user(request):
+# 	if request.method == 'POST':
+		
