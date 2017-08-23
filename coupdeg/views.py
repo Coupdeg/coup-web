@@ -24,16 +24,20 @@ def register(request):
 
 def user(request):
 	if request.method == 'POST':
-		email = request.POST['email']
-		first_name = request.POST['firstname']
-		last_name = request.POST['lastname']
-		address = request.POST['address']
-		city = request.POST['city']
-		state = request.POST['state']
-		country = request.POST['country']
-		zip_code = request.POST['zip']
-		user = User(email=email, first_name=first_name, last_name=last_name,
-								address=address, city=city, state=state, country=country, zip_code=zip_code)
-		user.save()
-		return redirect('/')
+		password = request.POST['password']
+		re_password = request.POST['re-password']
+
+		if password == re_password:
+			email = request.POST['email']
+			first_name = request.POST['firstname']
+			last_name = request.POST['lastname']
+			address = request.POST['address']
+			city = request.POST['city']
+			state = request.POST['state']
+			country = request.POST['country']
+			zip_code = request.POST['zip']
+			user = User(email=email, first_name=first_name, last_name=last_name,
+									address=address, city=city, state=state, country=country, zip_code=zip_code)
+			user.save()
+			return redirect('/user/login')
 	
