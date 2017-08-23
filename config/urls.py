@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^$', main_views.landing, name="landing"),
     url(r'^product/$', main_views.product, name="product"),
     url(r'^about/$', main_views.about, name="about"),
-    url(r'^user/login', main_views.login, name="login")
+    url(r'^user/', include('coupdeg.urls_user')),
 ]
 
 if settings.DEBUG:
