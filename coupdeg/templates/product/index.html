@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 	{% for image in all_images %}
-		<img src="{{ image.Image.url }}" alt="" style="width:400px;height:400px;">
+		<img src="{{ image.image.url }}" alt="" style="width:400px;height:400px;">
 	{% endfor %}
 	<div class = "product-content">
 		<h1 class = "text-center text-head-title">ALL PRODUCTS</h1>
