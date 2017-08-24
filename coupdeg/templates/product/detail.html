@@ -1,0 +1,10 @@
+{% extends "../layout/application.html" %}
+{% load static %}
+{% block content %}
+	{% for image in all_images %}
+		<img src="{{ image.Image.url }}" alt="" style="width:400px;height:400px;">
+	{% endfor %}
+	<div class = "product-content">
+        
+	</div>
+{% endblock %}
