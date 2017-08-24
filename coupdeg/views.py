@@ -6,10 +6,11 @@ from .models import User
 from passlib.hash import django_pbkdf2_sha256 as handler
 
 def landing(request):
-	products = Product.objects.all()
-	images = Image.objects.all()
+	products = Product.objects.all().order_by('-id')[:6]
+	images = Image.objects.filter(image_types = 1).order_by('-type_id')[:6]
 	context = {
 		'products': products,
+		'images': images
 	}
 
  	return render(request, 'landing/index.html', context)

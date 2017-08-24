@@ -3,19 +3,20 @@
     <div class="landing-background-title "></div>
     <div class="line"></div>
     <div class="content-newarrivals">
-        <h3 class="text-center text-heading">NEW ARRIVALS</h3>
-        <h1>{{ products.last.id }}</h1>
+        <h3 class="text-center text-heading">NEW ARRIVALS</h3>     
         <div class="newarrivals-items-margin-bottom d-flex justify-content-center">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_01.jpg" %}'>
-                    <div class="overlay">
-                        <h2>Olive green knit top</h2>
-                        <a class="info link-size" href="#">Buy now</a>
+            {% for i in '012' %}                
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <div class="hovereffect">
+                        <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_01.jpg" %}'>
+                        <div class="overlay">
+                            <h2>Olive green knit top</h2>
+                            <a class="info link-size" href="#">Buy now</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            {% endfor %}
+            {% comment %} <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <div class="hovereffect">
                     <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_02.jpg" %}'>
                     <div class="overlay">
@@ -32,19 +33,21 @@
                         <a class="info link-size" href="#">Buy now</a>
                     </div>
                 </div>
-            </div>
+            </div> {% endcomment %}
         </div>
         <div class="newarrivals-items-margin-bottom d-flex justify-content-center">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_04.jpg" %}'>
-                    <div class="overlay">
-                        <h2>natural linen small clutch</h2>
-                        <a class="info link-size" href="#">Buy now</a>
+            {% for i in '456' %}                
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <div class="hovereffect">
+                        <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_01.jpg" %}'>
+                        <div class="overlay">
+                            <h2>Olive green knit top</h2>
+                            <a class="info link-size" href="#">Buy now</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            {% endfor %}
+            {% comment %} <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <div class="hovereffect">
                     <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_05.jpg" %}'>
                     <div class="overlay">
@@ -61,7 +64,7 @@
                         <a class="info link-size" href="#">Buy now</a>
                     </div>
                 </div>
-            </div>
+            </div> {% endcomment %}
         </div>
     </div>
     <div class="line"></div>
