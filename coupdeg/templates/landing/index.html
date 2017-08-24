@@ -6,12 +6,11 @@
         <h3 class="text-center text-heading">NEW ARRIVALS</h3>     
         <div class="newarrivals-items-margin-bottom d-flex justify-content-center">
             {% for i in '012' %}
-                {{ products|index:i }}
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                     <div class="hovereffect">
-                        <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_01.jpg" %}'>
+                        <img class="img-responsive newarrivals-images" src='{{ images|index_of_image_url:i }}'>                            
                         <div class="overlay">
-                            <h2>Olive green knit top</h2>
+                            <h2>{{ products|index_of_product_name:i }}</h2>
                             <a class="info link-size" href="#">Buy now</a>
                         </div>
                     </div>
