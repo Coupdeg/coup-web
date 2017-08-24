@@ -26,6 +26,8 @@ class Product(models.Model):
 	details = models.CharField(max_length=150)
 	product_types = models.CharField(max_length=1, choices=types)
 	price = models.IntegerField()
+	def __str__(self):
+		return 'ID : %s -> Name : %s' % (self.id, self.name)
 
 class Image(models.Model):
 	types = (
@@ -41,3 +43,5 @@ class Image(models.Model):
 	type_id = models.IntegerField()
 	role = models.CharField(max_length=1, choices=types_role, default=0)
 
+	def __str__(self):
+		return 'ID : %s -> Type : %s -> Type ID : %s' % (self.id, self.image_types, self.type_id)
