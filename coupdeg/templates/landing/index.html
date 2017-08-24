@@ -1,11 +1,12 @@
-{% extends "../layout/application.html" %} {% load static %} {% block content %}
+{% extends "../layout/application.html" %} {% load helper %}{% load static %} {% block content %}
 <div class="content">
     <div class="landing-background-title "></div>
     <div class="line"></div>
     <div class="content-newarrivals">
         <h3 class="text-center text-heading">NEW ARRIVALS</h3>     
         <div class="newarrivals-items-margin-bottom d-flex justify-content-center">
-            {% for i in '012' %}                
+            {% for i in '012' %}
+                {{ products|index:i }}
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                     <div class="hovereffect">
                         <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_01.jpg" %}'>
