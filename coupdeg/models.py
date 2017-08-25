@@ -2,6 +2,7 @@ from django.db import models
 
 class User(models.Model):
 	email = models.EmailField(max_length=50, unique=True)
+	password = models.CharField(max_length=256)
 	first_name = models.CharField(max_length=50)
 	last_name = models.CharField(max_length=50)
 	address = models.CharField(max_length=100)
@@ -9,6 +10,8 @@ class User(models.Model):
 	state = models.CharField(max_length=50)
 	country = models.CharField(max_length=50)
 	zip_code = models.CharField(max_length=50)
+	def __str__(self):
+		return 'ID : %s -> Email : %s' % (self.id, self.email)
 
 class Product(models.Model):
 	types = (
@@ -23,6 +26,8 @@ class Product(models.Model):
 	details = models.CharField(max_length=150)
 	product_types = models.CharField(max_length=1, choices=types)
 	price = models.IntegerField()
+	def __str__(self):
+		return 'ID : %s -> Name : %s' % (self.id, self.name)
 
 class Image(models.Model):
 	types = (
@@ -38,3 +43,5 @@ class Image(models.Model):
 	type_id = models.IntegerField()
 	role = models.CharField(max_length=1, choices=types_role, default=0)
 
+	def __str__(self):
+		return 'ID : %s -> Type : %s -> Type ID : %s' % (self.id, self.image_types, self.type_id)

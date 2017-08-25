@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^product/$', main_views.product, name="product"),
     url(r'^detail/$', main_views.detail, name="detail"),
     url(r'^about/$', main_views.about, name="about"),
-    url(r'^user/login', main_views.login, name="login")
+    url(r'^user/', include('coupdeg.urls_user')),
 ]
 
 if settings.DEBUG:

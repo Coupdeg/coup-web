@@ -1,66 +1,34 @@
-{% extends "../layout/application.html" %} {% load static %} {% block content %}
+{% extends "../layout/application.html" %} {% load helper %}{% load static %} {% block content %}
 <div class="content">
     <div class="landing-background-title "></div>
     <div class="line"></div>
-    <div class="content-newarrivals">
-        <h3 class="text-center text-heading">NEW ARRIVALS</h3>
+    <div class="content-newarrivals x">
+        <h3 class="text-center text-heading">NEW ARRIVALS</h3>     
         <div class="newarrivals-items-margin-bottom d-flex justify-content-center">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_01.jpg" %}'>
-                    <div class="overlay">
-                        <h2>Olive green knit top</h2>
-                        <a class="info link-size" href="#">Buy now</a>
+            {% for i in '012' %}
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 image-card-container">
+                    <div class="hovereffect">
+                        <img class="img-responsive newarrivals-images" src='{{ images|index_of_image_url:i }}'>                            
+                        <div class="overlay">
+                            <h2>{{ products|index_of_product_name:i }}</h2>
+                            <a class="info link-size" href="#">Buy now</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_02.jpg" %}'>
-                    <div class="overlay">
-                        <h2>Baby pink crossbody bag</h2>
-                        <a class="info link-size" href="#">Buy now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_03.jpg" %}'>
-                    <div class="overlay">
-                        <h2>womens black waistcoat</h2>
-                        <a class="info link-size" href="#">Buy now</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
         <div class="newarrivals-items-margin-bottom d-flex justify-content-center">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_04.jpg" %}'>
-                    <div class="overlay">
-                        <h2>natural linen small clutch</h2>
-                        <a class="info link-size" href="#">Buy now</a>
+            {% for i in '345' %}                
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 image-card-container">
+                    <div class="hovereffect">
+                        <img class="img-responsive newarrivals-images" src='{{ images|index_of_image_url:i }}'>                            
+                        <div class="overlay">
+                            <h2>{{ products|index_of_product_name:i }}</h2>
+                            <a class="info link-size" href="#">Buy now</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_05.jpg" %}'>
-                    <div class="overlay">
-                        <h2>linen cosmetic bag<br>( turkish coffee )</h2>
-                        <a class="info link-size" href="#">Buy now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_06.jpg" %}'>
-                    <div class="overlay">
-                        <h2>linen cosmetic bag<br>( gray )</h2>
-                        <a class="info link-size" href="#">Buy now</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
     <div class="line"></div>
