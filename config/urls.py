@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', main_views.landing, name="landing"),
     url(r'^product/$', main_views.product, name="product"),
+    url(r'^detail/$', main_views.detail, name="detail"),
     url(r'^about/$', main_views.about, name="about"),
     url(r'^user/login', main_views.login, name="login")
 ]

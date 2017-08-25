@@ -12,6 +12,9 @@ def product(request):
 	}
 	return render(request, 'product/index.html', context)
 
+def detail(request):
+	return render(request, 'about/detail.html')
+
 def about(request):
 	return render(request, 'about/index.html')
 
