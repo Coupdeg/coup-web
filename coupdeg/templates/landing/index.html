@@ -1,73 +1,66 @@
-{% extends "../layout/application.html" %} {% load static %} {% block content %}
+{% extends "../layout/application.html" %} {% load helper %}{% load static %} {% block content %}
 <div class="content">
     <div class="landing-background-title "></div>
     <div class="line"></div>
-    <div class="content-newarrivals">
-        <h3 class="text-center text-heading">New Arrivals.</h3>
+    <div class="content-newarrivals x">
+        <h3 class="text-center text-heading">NEW ARRIVALS</h3>     
         <div class="newarrivals-items-margin-bottom d-flex justify-content-center">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_01.jpg" %}'>
-                    <div class="overlay">
-                        <h2>Hover effect</h2>
-                        <a class="info" href="#">link here</a>
+            {% for i in '012' %}
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 image-card-container">
+                    <div class="hovereffect">
+                        <img class="img-responsive newarrivals-images" src='{{ images|index_of_image_url:i }}'>                            
+                        <div class="overlay">
+                            <h2>{{ products|index_of_product_name:i }}</h2>
+                            <a class="info link-size" href="#">Buy now</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_02.jpg" %}'>
-                    <div class="overlay">
-                        <h2>Hover effect</h2>
-                        <a class="info" href="#">link here</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_03.jpg" %}'>
-                    <div class="overlay">
-                        <h2>Hover effect</h2>
-                        <a class="info" href="#">link here</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
         <div class="newarrivals-items-margin-bottom d-flex justify-content-center">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_04.jpg" %}'>
-                    <div class="overlay">
-                        <h2>Hover effect</h2>
-                        <a class="info" href="#">link here</a>
+            {% for i in '345' %}                
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 image-card-container">
+                    <div class="hovereffect">
+                        <img class="img-responsive newarrivals-images" src='{{ images|index_of_image_url:i }}'>                            
+                        <div class="overlay">
+                            <h2>{{ products|index_of_product_name:i }}</h2>
+                            <a class="info link-size" href="#">Buy now</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_05.jpg" %}'>
-                    <div class="overlay">
-                        <h2>Hover effect</h2>
-                        <a class="info" href="#">link here</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="hovereffect">
-                    <img class="img-responsive newarrivals-images" src='{% static "images/landing/newarrival_06.jpg" %}'>
-                    <div class="overlay">
-                        <h2>Hover effect</h2>
-                        <a class="info" href="#">link here</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
     <div class="line"></div>
     <div class="content-special-promotions">
-        <h3 class="text-center text-heading">Speacial promotion.</h3>
+        <h3 class="text-center text-heading">SPEACIAL PROMOTION</h3>
         <div class="d-flex justify-content-center">
-            <img class="speacial-promotion-big-branner" src='{% static "images/landing/silde-pic-promotion.png" %}'>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img class="d-block w-100" src="{% static "images/landing/silde-pic-promotion.png" %}" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src="{% static "images/landing/silde-pic-promotion.png" %}" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src="{% static "images/landing/silde-pic-promotion.png" %}" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
         <div class="d-flex justify-content-center">
             <img class="speacial-promotion-small-branner" src='{% static "images/landing/silde-pic-promotion-sub.png" %}'>
@@ -76,13 +69,45 @@
     </div>
     <div class="line"></div>
     <div class="content-find-products">
-        <h3 class="text-center text-heading">Find our products.</h3>
+        <h3 class="text-center text-heading">FIND OUR PRODUCTS</h3>
         <div class="d-flex justify-content-center">
-            <img class="find-products" src='{% static "images/landing/find_products_01.jpg" %}'>
-            <img class="find-products" src='{% static "images/landing/find_products_02.jpg" %}'>
-            <img class="find-products" src='{% static "images/landing/find_products_03.jpg" %}'>
-            <img class="find-products" src='{% static "images/landing/find_products_04.jpg" %}'>
-            <img class="find-products" src='{% static "images/landing/find_products_05.jpg" %}'>
+            <div class="d-flex justify-content-center">
+                <div class="hovereffect-small find-our-product-space d-flex justify-content-center">
+                    <img class="img-responsive find-products" src='{% static "images/landing/find_products_01.jpg" %}'>
+                    <div class="overlay-small">
+                        <h2>Shirts</h2>
+                        <a class="info" href="#">FIND MORE</a>
+                    </div>
+                </div>
+                <div class="hovereffect-small find-our-product-space">
+                    <img class="img-responsive find-products" src='{% static "images/landing/find_products_02.jpg" %}'>
+                    <div class="overlay-small">
+                        <h2>Bag</h2>
+                        <a class="info" href="#">FIND MORE</a>
+                    </div>
+                </div>
+                <div class="hovereffect-small find-our-product-space">
+                    <img class="img-responsive find-products" src='{% static "images/landing/find_products_03.jpg" %}'>
+                    <div class="overlay-small">
+                        <h2>Dresses</h2>
+                        <a class="info" href="#">FIND MORE</a>
+                    </div>
+                </div>
+                <div class="hovereffect-small find-our-product-space">
+                    <img class="img-responsive find-products" src='{% static "images/landing/find_products_04.jpg" %}'>
+                    <div class="overlay-small">
+                        <h2>Scarves</h2>
+                        <a class="info" href="#">FIND MORE</a>
+                    </div>
+                </div>
+                <div class="hovereffect-small find-our-product-space">
+                    <img class="img-responsive find-products" src='{% static "images/landing/find_products_05.jpg" %}'>
+                    <div class="overlay-small">
+                        <h2>Accessories</h2>
+                        <a class="info" href="#">FIND MORE</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

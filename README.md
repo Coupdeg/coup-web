@@ -40,6 +40,7 @@
 - pytz==2017.2
 - whitenoise==3.3.0
 - Pillow==4.2.1
+- passlib==1.7.1
 
 # Create superuser for manage database
 1. `python manage.py createsuperuser`
