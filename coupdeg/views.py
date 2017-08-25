@@ -13,7 +13,7 @@ def product(request):
 	return render(request, 'product/index.html', context)
 
 def detail(request):
-	return render(request, 'about/detail.html')
+	return render(request, 'detail/index.html')
 
 def about(request):
 	return render(request, 'about/index.html')
