@@ -1,6 +1,6 @@
 footer {
     color: #888888;
-    border-top:1px solid;
+    border-top: 1px solid;
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
@@ -14,39 +14,46 @@ footer {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: .5rem 1rem;
-    font-family:  'Raleway', sans-serif;	
+    font-family: 'Marvel', sans-serif;
+    font-family: 'News Cycle', sans-serif;
     img.image-logo {
-		height:65px;
-		width:65px;
+        height: 65px;
+        width: 65px;
     }
     img.image-social-icon {
-		height:45px;
-		width:45px;
+        height: 45px;
+        width: 45px;
     }
     img.image-license {
-		height:20px;
-		width:200px;
-	}
+        height: 20px;
+        width: 200px;
+    }
 }
-.footer-size{
+
+.footer-size {
     height: 90px;
 }
-.footer-center{
+
+.footer-center {
     align-self: center;
 }
-.footer-image-center{
+
+.footer-image-center {
     display: block;
     margin: 0 auto;
     padding: 0 auto;
 }
-.footer-items-space{
+
+.footer-items-space {
     margin: 0 20px;
 }
-.footer-item-head{
+
+.footer-item-head {
     margin-left: 50px;
     margin-right: 20px;
 }
-.footer-item-tail{
+
+.footer-item-tail {
     margin-right: 50px;
     margin-left: 20px;
 }
