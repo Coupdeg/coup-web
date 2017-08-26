@@ -4,9 +4,7 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    url(r'^register/', views.register, name="register"),
-    url(r'^login/', views.login, name="login"),
-	url(r'^$', views.user, name="user"),
+		url(r'^$', views.product, name="product"),
 ]
 
 if settings.DEBUG:
