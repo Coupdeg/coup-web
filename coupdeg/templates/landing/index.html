@@ -1,8 +1,9 @@
-{% extends "../layout/application.html" %} {% load helper %}{% load static %} {% block content %}
+{% extends "../layout/landing.html" %} {% load helper %}{% load static %} {% block content %}
 <div class="content">
-    <div class="landing-background-title "></div>
+    <div class="landing-background-title"></div>
+    <div id="startchange"></div>
     <div class="line"></div>
-    <div class="content-newarrivals x">
+    <div class="content-newarrivals">
         <h3 class="text-center text-heading">NEW ARRIVALS</h3>     
         <div class="newarrivals-items-margin-bottom d-flex justify-content-center">
             {% for i in '012' %}
