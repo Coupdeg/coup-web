@@ -19,4 +19,26 @@
     .space-small-v{
         margin: 30px 0px;
     }
+    .space-medium-v{
+        margin: 60px 0px;
+    }
+    .btn-detail-cart{
+        color: white;
+        background-color: grey;
+        border-color: grey;
+        border-radius: 100px;
+        width : 50%;
+        height: 4rem;
+        font-size: 20px;
+    }
+    .btn-detail-cart:hover{
+        color: #111;
+        background-color: #e2e6ea;
+        border-color: #dae0e5
+    }
+    .btn-detail-cart-active{
+        border: solid 1px;
+        border-radius: 0px;
+    }
+    
 }
