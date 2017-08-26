@@ -3,10 +3,20 @@
 }
 .detail-content{
     padding: 0% 10%;
+    .product-title{
+        margin-bottom: 30px;
+    }
+    .btn-dropdown-size{
+        min-width: 125px;
+        margin: 0px 15px;
+    }
     hr{
         background: black;
     }
     .line-padding{
         padding: 0% 30%;
+    }
+    .space-small-v{
+        margin: 30px 0px;
     }
 }
