@@ -27,30 +27,6 @@ a:hover{
     background: grey;
     margin: 0px;
 }
-.dropdown-menu{
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    display: none;
-    float: left;
-    min-width: 0px !important;
-    padding: .5rem .5rem;
-    margin: .125rem 0 0;
-    font-size: 1rem;
-    color: #292b2c;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, .15);
-    border-radius: .25rem;
-    width: 100%;    
-}
-a.dropdown-page{
-    color : black;
-}
 .space-extra-small-h{
     margin: 15px 0px;
 }
