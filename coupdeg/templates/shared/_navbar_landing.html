@@ -1,4 +1,4 @@
-<nav class="navbar navbar-lit bg-faded navbar-style navbar-color-head">
+<nav id="nav-landing" class="navbar navbar-lit bg-faded navbar-style navbar-color-head fixed-top">
     <div class="col-4 text-center navbar-menu">
         <div class="row">
             <a class="col-4 text-center navbar-menu navbar-color-text" href="/">HOME</a>
@@ -8,7 +8,7 @@
     </div>
     <div class="col-4 text-center navbar-menu ">
         {% load static %}
-        <a class="navbar-menu" href="#">
+        <a class="navbar-menu" href="/">
             <img src='{% static "images/navbar_logo.png" %}' href="#">
         </a>
     </div>
@@ -17,7 +17,7 @@
             <a class="col-4 text-center navbar-menu navbar-color-text i-search" href="#">
 				<i class="fa fa-search" aria-hidden="true"></i>			
 			</a>
-			<a class="col-4 text-center navbar-menu navbar-color-text" href="/user/login">lOGIN</a>
+			<a class="col-4 text-center navbar-menu navbar-color-text" href="/user/login">LOGIN</a>
 			<a class="col-4 text-center navbar-menu navbar-color-text" href="#">
 				<i class="fa fa-shopping-cart i-cart" aria-hidden="true" ></i>			
 			</a>
