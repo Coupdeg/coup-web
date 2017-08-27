@@ -336,7 +336,8 @@ h3.text-heading {
     font-family: 'Dosis', sans-serif;
     color: #4A4A4A;
     text-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.5);
-    font-size: 14px; }
+    font-size: 14px;
+    padding-top: 1%; }
     .login .button-submit:focus {
       outline: 0; }
     .login .button-submit:hover {
@@ -512,6 +513,29 @@ a.dropdown-page {
   .register .button-submit:hover {
     cursor: pointer;
     background-color: #E9E9E9; }
+
+.container-about {
+  margin-top: 5%; }
+  .container-about .title {
+    font-size: 36px;
+    font-weight: 500; }
+  .container-about .sub-title {
+    font-size: 20px;
+    font-weight: 500; }
+  .container-about .story {
+    font-size: 16px;
+    margin: 5% 15%; }
+  .container-about .horizontal-line {
+    box-sizing: border-box;
+    border-bottom: 1px solid #979797;
+    width: 65%;
+    margin: 5% auto 10% auto;
+    display: block; }
+  .container-about img {
+    width: 100%;
+    height: 100%; }
+  .container-about .row-img-container {
+    margin: 5% 15%; }
 
 html, body {
   height: 100%;
