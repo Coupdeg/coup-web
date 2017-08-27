@@ -4,16 +4,17 @@
     <div id="startchange"></div>
     <div class="line"></div>
     <div class="content-newarrivals">
-        <h3 class="text-center text-heading">NEW ARRIVALS</h3>     
+        <h3 class="text-center text-heading">NEW ARRIVALS</h3>
         <div class="newarrivals-items-margin-bottom d-flex justify-content-center">
             {% for i in '012' %}
                 {% if products|index_of_length:i == True %}
+                {% index_of_product products i as product %}                                    
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 image-card-container">
                     <div class="hovereffect">
                         <img class="img-responsive newarrivals-images" src='{{ images|index_of_image_url:i }}'>                            
                         <div class="overlay">
-                            <h2>{{ products|index_of_product_name:i }}</h2>
-                            <a class="info link-size" href="#">Buy now</a>
+                            <h2>{{ product.name }}</h2>
+                            <a class="info link-size" href="/product/{{ product.id }}">Buy now</a>
                         </div>
                     </div>
                 </div>
@@ -22,13 +23,14 @@
         </div>
         <div class="newarrivals-items-margin-bottom d-flex justify-content-center">
             {% for i in '345' %}
-                {% if products|index_of_length:i == True %}                
+                {% if products|index_of_length:i == True %}
+                {% index_of_product products i as product %}                                    
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 image-card-container">
                     <div class="hovereffect">
                         <img class="img-responsive newarrivals-images" src='{{ images|index_of_image_url:i }}'>                            
                         <div class="overlay">
-                            <h2>{{ products|index_of_product_name:i }}</h2>
-                            <a class="info link-size" href="#">Buy now</a>
+                            <h2>{{ product.name }}</h2>
+                            <a class="info link-size" href="/product/{{ product.id }}">Buy now</a>
                         </div>
                     </div>
                 </div>
