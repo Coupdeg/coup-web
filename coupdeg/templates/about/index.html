@@ -1,4 +1,4 @@
-{% extends "../layout/application.html" %}
+{% extends "../layout/application.html" %} {% load static %}
 {% block content %}
 	<div class="text-center container container-about">
 		<div class="title">What is coup ?</div>
@@ -13,8 +13,25 @@
 				with Chiangmai city even though they are from a Chinese-Thai family in Nakornrajchasima.
 		</p>
 		<div class="line"></div>
-		<div>IMG</div>
-		<div>IMG</div>
+		<div class="row row-img-container">
+			<div class="col-4">
+				<img class="img-responsive" src='{% static "images/product/product_02.jpg" %}'>
+			</div>
+			<div class="col-4">
+				<img class="img-responsive" src='{% static "images/product/product_02.jpg" %}'>
+			</div>
+			<div class="col-4">
+				<img class="img-responsive" src='{% static "images/product/product_02.jpg" %}'>
+			</div>
+		</div>
+		<div class="row row-img-container">
+			<div class="col-6">
+				<img class="img-responsive" src='{% static "images/product/product_02.jpg" %}'>
+			</div>
+			<div class="col-6">
+				<img class="img-responsive" src='{% static "images/product/product_02.jpg" %}'>
+			</div>
+		</div>
 		<div class="line"></div>
 		<p class="story">
 				Karuna Chatwongwan, the owner of the COUP shop and the creator of COUP   said, “The bags I make just represent myself. 
@@ -41,7 +58,14 @@
 				All is “COUP” – a happy team that is simple and appreciates people as much as it does nature.
 		</p>
 		<div class="line"></div>
-		<div>IMG</div>
+		<div class="row row-img-container">
+			<div class="col-6">
+				<img class="img-responsive" src='{% static "images/product/product_02.jpg" %}'>
+			</div>
+			<div class="col-6">
+				<img class="img-responsive" src='{% static "images/product/product_02.jpg" %}'>
+			</div>
+		</div>
 		<div class="line"></div>
 		<p class="story">
 				Willingness
