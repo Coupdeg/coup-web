@@ -27,4 +27,6 @@ def user(request):
 			user = User(email=email, password=password,first_name=first_name, last_name=last_name,
 									address=address, city=city, state=state, country=country, zip_code=zip_code)
 			user.save()
-			return redirect('/user/login')	
+			return redirect('/user/login')
+		else :
+			return redirect('/')
