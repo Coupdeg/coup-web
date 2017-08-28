@@ -22,6 +22,7 @@ from coupdeg import views as main_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', main_views.landing, name="landing"),
+    url(r'^detail/$', main_views.detail, name="detail"),
     url(r'^product/', include('coupdeg.urls_product')),
     url(r'^about/', main_views.about, name="about"),
     url(r'^user/', include('coupdeg.urls_user')),

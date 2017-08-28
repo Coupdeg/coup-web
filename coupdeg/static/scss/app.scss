@@ -3,6 +3,7 @@
 @import 'landing-page.scss';
 @import 'login.scss';
 @import 'product.scss';
+@import 'detail.scss';
 @import 'register.scss';
 @import 'about';
 html, body {
@@ -12,6 +13,28 @@ html, body {
 }
 .content{
     min-height: 100%;
+}
+.dropdown-menu{
+    min-width: 10rem;
+    padding: .5rem .5rem;
+}
+a.dropdown-page{
+    color : black;
+}
+.btn-light{
+    color: #111;
+    background-color: white;
+    border-color: white;
+    font-size: 20px;
+}
+.btn-light:hover{
+    color: #111;
+    background-color: #e2e6ea;
+    border-color: #dae0e5
+}
+.btn-light-active{
+    border: solid 1px;
+    border-radius: 0px;
 }
 
 

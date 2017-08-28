@@ -27,30 +27,6 @@ a:hover{
     background: grey;
     margin: 0px;
 }
-.dropdown-menu{
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    display: none;
-    float: left;
-    min-width: 0px !important;
-    padding: .5rem .5rem;
-    margin: .125rem 0 0;
-    font-size: 1rem;
-    color: #292b2c;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, .15);
-    border-radius: .25rem;
-    width: 100%;    
-}
-a.dropdown-page{
-    color : black;
-}
 .space-extra-small-h{
     margin: 15px 0px;
 }
@@ -73,18 +49,4 @@ a.dropdown-page{
     border-top: solid 1px;
     padding: 30px;
 }
-.btn-light{
-    color: #111;
-    background-color: white;
-    border-color: white;
-    font-size: 20px;
-}
-.btn-light:hover{
-    color: #111;
-    background-color: #e2e6ea;
-    border-color: #dae0e5
-}
-.btn-light-active{
-    border: solid 1px;
-    border-radius: 0px;
-}
+

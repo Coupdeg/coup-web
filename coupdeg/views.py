@@ -13,5 +13,8 @@ def landing(request):
 
  	return render(request, 'landing/index.html', context)
 
+def detail(request):
+	return render(request, 'detail/index.html')
+
 def about(request):
 	return render(request, 'about/index.html')
