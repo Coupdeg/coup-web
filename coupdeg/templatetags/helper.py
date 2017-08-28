@@ -2,8 +2,9 @@ from django import template
 register = template.Library()
 
 @register.filter
-def index_of_product_name(List, i):
-    return List[int(i)].name
+@register.simple_tag(name='index_of_product')
+def index_of_product(List, i):
+    return List[int(i)]
 
 @register.filter
 def index_of_image_url(List, i):

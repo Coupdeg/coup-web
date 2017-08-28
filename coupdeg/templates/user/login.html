@@ -9,25 +9,25 @@
 			<input type="password" placeholder="Password*" class="input-field">
 			<div class="forgot-password">Forgot password?</div>
 			<div class="group-button">
-				<button class="button-submit">Login</button>
-				<button class="button-submit">Register</button>
+				<a class="btn button-submit">Login</a>
+				<a class="btn button-submit" href="/user/register">Register</a>
 			</div>
 			<div class="line-border"></div>
 			<div class="login-by group-button">Login by</div>
 			<div class="group-button">
 					{% load static %}
-					<button class="button-submit">
+					<a class="btn button-submit">
 						<img src='{% static "images/login/facebook.png" %}' href="#">
 						Facebook
-					</button>
-					<button class="button-submit">
+					</a>
+					<a class="btn button-submit">
 						<img src='{% static "images/login/gmail.png" %}' href="#">							
 						Gmail+
-					</button>
-					<button class="button-submit">
+					</a>
+					<a class="btn button-submit">
 						<img src='{% static "images/login/twitter.png" %}' href="#">														
 						Twitter
-					</button>					
+					</a>					
 			</div>
 		</div>
 	</div>

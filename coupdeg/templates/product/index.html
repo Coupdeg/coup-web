@@ -1,9 +1,6 @@
 {% extends "../layout/application.html" %}
 {% load static %}
 {% block content %}
-	{% for image in all_images %}
-		<img src="{{ image.image.url }}" alt="" style="width:400px;height:400px;">
-	{% endfor %}
 	<div class = "product-content">
 		<h1 class = "text-center text-head-title">ALL PRODUCTS</h1>
 		<div class = "row-nav-product d-flex justify-content-center">
