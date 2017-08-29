@@ -1,5 +1,9 @@
 .container-login {
-	background-color:royalblue;
+	background: url("../images/login/background.png");
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover; 
 	padding: 10% 20% 10% 20%;
 }
 .login {
