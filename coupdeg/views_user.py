@@ -4,7 +4,10 @@ from .models import User
 from passlib.hash import django_pbkdf2_sha256 as handler
 
 def login(request):
-	return render(request, 'user/login.html')
+	if request.method == 'POST':
+		return redirect('/')
+	else:
+		return render(request, 'user/login.html')
 
 def register(request):
 	return render(request, 'user/register.html')
