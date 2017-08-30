@@ -12,4 +12,5 @@ def product(request):
 
 def details(request, product_id):
 	product = get_object_or_404(Product, pk=product_id)
-	return render(request, 'product/details.html', { 'product': product })
+	image = Image.objects.filter(type_id = product_id)[0]
+	return render(request, 'product/details.html', { 'product': product, 'image': image })
