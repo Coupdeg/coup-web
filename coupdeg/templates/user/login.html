@@ -5,9 +5,10 @@
 			<div class="text-center head">
 				Login
 			</div>
-			<form action="{ url 'user/login' }" method="post">
-				<input type="text" placeholder="Email*" class="input-field">
-				<input type="password" placeholder="Password*" class="input-field">
+			<form action="{% url 'login' %}" method="post">
+				{% csrf_token %}				
+				<input type="text" placeholder="Email*" class="input-field" name="email">
+				<input type="password" placeholder="Password*" class="input-field" name="password">
 				<div class="forgot-password">Forgot password?</div>
 				<div class="group-button">
 					<input class="btn button-submit" type="submit" value="Login">					

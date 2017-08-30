@@ -5,7 +5,12 @@ from passlib.hash import django_pbkdf2_sha256 as handler
 
 def login(request):
 	if request.method == 'POST':
-		return redirect('/')
+		password = request.POST['password']
+		user = User.objects.filter(email = request.POST['email'])
+		if user and handler.verify(password, user[0].password) == True :
+			return redirect('/')
+		else :
+			return redirect('/user/register')
 	else:
 		return render(request, 'user/login.html')
 
