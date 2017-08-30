@@ -1,11 +1,7 @@
-{% extends "../layout/application.html" %}
+{% extends "../layout/application.html" %}{% load helper %}
 {% load static %}
 {% block content %}
-{{ product.name }}
-{{ product.details }}
-{{ product.product_types }}
-{{ product.price }}
-	<h1 class = "text-center text-head">{{ product.product_types }}</h1>
+	<h1 class = "text-center text-head">{{ product.product_types|get_enum }}</h1>
 	<div class = "detail-content ">
 		<div class = "row">
 			<div class = "col-6">
