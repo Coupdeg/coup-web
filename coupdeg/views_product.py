@@ -4,9 +4,11 @@ from .models import Image
 from .models import Product
 
 def product(request):
-	all_images = Image.objects.all()
+	images = Image.objects.filter(image_types = 1).order_by('-type_id')
+	products = Product.objects.all()
 	context = {
-		'all_images': all_images,
+		'images': images,
+		'products': products,
 	}
 	return render(request, 'product/index.html', context)
 

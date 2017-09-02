@@ -30,5 +30,5 @@ def get_enum(i):
     elif i == '4' :
         return "Scarves"
     else :
-        return "Accessories"  
+        return "Accessories"
         
