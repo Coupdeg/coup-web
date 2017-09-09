@@ -16,3 +16,19 @@ def index_of_length(List, i):
         return False
     else:
         return True
+
+@register.filter
+def get_enum(i):
+    if i == '0' :
+        return "Bags"
+    elif i == '1' :
+        return "Soaps"
+    elif i == '2' :
+        return "Dresses" 
+    elif i == '3' :
+        return "Shirts"
+    elif i == '4' :
+        return "Scarves"
+    else :
+        return "Accessories"
+        

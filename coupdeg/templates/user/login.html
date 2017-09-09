@@ -5,30 +5,33 @@
 			<div class="text-center head">
 				Login
 			</div>
-			<input type="text" placeholder="Email*" class="input-field">
-			<input type="password" placeholder="Password*" class="input-field">
-			<div class="forgot-password">Forgot password?</div>
-			<div class="group-button">
-				<a class="btn button-submit">Login</a>
-				<a class="btn button-submit" href="/user/register">Register</a>
-			</div>
-			<div class="line-border"></div>
-			<div class="login-by group-button">Login by</div>
-			<div class="group-button">
-					{% load static %}
-					<a class="btn button-submit">
-						<img src='{% static "images/login/facebook.png" %}' href="#">
-						Facebook
-					</a>
-					<a class="btn button-submit">
-						<img src='{% static "images/login/gmail.png" %}' href="#">							
-						Gmail+
-					</a>
-					<a class="btn button-submit">
-						<img src='{% static "images/login/twitter.png" %}' href="#">														
-						Twitter
-					</a>					
-			</div>
+			<form action="{% url 'login' %}" method="post">
+				{% csrf_token %}				
+				<input type="text" placeholder="Email*" class="input-field" name="email">
+				<input type="password" placeholder="Password*" class="input-field" name="password">
+				<div class="forgot-password">Forgot password?</div>
+				<div class="group-button">
+					<input class="btn button-submit" type="submit" value="Login">					
+					<a class="btn button-submit" href="/user/register">Register</a>
+				</div>
+				<div class="line-border"></div>
+				<div class="login-by group-button">Login by</div>
+				<div class="group-button">
+						{% load static %}
+						<a class="btn button-submit">
+							<img src='{% static "images/login/facebook.png" %}' href="#">
+							Facebook
+						</a>
+						<a class="btn button-submit">
+							<img src='{% static "images/login/gmail.png" %}' href="#">							
+							Gmail+
+						</a>
+						<a class="btn button-submit">
+							<img src='{% static "images/login/twitter.png" %}' href="#">														
+							Twitter
+						</a>					
+				</div>
+			</form>
 		</div>
 	</div>
 {% endblock %}
