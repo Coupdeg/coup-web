@@ -5,7 +5,7 @@
 	<div class = "product-content">
 		<h1 class = "text-center text-head-title">ALL PRODUCTS</h1>
 		<div class = "row-nav-product d-flex justify-content-center">
-			<a class = "nav-button text-center d-flex align-items-center" href = "/product/type=0">ALL</a>
+			<a class = "nav-button text-center d-flex" href = "/product/type=0">ALL</a>
 			<div class="line-v"></div>
 			<a class = "nav-button text-center d-flex align-items-center" href = "/product/type=1">BAG</a>
 			<div class="line-v"></div>
@@ -34,11 +34,12 @@
 		<div class = "content-image-product">
 			<div class = "row space-medium">
 				{% for product in products %}			
-				<div class = "col-4 d-flex justify-content-center">
-					<div class = "product-content">
-						<img class = "img-responsive image-product " src='{{ images|index_of_image_url:forloop.counter0 }}'>
+				<div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					<div class="product-card-container">
+						<img class = "img-responsive image-product" src='{{ images|index_of_image_url:forloop.counter0 }}'>
 						<h4 class = "text-center space-extra-small-h">{{ product.name }}.</h4>
-						<h4 class="text-center"> {{ product.price }}.00฿</h4>
+						<h4 class="text-center price"> {{ product.price }}.00฿</h4>
+						<a href="/product/{{ product.id }}" class="overlay btn btn-outline-info">Buy Now</a>
 					</div>
 				</div>
 				{% endfor %}
