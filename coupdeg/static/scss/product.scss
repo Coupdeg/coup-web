@@ -57,13 +57,17 @@ a:hover{
     transition: .5s ease;
     backface-visibility: hidden;
     opacity: 1;
-    display: block;    
+    display: block;
+    .price {
+        padding-bottom: 8%;
+    }    
     
     &:hover {
         img {
             opacity: 0.1;
         }
-        background-color: whitesmoke;
+        background-color: #E0E4CC;
+        color: #F38630;
         .overlay {
             opacity: 1;
             filter: alpha(opacity=100);
