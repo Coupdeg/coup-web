@@ -20,7 +20,7 @@ def product(request, type_number):
 	else :
 		products = Product.objects.all()
 		
-	images = Image.objects.filter(image_types = 1).order_by('-type_id')
+	images = Image.objects.filter(image_types = 1).order_by('type_id')
 	context = {
 		'images': images,
 		'products': products,
