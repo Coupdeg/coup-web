@@ -6,15 +6,22 @@ from passlib.hash import django_pbkdf2_sha256 as handler
 
 def login(request):
 	if request.method == 'POST':
-		password = request.POST['password']
-		user = User.objects.filter(email = request.POST['email'])
-		if user and handler.verify(password, user[0].password) == True :
-			request.session['email'] = user[0].email
-			return redirect('/')
-		else :
-			return redirect('/user/register')
+		if request.POST['type'] == 'LOGOUT':
+			request.session['email'] = None
+			return redirect('/')						
+		else:	
+			password = request.POST['password']
+			user = User.objects.filter(email = request.POST['email'])
+			if user and handler.verify(password, user[0].password) == True :
+				request.session['email'] = user[0].email
+				return redirect('/')
+			else :
+				return redirect('/user/register')
+	elif request.method == 'DELETE':
+		request.session['email'] = None
+		return redirect('/')
 	else:
-		if request.session['email'] == None:
+		if request.session['email']:
 			return redirect('/')
 		else:
 			return render(request, 'user/login.html')

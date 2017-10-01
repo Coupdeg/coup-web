@@ -17,8 +17,14 @@
             <a class="col-4 text-center navbar-menu navbar-color-text i-search" href="#">
 				<i class="fa fa-search" aria-hidden="true"></i>			
             </a>
-            
-			<a class="col-4 text-center navbar-menu navbar-color-text" href="/user/login">LOGIN</a>
+            {% if request.session.email == None %}            
+                <a class="col-4 text-center navbar-menu navbar-color-text" href="/user/login">LOGIN</a>
+            {% else %}
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}				                        
+                    <input name="type" value = "LOGOUT" type="submit">
+                </form>
+            {% endif %}    
 			<a class="col-4 text-center navbar-menu navbar-color-text" href="#">
 				<i class="fa fa-shopping-cart i-cart" aria-hidden="true" ></i>			
 			</a>

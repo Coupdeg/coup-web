@@ -5,6 +5,7 @@
     </div>
     <div class="line"></div>
     <div class="content-newarrivals">
+        {{ request.session.email }}            
         <h3 class="text-center text-heading">NEW ARRIVALS</h3>
         <div class="newarrivals-items-margin-bottom d-flex justify-content-center">
             {% for i in '012' %}
