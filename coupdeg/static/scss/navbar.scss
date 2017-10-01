@@ -35,3 +35,13 @@ a.navbar-color-text:hover {
 .navbar-color-slide {
     background-color: #737373;
 }
+
+.after-login {
+    background-color: transparent;
+    border: 0px;
+    &:hover {
+        cursor: pointer;
+        color: gray;
+    }
+    &:focus {outline:0;}
+}
