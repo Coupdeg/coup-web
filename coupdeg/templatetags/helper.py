@@ -19,6 +19,7 @@ def index_of_length(List, i):
 
 @register.filter
 def get_enum(i):
+    i = str(i)
     if i == '0' :
         return "Bags"
     elif i == '1' :
@@ -29,8 +30,10 @@ def get_enum(i):
         return "Shirts"
     elif i == '4' :
         return "Scarves"
-    else :
+    elif i == '5' :
         return "Accessories"
+    else :
+        return "All"
 
 @register.filter(name='times') 
 def times(number):
