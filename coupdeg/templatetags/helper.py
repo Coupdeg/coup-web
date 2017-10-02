@@ -34,4 +34,4 @@ def get_enum(i):
 
 @register.filter(name='times') 
 def times(number):
-    return range(number)        
+    return range(1, number+1)        
