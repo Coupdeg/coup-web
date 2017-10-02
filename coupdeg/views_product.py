@@ -1,5 +1,6 @@
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404, redirect
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Image
 from .models import Product
 
@@ -19,6 +20,15 @@ def product(request, type_number):
 		products = Product.objects.filter(product_types = 5)
 	else :
 		products = Product.objects.all()
+
+	paginator = Paginator(products, 12)
+	page = request.GET.get('page')
+	try:
+			products = paginator.page(page)
+	except PageNotAnInteger:
+			products = paginator.page(1)
+	except EmptyPage:
+			products = paginator.page(paginator.num_pages)
 		
 	images = Image.objects.filter(image_types = 1).order_by('type_id')
 	context = {
