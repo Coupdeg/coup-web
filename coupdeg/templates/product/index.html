@@ -45,32 +45,24 @@
 				{% endfor %}
 			</div>
 		</div>
-		<div class="pagination">
-			<span class="step-links">
-					{% if products.has_previous %}
-							<a href="?page={{ products.previous_page_number }}">previous</a>
-					{% endif %}
-	
-					<span class="current">
-							Page {{ products.number }} of {{ products.paginator.num_pages }}.
-					</span>
-	
-					{% if products.has_next %}
-							<a href="?page={{ products.next_page_number }}">next</a>
-					{% endif %}
-			</span>
-	</div>
 		<div class = "page-button d-flex justify-content-center  space-medium-h">
 			<div class = "d-flex flex-column justify-content-center ">
 				<div>
-					<button type="button" class="btn btn-light space-small-v">< PREV</button>
+					{% if products.has_previous %}
+						<a class="btn btn-light space-small-v" href="?page={{ products.previous_page_number }}">< PREV</a>
+					{% endif %}
 					<button type="button" class="btn btn-light space-extra-small-v btn-light-active">1</button>
 					<button type="button" class="btn btn-light space-extra-small-v">2</button>
 					<button type="button" class="btn btn-light space-extra-small-v">3</button>
 					<button type="button" class="btn btn-light space-extra-small-v">4</button>
-					<button type="button" class="btn btn-light space-small-v">NEXT ></button>
+					{% for i in 15|times %}
+						{{ i+1 }}
+					{% endfor %}
+					{% if products.has_next %}
+						<a class="btn btn-light space-small-v" href="?page={{ products.next_page_number }}">NEXT ></a>
+					{% endif %}
 				</div>
-				<div class = "d-flex justify-content-center space-small">
+				<!-- <div class = "d-flex justify-content-center space-small">
 					<div class="btn-group">
 						<button class="btn btn-s btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							12 / page <span class="caret"></span>
@@ -81,7 +73,7 @@
 							<li><a href="#" class = "dropdown-page"> 60 / page </a></li>
 						</ul>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
