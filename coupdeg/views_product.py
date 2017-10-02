@@ -34,6 +34,7 @@ def product(request, type_number):
 	context = {
 		'images': images,
 		'products': products,
+		'product_types': type_number-1
 	}
 	return render(request, 'product/index.html', context)
 
