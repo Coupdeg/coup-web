@@ -21,10 +21,7 @@ def login(request):
 		request.session['email'] = None
 		return redirect('/')
 	else:
-		if request.session['email']:
-			return redirect('/')
-		else:
-			return render(request, 'user/login.html')
+		return render(request, 'user/login.html')
 
 def register(request):
 	return render(request, 'user/register.html')
