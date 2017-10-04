@@ -13,7 +13,7 @@ $(document).ready( ()=> {
 		if( $(event.target).is('.cd-popup-yes') ) {
 			console.log($(".cd-popup-yes input").val())
 			$.ajax({
-				url: '/product/cart',
+				url: '/user/history',
 				data : {'product_id': $(".add-to-cart-pop .cd-popup-yes input").val() },
 			});
 			event.preventDefault();

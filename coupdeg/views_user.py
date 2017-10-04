@@ -2,6 +2,9 @@ from django.http import Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from .models import User
+from .models import Product
+from .models import History
+from django.utils import timezone
 from passlib.hash import django_pbkdf2_sha256 as handler
 
 def login(request):
@@ -49,4 +52,11 @@ def user(request):
 			return redirect('/')
 
 def history(request):
+	if request.method == 'GET':
+		product_id = request.GET.get('product_id')
+		product = get_object_or_404(Product, pk=product_id)
+		now = timezone.now()
+		history = History(product= product, date=now)
+		history.save()
+
 	return render(request, 'user/history.html')
