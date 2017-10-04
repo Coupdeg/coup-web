@@ -1,4 +1,6 @@
 from django.db import models
+import datetime
+from django.utils import timezone
 
 class User(models.Model):
 	email = models.EmailField(max_length=50, unique=True)
@@ -45,3 +47,15 @@ class Image(models.Model):
 
 	def __str__(self):
 		return 'ID : %s -> Type : %s -> Type ID : %s' % (self.id, self.image_types, self.type_id)
+
+class History(models.Model):
+	product = models.ForeignKey(Product, on_delete=models.CASCADE)
+	date = models.DateTimeField('date published')
+
+	def was_published_recently(self):
+		now = timezone.now()
+		return now - datetime.timedelta(days=1) <= self.pub_date <= now
+	was_published_recently.admin_order_field = 'pub_date'
+	was_published_recently.boolean = True
+	was_published_recently.short_description = 'Published recently?'
+
