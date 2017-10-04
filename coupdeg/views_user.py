@@ -47,3 +47,6 @@ def user(request):
 			return redirect('/user/login')
 		else :
 			return redirect('/')
+
+def history(request):
+	return render(request, 'user/history.html')
