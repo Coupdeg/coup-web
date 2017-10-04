@@ -21,10 +21,7 @@
                 <a class="col-4 text-center navbar-menu navbar-color-text" href="/user/login">LOGIN</a>
             {% else %}
                 <div class="col-4">
-                    <form action="{% url 'login' %}" method="post">
-                        {% csrf_token %}				                        
-                        <input class="after-login text-center navbar-menu navbar-color-text"  name="type" value = "LOGOUT" type="submit"/>
-                    </form>
+                    {% include "./_login_nav.html" %}
                 </div>
             {% endif %}    
 			<a class="col-4 text-center navbar-menu navbar-color-text" href="#">

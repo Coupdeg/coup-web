@@ -13,7 +13,7 @@ def login(request):
 			password = request.POST['password']
 			user = User.objects.filter(email = request.POST['email'])
 			if user and handler.verify(password, user[0].password) == True :
-				request.session['email'] = user[0].email
+				request.session['email'] = user[0].first_name
 				return redirect('/')
 			else :
 				return redirect('/user/register')
