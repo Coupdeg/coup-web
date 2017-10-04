@@ -1,7 +1,6 @@
 {% extends "../layout/application.html" %}{% load helper %}
 {% load static %}
 {% block content %}
-	{{ request.session.cart }}
 	<h1 class = "text-center text-head">{{ product.product_types|get_enum }}</h1>
 	<div class = "detail-content ">
 		<div class = "row">
@@ -56,7 +55,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center space-medium-v">
-					<button type="button" class="btn btn-detail-cart add-to-cart">Add to cart</button>
+					<button type="button" class="btn btn-detail-cart add-to-cart">BUY</button>
 				</div>
 				<div class="collapse-resize">
 					<div id="accordion" role="tablist">
@@ -148,7 +147,7 @@
 	{% if request.session.email %}
 	<div class="cd-popup add-to-cart-pop" role="alert">
 		<div class="cd-popup-container">
-			<p>Comfirm {{ product.id }} ?</p>
+			<p>Comfirm Buy ?</p>
 			<a href="#" class="btn btn-danger cd-popup-yes">Yes
 				<input value="{{ product.id }}" hidden>
 			</a>
