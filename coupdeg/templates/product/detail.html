@@ -1,6 +1,7 @@
 {% extends "../layout/application.html" %}{% load helper %}
 {% load static %}
 {% block content %}
+	{{ request.session.cart }}
 	<h1 class = "text-center text-head">{{ product.product_types|get_enum }}</h1>
 	<div class = "detail-content ">
 		<div class = "row">
@@ -147,8 +148,10 @@
 	{% if request.session.email %}
 	<div class="cd-popup add-to-cart-pop" role="alert">
 		<div class="cd-popup-container">
-			<p>Comfirm ?</p>
-			<a href="#" class="btn btn-danger">Yes</a>
+			<p>Comfirm {{ product.id }} ?</p>
+			<a href="#" class="btn btn-danger cd-popup-yes">Yes
+				<input value="{{ product.id }}" hidden>
+			</a>
 			<a href="#" class="btn btn-primary cd-popup-no">No</a>
 			<a href="#" class="cd-popup-close img-replace"></a>
 		</div>
