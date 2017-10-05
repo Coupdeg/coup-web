@@ -55,7 +55,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center space-medium-v">
-					<button type="button" class="btn btn-detail-cart">Add to cart</button>
+					<button type="button" class="btn btn-detail-cart add-to-cart">BUY</button>
 				</div>
 				<div class="collapse-resize">
 					<div id="accordion" role="tablist">
@@ -144,4 +144,29 @@
 			</div>
 		</div>
 	</div>
+	{% if request.session.email %}
+	<div class="cd-popup add-to-cart-pop" role="alert">
+		<div class="cd-popup-container">
+			<p>Confirm Buy ?</p>
+			<div class="confirm-buy-product">
+				<form action="{% url 'history' %}" method="post">
+					{% csrf_token %}
+					<input name="email" value="{{ request.session.email }}" hidden>
+					<input name="product_id" value="{{ product.id }}" hidden>					
+					<input value="Yes" class="btn btn-primary btn-yes"type="submit">
+					<a href="#" class="btn btn-danger cd-popup-no">No</a>				
+				</form>
+			</div>
+			<a href="#" class="cd-popup-close img-replace"></a>
+		</div>
+	</div>
+	{% else %}
+	<div class="cd-popup add-to-cart-pop" role="alert">
+		<div class="cd-popup-container">
+			<p>Please login.</p>
+			<a href="/user/login" class="btn btn-primary">Login Now.</a>
+			<a href="#" class="cd-popup-close img-replace"></a>
+		</div>
+	</div>
+	{% endif %}
 {% endblock %}

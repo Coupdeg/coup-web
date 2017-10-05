@@ -6,7 +6,8 @@ from . import views_product as view
 urlpatterns = [
 		url(r'^$', view.product, name="product"),
         url(r'^(?P<product_id>[0-9]+)/$', view.detail, name="detail"),
-        url(r'^(?:type=(?P<type_number>[0-6]+))/$', view.product, name="product")        
+        url(r'^(?:type=(?P<type_number>[0-6]+))/$', view.product, name="product"),
+		url(r'^cart', view.cart, name="cart"),                
 ]
 
 if settings.DEBUG:

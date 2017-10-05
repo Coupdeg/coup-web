@@ -1,4 +1,5 @@
-from django.http import Http404
+from django.http import Http404, HttpResponse
+import json
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Image
@@ -42,3 +43,10 @@ def detail(request, product_id):
 	product = get_object_or_404(Product, pk=product_id)
 	image = Image.objects.filter(type_id = product_id)[0]
 	return render(request, 'product/detail.html', { 'product': product, 'image': image })
+
+def cart(request):
+	# request.session.setdefault('cart',str(','))
+	# request.session['cart'] = str(request.session['cart']) + str(request.POST['product_id'])
+	request.session['cart'] = request.session['cart'] + str(","+request.GET.get('product_id'))
+	data = request.session['cart']
+	return HttpResponse(json.dumps(data), content_type='application/json')
