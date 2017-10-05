@@ -2,6 +2,9 @@ from django.http import Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from .models import User
+from .models import Product
+from .models import History
+from django.utils import timezone
 from passlib.hash import django_pbkdf2_sha256 as handler
 
 def login(request):
@@ -13,7 +16,7 @@ def login(request):
 			password = request.POST['password']
 			user = User.objects.filter(email = request.POST['email'])
 			if user and handler.verify(password, user[0].password) == True :
-				request.session['email'] = user[0].first_name
+				request.session['email'] = user[0].email
 				return redirect('/')
 			else :
 				return redirect('/user/register')
@@ -47,3 +50,25 @@ def user(request):
 			return redirect('/user/login')
 		else :
 			return redirect('/')
+
+def history(request):
+	if request.method == 'POST':
+		user_id = User.objects.filter(email = request.POST['email'])
+		user = get_object_or_404(User, pk=user_id[0].id)		
+		product_id = request.POST['product_id']
+		product = get_object_or_404(Product, pk=product_id)
+		now = timezone.now()
+		history = History(user=user, product= product, date=now)
+		history.save()
+		return redirect('/product/'+product_id)
+	else:
+		if request.session['email']:
+			user_id = User.objects.filter(email = request.session['email'])
+			user = get_object_or_404(User, pk=user_id[0].id)
+			history = History.objects.filter(user = user)
+			context = {
+				'history': history
+			}	
+			return render(request, 'user/history.html', context)
+		else :
+			return redirect('/user/login')

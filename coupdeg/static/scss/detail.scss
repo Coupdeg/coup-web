@@ -98,3 +98,11 @@
         height: 100%;
     }
 }
+.confirm-buy-product {
+    .btn-yes{
+        align-content: left;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

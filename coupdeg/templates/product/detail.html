@@ -147,11 +147,16 @@
 	{% if request.session.email %}
 	<div class="cd-popup add-to-cart-pop" role="alert">
 		<div class="cd-popup-container">
-			<p>Comfirm Buy ?</p>
-			<a href="#" class="btn btn-danger cd-popup-yes">Yes
-				<input value="{{ product.id }}" hidden>
-			</a>
-			<a href="#" class="btn btn-primary cd-popup-no">No</a>
+			<p>Confirm Buy ?</p>
+			<div class="confirm-buy-product">
+				<form action="{% url 'history' %}" method="post">
+					{% csrf_token %}
+					<input name="email" value="{{ request.session.email }}" hidden>
+					<input name="product_id" value="{{ product.id }}" hidden>					
+					<input value="Yes" class="btn btn-primary btn-yes"type="submit">
+				</form>
+				<a href="#" class="btn btn-danger cd-popup-no">No</a>
+			</div>
 			<a href="#" class="cd-popup-close img-replace"></a>
 		</div>
 	</div>
