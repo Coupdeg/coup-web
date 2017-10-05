@@ -9,7 +9,7 @@ from passlib.hash import django_pbkdf2_sha256 as handler
 
 def login(request):
 	if request.method == 'POST':
-		if request.POST['type'] == 'LOGOUT':
+		if request.POST['type'] == 'Logout':
 			request.session['email'] = None
 			return redirect('/')						
 		else:	

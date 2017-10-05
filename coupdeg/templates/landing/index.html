@@ -12,7 +12,7 @@
                 {% index_of_product products i as product %}                                    
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 image-card-container">
                     <div class="hovereffect">
-                        <img class="img-responsive newarrivals-images" src='{{ images|index_of_image_url:i }}'>                            
+                        <img class="img-responsive newarrivals-images" src='{{ product.id|index_of_image_url }}'>                            
                         <div class="overlay">
                             <h2>{{ product.name }}</h2>
                             <a class="info link-size" href="/product/{{ product.id }}">Buy now</a>
@@ -28,7 +28,7 @@
                 {% index_of_product products i as product %}                                    
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 image-card-container">
                     <div class="hovereffect">
-                        <img class="img-responsive newarrivals-images" src='{{ images|index_of_image_url:i }}'>                            
+                        <img class="img-responsive newarrivals-images" src='{{ product.id|index_of_image_url }}'>                            
                         <div class="overlay">
                             <h2>{{ product.name }}</h2>
                             <a class="info link-size" href="/product/{{ product.id }}">Buy now</a>
