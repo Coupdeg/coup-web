@@ -1,4 +1,5 @@
 from django import template
+from ..models import Image
 register = template.Library()
 
 @register.filter
@@ -7,8 +8,9 @@ def index_of_product(List, i):
     return List[int(i)]
 
 @register.filter
-def index_of_image_url(List, i):
-    return List[int(i)].image.url
+def index_of_image_url(i):
+    image = Image.objects.filter(type_id = i)
+    return image[0].image.url
 
 @register.filter
 def index_of_length(List, i):
