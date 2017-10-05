@@ -148,12 +148,12 @@
 	<div class="cd-popup add-to-cart-pop" role="alert">
 		<div class="cd-popup-container">
 			<p>Confirm Buy ?</p>
-			<div>
+			<div class="confirm-buy-product">
 				<form action="{% url 'history' %}" method="post">
 					{% csrf_token %}
 					<input name="email" value="{{ request.session.email }}" hidden>
 					<input name="product_id" value="{{ product.id }}" hidden>					
-					<input value="Yes" class="btn btn-primary"type="submit">
+					<input value="Yes" class="btn btn-primary btn-yes"type="submit">
 				</form>
 				<a href="#" class="btn btn-danger cd-popup-no">No</a>
 			</div>

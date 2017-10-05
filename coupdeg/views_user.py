@@ -54,7 +54,6 @@ def user(request):
 def history(request):
 	if request.method == 'POST':
 		user_id = User.objects.filter(email = request.POST['email'])
-		print(request.POST['email'])
 		user = get_object_or_404(User, pk=user_id[0].id)		
 		product_id = request.POST['product_id']
 		product = get_object_or_404(Product, pk=product_id)
@@ -62,12 +61,14 @@ def history(request):
 		history = History(user=user, product= product, date=now)
 		history.save()
 		return redirect('/product/'+product_id)
-	else:	
-		return render(request, 'user/history.html')
-
-def post_history(request):
-		product_id = request.GET.get('product_id')
-		product = get_object_or_404(Product, pk=product_id)
-		now = timezone.now()
-		history = History(product= product, date=now)
-		history.save()
+	else:
+		if request.session['email']:
+			user_id = User.objects.filter(email = request.session['email'])
+			user = get_object_or_404(User, pk=user_id[0].id)
+			history = History.objects.filter(user = user)
+			context = {
+				'history': history
+			}	
+			return render(request, 'user/history.html', context)
+		else :
+			return redirect('/user/login')

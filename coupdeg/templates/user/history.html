@@ -1,3 +1,8 @@
 <center>
 	<h1>History</h1>
+	{% for h in history %}
+	<div>
+		{{ h.product.name }} {{ h.product.price }}.00 Bath {{ h.date}}			
+	</div>	
+	{% endfor %}	
 </center>
