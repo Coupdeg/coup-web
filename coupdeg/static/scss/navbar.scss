@@ -37,11 +37,23 @@ a.navbar-color-text:hover {
 }
 
 .after-login {
-    background-color: transparent;
-    border: 0px;
-    &:hover {
-        cursor: pointer;
-        color: gray;
+    ul,li {
+        text-align: center; 
+        a {
+            color: black;    
+            font-size: 18px;          
+        }
+        input {
+            border: 0px;
+            background-color: transparent;
+            font-size: 18px;
+            &:hover {
+                cursor: pointer;          
+            }                      
+        }
+        &:hover {
+            background-color: rgba(gray,0.2);
+            cursor: pointer;          
+        }
     }
-    &:focus {outline:0;}
 }

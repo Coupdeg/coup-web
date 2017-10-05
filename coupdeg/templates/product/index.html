@@ -36,7 +36,7 @@
 				{% for product in products %}			
 				<div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
 					<div class="product-card-container">
-						<img class = "img-responsive image-product" src='{{ images|index_of_image_url:forloop.counter0 }}'>
+						<img class = "img-responsive image-product" src='{{ product.id|index_of_image_url }}'>
 						<h4 class = "text-center space-extra-small-h">{{ product.name }}.</h4>
 						<h4 class="text-center price"> {{ product.price }}.00฿</h4>
 						<a href="/product/{{ product.id }}" class="overlay btn btn-outline-info">Buy Now</a>

@@ -1,11 +1,11 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;"><i class="fa fa-user-circle-o" aria-hidden="true" style="background-color:transparent;color:white;font-size:30px;"></i><b class="caret" ></b></a>
-<ul class="dropdown-menu">
+<ul class="dropdown-menu after-login" style="padding: 0px">
 	{% comment %} <li><a href="">{{ request.session.email }}</a></li> {% endcomment %}
 	<li><a href="/user/history">History</a></li>
 	<li>
 		<form action="{% url 'login' %}" method="post">
 			{% csrf_token %}				                        
-			<input  name="type" value = "LOGOUT" type="submit"/>
+			<input  name="type" value = "Logout" type="submit"/>
 		</form>
 	</li>
 </ul>
