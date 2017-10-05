@@ -147,10 +147,10 @@
 	{% if request.session.email %}
 	<div class="cd-popup add-to-cart-pop" role="alert">
 		<div class="cd-popup-container">
-			<p>Comfirm Buy ?</p>
-			<a href="#" class="btn btn-danger cd-popup-yes">Yes
-				<input value="{{ product.id }}" hidden>
-			</a>
+			<p>Confirm Buy ?</p>
+			<form action="{% url 'history' %}" method="post">
+				<input value="Yes" type="submit">
+			</form>
 			<a href="#" class="btn btn-primary cd-popup-no">No</a>
 			<a href="#" class="cd-popup-close img-replace"></a>
 		</div>

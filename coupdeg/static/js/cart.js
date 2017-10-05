@@ -11,11 +11,10 @@ $(document).ready( ()=> {
 			$(this).removeClass('is-visible');
 		}
 		if( $(event.target).is('.cd-popup-yes') ) {
-			console.log($(".cd-popup-yes input").val())
-			$.ajax({
-				url: '/user/history',
-				data : {'product_id': $(".add-to-cart-pop .cd-popup-yes input").val() },
-			});
+			// $.ajax({
+			// 	url: '/user/post_history',
+			// 	data : {'product_id': $(".add-to-cart-pop .cd-popup-yes input").val() },
+			// });
 			event.preventDefault();
 			$(this).removeClass('is-visible');
 		}

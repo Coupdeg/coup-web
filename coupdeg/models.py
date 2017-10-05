@@ -49,8 +49,12 @@ class Image(models.Model):
 		return 'ID : %s -> Type : %s -> Type ID : %s' % (self.id, self.image_types, self.type_id)
 
 class History(models.Model):
-	product = models.ForeignKey(Product, on_delete=models.CASCADE)
-	date = models.DateTimeField('date published')
+	user = models.ForeignKey(User, on_delete=models.CASCADE)
+	product = models.ForeignKey(Product)
+	date = models.DateTimeField('date published',null=True)
+
+	# def __str__(self):
+	# 	return 'Product : %s -> Date : %s' % (self.product.name, self.date)
 
 	def was_published_recently(self):
 		now = timezone.now()

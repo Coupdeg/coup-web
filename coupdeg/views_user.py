@@ -52,11 +52,19 @@ def user(request):
 			return redirect('/')
 
 def history(request):
-	if request.method == 'GET':
+	if request.method == 'POST':
 		product_id = request.GET.get('product_id')
 		product = get_object_or_404(Product, pk=product_id)
 		now = timezone.now()
 		history = History(product= product, date=now)
 		history.save()
+		return r
+	else:	
+		return render(request, 'user/history.html')
 
-	return render(request, 'user/history.html')
+def post_history(request):
+		product_id = request.GET.get('product_id')
+		product = get_object_or_404(Product, pk=product_id)
+		now = timezone.now()
+		history = History(product= product, date=now)
+		history.save()
