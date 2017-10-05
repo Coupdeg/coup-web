@@ -53,8 +53,8 @@ class History(models.Model):
 	product = models.ForeignKey(Product)
 	date = models.DateTimeField('date published',null=True)
 
-	# def __str__(self):
-	# 	return 'Product : %s -> Date : %s' % (self.product.name, self.date)
+	def __str__(self):
+		return 'User : %s -> Product : %s -> Date : %s' % (self.user.email, self.product.name, self.date)
 
 	def was_published_recently(self):
 		now = timezone.now()

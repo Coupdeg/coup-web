@@ -16,7 +16,7 @@ def login(request):
 			password = request.POST['password']
 			user = User.objects.filter(email = request.POST['email'])
 			if user and handler.verify(password, user[0].password) == True :
-				request.session['email'] = user[0].first_name
+				request.session['email'] = user[0].email
 				return redirect('/')
 			else :
 				return redirect('/user/register')
@@ -53,12 +53,15 @@ def user(request):
 
 def history(request):
 	if request.method == 'POST':
-		product_id = request.GET.get('product_id')
+		user_id = User.objects.filter(email = request.POST['email'])
+		print(request.POST['email'])
+		user = get_object_or_404(User, pk=user_id[0].id)		
+		product_id = request.POST['product_id']
 		product = get_object_or_404(Product, pk=product_id)
 		now = timezone.now()
-		history = History(product= product, date=now)
+		history = History(user=user, product= product, date=now)
 		history.save()
-		return r
+		return redirect('/product/'+product_id)
 	else:	
 		return render(request, 'user/history.html')
 
