@@ -1,15 +1,15 @@
 CART_ID = 'CART-ID'
-CART = []
 class Cart:
-	def __init__(self):
-		CART = []
+	def __init__(self, request):
+		
+		self.CART = []
 
 	def add(self, product):
-		CART.append(product)
-		for p in CART: print p
+		self.CART.append(product)
+		for p in self.CART: print p
 
 	def remove(self, product):
-		CART.remove(product)
+		self.CART.remove(product)
 
 	def count(self):
-		return CART
+		return self.CART

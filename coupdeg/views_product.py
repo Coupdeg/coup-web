@@ -49,7 +49,7 @@ def cart(request):
 	if request.method == 'POST' :	
 		product_id = request.POST['product_id']
 		product = get_object_or_404(Product, pk=product_id)
-		cart = Cart()
+		cart = Cart(request)
 		cart.add(product)
 		return redirect('/product/'+product_id)
 	else :
