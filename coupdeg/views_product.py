@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Image
 from .models import Product
+from .cart import Cart
 
 def product(request, type_number):
 	type_number = int(type_number)
@@ -47,6 +48,21 @@ def detail(request, product_id):
 def cart(request):
 	# request.session.setdefault('cart',str(','))
 	# request.session['cart'] = str(request.session['cart']) + str(request.POST['product_id'])
-	request.session['cart'] = request.session['cart'] + str(","+request.GET.get('product_id'))
-	data = request.session['cart']
-	return HttpResponse(json.dumps(data), content_type='application/json')
+	if request.method == 'POST' :
+		# request.session['cart'] = request.session['cart'] + str(","+request.GET.get('product_id'))
+		# data = request.session['cart']
+		# return HttpResponse(json.dumps(data), content_type='application/json')
+		# user_id = User.objects.filter(email = request.POST['email'])
+		# user = get_object_or_404(User, pk=user_id[0].id)		
+		product_id = request.POST['product_id']
+		product = get_object_or_404(Product, pk=product_id)
+		cart = Cart(request)
+		cart.add(product)
+		# product = get_object_or_404(Product, pk=product_id)
+		# now = timezone.now()
+		# history = History(user=user, product= product, date=now)
+		# history.save()
+
+		return redirect('/product/'+product_id)
+	else :
+		return redirect('/user/login')
