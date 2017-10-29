@@ -33,6 +33,7 @@ a.navbar-color-text:hover {
 }
 
 .navbar-color-slide {
+    transition: background-color .5s ease-out;    
     background-color: #737373;
 }
 
