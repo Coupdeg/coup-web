@@ -43,7 +43,7 @@ def get_enum(i):
 def times(number):
     return range(1, number+1)
 
-@register.assignment_tag
-def cart():
-    cart = Cart()
-    return cart.count()     
+@register.filter
+def cart(request):
+    cart = Cart(request)
+    return cart    

@@ -50,7 +50,7 @@ def cart(request):
 		product_id = request.POST['product_id']
 		product = get_object_or_404(Product, pk=product_id)
 		cart = Cart(request)
-		cart.add(product)
+		cart.add(product, product.price)
 		return redirect('/product/'+product_id)
 	else :
 		return redirect('/user/login')
