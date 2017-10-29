@@ -46,23 +46,11 @@ def detail(request, product_id):
 	return render(request, 'product/detail.html', { 'product': product, 'image': image })
 
 def cart(request):
-	# request.session.setdefault('cart',str(','))
-	# request.session['cart'] = str(request.session['cart']) + str(request.POST['product_id'])
-	if request.method == 'POST' :
-		# request.session['cart'] = request.session['cart'] + str(","+request.GET.get('product_id'))
-		# data = request.session['cart']
-		# return HttpResponse(json.dumps(data), content_type='application/json')
-		# user_id = User.objects.filter(email = request.POST['email'])
-		# user = get_object_or_404(User, pk=user_id[0].id)		
+	if request.method == 'POST' :	
 		product_id = request.POST['product_id']
 		product = get_object_or_404(Product, pk=product_id)
-		cart = Cart(request)
+		cart = Cart()
 		cart.add(product)
-		# product = get_object_or_404(Product, pk=product_id)
-		# now = timezone.now()
-		# history = History(user=user, product= product, date=now)
-		# history.save()
-
 		return redirect('/product/'+product_id)
 	else :
 		return redirect('/user/login')

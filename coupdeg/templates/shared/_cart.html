@@ -1,3 +1,4 @@
+{% load helper %}
 <div class="cd-popup open-cart" role="alert">
 	<div class="cd-popup-container">
 		<p>Cart</p>
@@ -5,6 +6,10 @@
 			<li><a href="#0">Yes</a></li>
 			<li><a href="#0">No</a></li>
 		</ul> -->
+		{% cart as a %}
+		{% for product in a %}
+			{{ product.name }} </br>			
+		{% endfor %}		
 		<a href="#0" class="cd-popup-close img-replace"></a>
 	</div> <!-- cd-popup-container -->
 </div> <!-- cd-popup -->
