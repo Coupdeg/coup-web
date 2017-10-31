@@ -17,6 +17,7 @@
 
 .navbar-menu {
     align-self: center;
+    input:focus {outline:0;}
 }
 
 .navbar-color-head {
@@ -33,6 +34,7 @@ a.navbar-color-text:hover {
 }
 
 .navbar-color-slide {
+    transition: background-color .5s ease-out;    
     background-color: #737373;
 }
 

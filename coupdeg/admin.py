@@ -3,8 +3,12 @@ from .models import User
 from .models import Product
 from .models import Image
 from .models import History
+from .models import Cart
+from .models import Item
 
 admin.site.register(User)
 admin.site.register(Product)
 admin.site.register(Image)
 admin.site.register(History) 
+admin.site.register(Cart)
+admin.site.register(Item)
