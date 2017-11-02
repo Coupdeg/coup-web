@@ -24,9 +24,19 @@
                     {% include "./_login_nav.html" %}
                 </div>
             {% endif %}    
-			<a class="col-4 text-center navbar-menu navbar-color-text open-cart" href="#">
+			<!-- <a class="col-4 text-center navbar-menu navbar-color-text open-cart" href="#">
 				<i class="fa fa-shopping-cart i-cart" aria-hidden="true" ></i>			
-			</a>
+            </a> -->
+            <div class="dropdown col-4">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
