@@ -50,6 +50,8 @@ def user(request):
 			return redirect('/user/login')
 		else :
 			return redirect('/')
+	else:
+		return render(request, 'user/profile.html')
 
 def history(request):
 	if request.method == 'POST':
