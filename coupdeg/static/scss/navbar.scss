@@ -69,3 +69,34 @@ a.navbar-color-text:hover {
     background-color: white;
     color: black;
 }
+
+.dropdown-menu-cart{
+    margin: .725rem 0 0;
+}
+
+.f-dropdown:before {
+    border: inset 6px;
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    border-color: transparent transparent #FFFFFF transparent;
+    border-bottom-style: solid;
+    position: absolute;
+    top: -12px;
+    left: 141px;
+    z-index: 89;
+}
+.f-dropdown:after {
+    border: inset 7px;
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    border-color: transparent transparent #cccccc transparent;
+    border-bottom-style: solid;
+    position: absolute;
+    top: -14px;
+    left: 140px;
+    z-index: 88;
+}
