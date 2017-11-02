@@ -100,3 +100,15 @@ a.navbar-color-text:hover {
     left: 140px;
     z-index: 88;
 }
+.div-cart-checkout{
+    text-align: center;
+    margin-top: 2rem;
+    .btn-checkout{
+        min-width: 8rem;
+        border-radius: 100px;
+    }
+    .btn-checkout:hover{
+        background-color: orange;
+        color: black;
+    }
+}
