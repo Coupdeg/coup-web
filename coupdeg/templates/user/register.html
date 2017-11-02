@@ -1,7 +1,7 @@
 {% extends "../layout/application.html" %}
 {% block content %}
 	<div class="container register">
-		<form action="{% url 'user' %}" method="post">
+		<form action="{% url 'register' %}" method="post">
 			{% csrf_token %}
 			<div class="text-center title-register">Register</div>
 			<div class="sub-register">- User information</div>

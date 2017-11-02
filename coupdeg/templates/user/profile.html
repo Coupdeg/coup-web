@@ -1,1 +1,26 @@
-<h1>Hello Profile</h1>
+{% extends "../layout/application.html" %}
+{% block content %}
+	<div class="container register">
+			<div class="text-center title-register">Profile</div>
+			<div class="sub-register">- Personal information</div>
+			<div class="line-register"></div>			
+			<div class="text-center">
+				{{ user.first_name }}
+				{{ user.last_name }}
+			</div>
+			<div>
+				{{ user.address }}
+			</div>
+			<div class="text-center">
+				{{ user.city }}
+				{{ user.state }}
+			</div>
+			<div class="text-center margin-divide">
+				{{ user.country }}
+				{{ user.zip_code }}
+			</div>
+			<div class="text-center ">
+				<input class="button-submit" type="submit" value="Edit">
+			</div>
+	</div>
+{% endblock %}
