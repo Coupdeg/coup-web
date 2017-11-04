@@ -27,9 +27,6 @@ def login(request):
 		return render(request, 'user/login.html')
 
 def register(request):
-	return render(request, 'user/register.html')
-
-def user(request):
 	if request.method == 'POST':
 		password = request.POST['password']
 		re_password = request.POST['re-password']
@@ -48,8 +45,27 @@ def user(request):
 									address=address, city=city, state=state, country=country, zip_code=zip_code)
 			user.save()
 			return redirect('/user/login')
-		else :
-			return redirect('/')
+	else :
+			return render(request, 'user/register.html')
+
+def user(request):
+		user_id = User.objects.filter(email = request.session['email'])
+		user = get_object_or_404(User, pk=user_id[0].id)
+		context = {
+			'user': user
+		}		
+		if request.method == 'POST':
+			user.email = request.POST['email']
+			user.first_name = request.POST['firstname']
+			user.last_name = request.POST['lastname']
+			user.address = request.POST['address']
+			user.city = request.POST['city']
+			user.state = request.POST['state']
+			user.country = request.POST['country']
+			user.zip_code = request.POST['zip']
+			user.save()
+
+		return render(request, 'user/profile.html', context)
 
 def history(request):
 	if request.method == 'POST':
