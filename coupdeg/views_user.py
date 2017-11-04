@@ -54,6 +54,17 @@ def user(request):
 		context = {
 			'user': user
 		}		
+		if request.method == 'POST':
+			user.email = request.POST['email']
+			user.first_name = request.POST['firstname']
+			user.last_name = request.POST['lastname']
+			user.address = request.POST['address']
+			user.city = request.POST['city']
+			user.state = request.POST['state']
+			user.country = request.POST['country']
+			user.zip_code = request.POST['zip']
+			user.save()
+
 		return render(request, 'user/profile.html', context)
 
 def history(request):

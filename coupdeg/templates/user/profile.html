@@ -1,7 +1,7 @@
 {% extends "../layout/application.html" %}
 {% block content %}
 <div class="container register">
-	<form action="{% url 'register' %}" method="post">
+	<form action="{% url 'profile' %}" method="post" onsubmit="return confirm('Do you really want to update profile?');">
 		{% csrf_token %}
 		<div class="text-center title-register">Profile</div>
 		<div class="sub-register">- Personal information</div>
@@ -30,9 +30,9 @@
 		<div class="text-center margin-divide">Zip/Postal Code :				
 			<input class="edit-input-field" type="text" placeholder="Zip/Postal Code*" name="zip" value="{{ user.zip_code }}">
 		</div>
-		<div class="text-center margin-divide ">
+		<div class="text-center margin-divide group-button">
 			<input class="button-submit" type="submit" value="Update profile">
-			<button class="button-submit">Cancel</button>				
+			<a class="btn" href=".">Cancel</a>				
 		</div>
 	</form>
 </div>
