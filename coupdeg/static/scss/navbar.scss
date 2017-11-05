@@ -72,7 +72,7 @@ a.navbar-color-text:hover {
 
 .dropdown-menu-cart{
     margin: .725rem 0 0;
-    min-width: 20rem !important;
+    min-width: 25rem !important;
 }
 
 .f-dropdown:before {
@@ -103,7 +103,8 @@ a.navbar-color-text:hover {
 }
 .div-cart-checkout{
     text-align: center;
-    margin-top: 2rem;
+    align-items: center;
+    margin-top: 1.25rem;
     .btn-checkout{
         min-width: 8rem;
         border-radius: 100px;
@@ -111,5 +112,55 @@ a.navbar-color-text:hover {
     .btn-checkout:hover{
         background-color: orange;
         color: black;
+    }
+}
+.circle {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    color: #fff;
+    line-height: 2rem;
+    text-align: center;
+    background: #737373
+}
+.dropdown-cart-title{
+    align-items: center;
+    justify-content: center;
+    .i-cart{
+        font-size: 2rem !important;
+    }
+    .space-between{
+        margin: 0rem 0.5rem;
+    }
+}
+.dropdown-cart-content{
+    padding: 3px 0px !important;
+    img{
+        width: 6rem;
+        height: 6rem;
+    }
+    .product-name{
+
+    }
+    .product-color{
+        width : 3rem;
+        background-color: green;
+    }
+    .product-size{
+        width : 3rem;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .product-border{
+        border: solid 1px #737373;
+    }
+    .space-between-detail{
+        margin: 0px 0.5rem;
+        width : 50px;
+    }
+    .space-between-line{
+        margin: 0.35rem 0rem;
     }
 }
