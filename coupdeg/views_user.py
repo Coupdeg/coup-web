@@ -19,12 +19,20 @@ def login(request):
 				request.session['email'] = user[0].email
 				return redirect('/')
 			else :
-				return redirect('/user/register')
+				error = "Invalid email or password ."
+				context = {
+					'error': error
+				}	
+				return render(request, 'user/login.html', context)
 	elif request.method == 'DELETE':
 		request.session['email'] = None
 		return redirect('/')
 	else:
-		return render(request, 'user/login.html')
+		error = None
+		context = {
+			'error': error
+		}	
+		return render(request, 'user/login.html', context)
 
 def register(request):
 	if request.method == 'POST':
