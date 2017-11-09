@@ -84,6 +84,9 @@
   .product-color{
       width : 3rem;
       background-color: green;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
   }
   .product-size{
       width : 3rem;
@@ -102,6 +105,7 @@
       margin: 0.35rem 0rem;
   }
 }
+
 .cd-popup {
   position: fixed;
   left: 0;
