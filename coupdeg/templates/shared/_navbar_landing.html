@@ -25,7 +25,9 @@
                 </div>
             {% endif %}
             {% if request.session.email != None %}
+            <div class = "col-4">
                 {% include "./_cart.html" %}
+            </div>
             {% endif %}
         </div>
     </div>

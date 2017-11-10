@@ -19,7 +19,7 @@
 		<i class="fa fa-shopping-cart i-cart" aria-hidden="true" ></i>			
 	</button>
 	<div class="dropdown-menu dropdown-menu-right dropdown-menu-cart f-dropdown" aria-labelledby="dropdownMenuButton" role="menu">
-
+			{% if request|cart %}
 			<div class = "d-flex dropdown-cart-title">
 				<i class="fa fa-shopping-cart i-cart space-between" aria-hidden="true" ></i>
 				<div class="circle sizing space-between mr-auto"></div>
@@ -60,6 +60,7 @@
 				</a>
 			{% endfor %}    
 			<div class = "div-cart-checkout">
-				<a class="btn btn-checkout" href= "/user/login">Checkout</a>
+				<a class="btn btn-checkout" href= "/user/login">CHECKOUT</a>
 			</div>
+			{% endif %}
 	</div>
