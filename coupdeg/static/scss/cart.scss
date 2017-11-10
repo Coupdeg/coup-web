@@ -44,9 +44,10 @@
   align-items: center;
   margin-top: 1.25rem;
   .btn-checkout{
-      min-width: 8rem;
-      border-radius: 100px;
-      background-color: #737373;
+    color : white;
+    min-width: 8rem;
+    border-radius: 100px;
+    background-color: #737373;
   }
   .btn-checkout:hover{
       background-color: orange;
