@@ -23,8 +23,10 @@
 					<div class="col-4">		
 							{% include "./_login_nav.html" %}
 					</div>
-			{% endif %}  
-			{% include "./_cart.html" %}
+			{% endif %}
+			{% if request.session.email != None %}              
+				{% include "./_cart.html" %}
+			{% endif %}	
 		</div>
 	</div>
 </nav>

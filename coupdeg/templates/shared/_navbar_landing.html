@@ -24,7 +24,9 @@
                     {% include "./_login_nav.html" %}
                 </div>
             {% endif %}
-            {% include "./_cart.html" %}
+            {% if request.session.email != None %}
+                {% include "./_cart.html" %}
+            {% endif %}
         </div>
     </div>
 </nav>
