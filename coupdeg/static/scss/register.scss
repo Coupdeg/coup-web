@@ -27,6 +27,13 @@
 		display:block;
 		font-family: 'Nixie One', cursive;
 	}
+	.error {
+		box-shadow: none !important;
+		border: 1px solid #FF0064 !important;
+		&::-webkit-input-placeholder { 
+			color: #FF0064;
+		}
+	}
 	input {
 		height: 50px;			
 	}

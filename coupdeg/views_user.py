@@ -65,6 +65,8 @@ def register(request):
 		if country == '':
 			error.append('country')
 		zip_code = request.POST['zip']
+		if zip_code == '':
+			error.append('zip_code')
 		user = User(email=email, password=password,first_name=first_name, last_name=last_name,
 								address=address, city=city, state=state, country=country, zip_code=zip_code)
 		if error:

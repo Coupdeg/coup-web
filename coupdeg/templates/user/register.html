@@ -7,30 +7,70 @@
 			<div class="sub-register">- User information</div>
 			<div class="line-register"></div>
 			<div>
-				<input class="input-field" type="email" placeholder="Email*" name="email">
+				{% if "email" in error %}
+					<input class="error input-field" type="email" placeholder="Email*" name="email">				
+				{% else %}
+					<input class="input-field" type="email" placeholder="Email*" name="email">				
+				{% endif %}
 			</div>
 			<div>
-				<input class="input-field" type="password" placeholder="Password*" name="password">
+				{% if "password" in error %}
+					<input class="error input-field" type="password" placeholder="Password*" name="password">				
+				{% else %}
+					<input class="input-field" type="password" placeholder="Password*" name="password">
+				{% endif %}
 			</div>
 			<div>
-				<input class="input-field margin-divide" type="password" placeholder="Re-enter Password*" name="re-password">
+				{% if "password" in error %}
+					<input class="error input-field margin-divide" type="password" placeholder="Re-enter Password*" name="re-password">
+				{% else %}
+					<input class="input-field margin-divide" type="password" placeholder="Re-enter Password*" name="re-password">
+				{% endif %}
 			</div>
 			<div class="sub-register">- Personal information</div>
 			<div class="line-register"></div>			
 			<div class="text-center">
-				<input class="sub-input-field" type="text" placeholder="Firstname*" name="firstname">
-				<input class="sub-input-field" type="text" placeholder="Lastname*" name="lastname">
+				{% if "first_name" in error %}
+					<input class="error sub-input-field" type="text" placeholder="Firstname*" name="firstname">
+				{% else %}
+					<input class="sub-input-field" type="text" placeholder="Firstname*" name="firstname">
+				{% endif %}
+				{% if "last_name" in error %}
+					<input class="error sub-input-field" type="text" placeholder="Lastname*" name="lastname">
+				{% else %}
+					<input class="sub-input-field" type="text" placeholder="Lastname*" name="lastname">
+				{% endif %}
 			</div>
 			<div>
-				<textarea class="input-field" cols="30" placeholder="Address*" name="address"></textarea>
+				{% if "address" in error %}
+					<textarea class="error input-field" cols="30" placeholder="Address*" name="address"></textarea>
+				{% else %}
+					<textarea class="input-field" cols="30" placeholder="Address*" name="address"></textarea>
+				{% endif %}
 			</div>
 			<div class="text-center">
-				<input class="sub-input-field" type="text" placeholder="City*" name="city">
-				<input class="sub-input-field" type="text" placeholder="State*" name="state">
+				{% if "city" in error %}
+					<input class="error sub-input-field" type="text" placeholder="City*" name="city">
+				{% else %}
+					<input class="sub-input-field" type="text" placeholder="City*" name="city">
+				{% endif %}
+				{% if "state" in error %}
+					<input class="error sub-input-field" type="text" placeholder="State*" name="state">
+				{% else %}
+					<input class="sub-input-field" type="text" placeholder="State*" name="state">
+				{% endif %}
 			</div>
 			<div class="text-center margin-divide">
-				<input class="sub-input-field" type="text" placeholder="Country/Region*" name="country">
-				<input class="sub-input-field" type="text" placeholder="Zip/Postal Code*" name="zip">
+				{% if "country" in error %}
+					<input class="error sub-input-field" type="text" placeholder="Country/Region*" name="country">
+				{% else %}
+					<input class="sub-input-field" type="text" placeholder="Country/Region*" name="country">
+				{% endif %}
+				{% if "zip_code" in error %}
+					<input class="error sub-input-field" type="text" placeholder="Zip/Postal Code*" name="zip">
+				{% else %}
+					<input class="sub-input-field" type="text" placeholder="Zip/Postal Code*" name="zip">
+				{% endif %}
 			</div>
 			<div class="text-center margin-divide ">
 				<input class="button-submit" type="submit" value="Register">
