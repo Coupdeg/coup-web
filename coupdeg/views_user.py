@@ -36,21 +36,43 @@ def login(request):
 
 def register(request):
 	if request.method == 'POST':
+		error = []
+		email = request.POST['email']
+		if email == '':
+			error.append("email")
 		password = request.POST['password']
 		re_password = request.POST['re-password']
-
 		if password == re_password and password != '':
-			email = request.POST['email']
 			password = handler.hash(password)
-			first_name = request.POST['firstname']
-			last_name = request.POST['lastname']
-			address = request.POST['address']
-			city = request.POST['city']
-			state = request.POST['state']
-			country = request.POST['country']
-			zip_code = request.POST['zip']
-			user = User(email=email, password=password,first_name=first_name, last_name=last_name,
-									address=address, city=city, state=state, country=country, zip_code=zip_code)
+		else:
+			error.append("password")
+		first_name = request.POST['firstname']
+		if first_name == '':
+			error.append('first_name')
+		last_name = request.POST['lastname']
+		if last_name == '':
+			error.append('last_name')
+		address = request.POST['address']
+		if address == '':
+			error.append('address')
+		city = request.POST['city']
+		if city == '':
+			error.append('city')
+		state = request.POST['state']
+		if state == '':
+			error.append('state')
+		country = request.POST['country']
+		if country == '':
+			error.append('country')
+		zip_code = request.POST['zip']
+		user = User(email=email, password=password,first_name=first_name, last_name=last_name,
+								address=address, city=city, state=state, country=country, zip_code=zip_code)
+		if error:
+			context = {
+				'error': error
+			}	
+			return render(request, 'user/register.html', context) 
+		else:
 			user.save()
 			return redirect('/user/login')
 	else :
