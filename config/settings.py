@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_imgur',
 ]
 
 MIDDLEWARE = [
@@ -139,6 +140,12 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'staticmedia')
 # ALLOWED_HOSTS = ['*']
 
 # DEBUG = False
+
+IMGUR_CONSUMER_ID = "d1327aceba2ac5a"
+IMGUR_CONSUMER_SECRET = "9ce7df04228377a122a642a9c62f9f96592fafcd"
+IMGUR_USERNAME = "NarongsakJob"
+IMGUR_ACCESS_TOKEN = "99d791a77efd81ab5af526d6c25cc41c9a04c6e9"
+IMGUR_ACCESS_TOKEN_REFRESH = "35bae9b41a080681571e7966cbda930ae7aea443"
 
 try:
     from .local_setting import *
