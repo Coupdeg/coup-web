@@ -22,9 +22,9 @@
 			{% if request|cart %}
 			<div class = "d-flex dropdown-cart-title">
 				<i class="fa fa-shopping-cart i-cart space-between" aria-hidden="true" ></i>
-				<div class="circle sizing space-between mr-auto"></div>
+				<div class="circle sizing space-between mr-auto">{{ request|get_total_quantity }}</div>
 				<div class = "space-between">Total :</div>
-				<div class = "space-between"></div>
+				<div class = "space-between">{{ request|get_total_price }}</div>
 				<div class = "space-between">฿</div>
 			</div>
 			<div class="dropdown-divider"></div>
