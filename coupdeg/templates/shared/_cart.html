@@ -1,16 +1,66 @@
 {% load helper %}
-<div class="cd-popup open-cart" role="alert">
+<!-- <div class="cd-popup open-cart" role="alert">
 	<div class="cd-popup-container">
 		<p>Cart</p>
-		<!-- <ul class="cd-buttons">
+		<ul class="cd-buttons">
 			<li><a href="#0">Yes</a></li>
 			<li><a href="#0">No</a></li>
-		</ul> -->
+		</ul>
 		{% for item in request|cart %}
 			{{ item.product.name }}
 			{{ item.quantity }}
 			{{ item.total_price }} บาท
 		{% endfor %}
 		<a href="#0" class="cd-popup-close img-replace"></a>
-	</div> <!-- cd-popup-container -->
-</div> <!-- cd-popup -->
+	</div>cd-popup-container
+</div> cd-popup -->
+<div class="dropdown btn-group">
+	<button class="btn btn-dropdown-cart dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<i class="fa fa-shopping-cart i-cart" aria-hidden="true" ></i>			
+	</button>
+	<div class="dropdown-menu dropdown-menu-right dropdown-menu-cart f-dropdown" aria-labelledby="dropdownMenuButton" role="menu">
+			{% if request|cart %}
+			<div class = "d-flex dropdown-cart-title">
+				<i class="fa fa-shopping-cart i-cart space-between" aria-hidden="true" ></i>
+				<div class="circle sizing space-between mr-auto"></div>
+				<div class = "space-between">Total :</div>
+				<div class = "space-between"></div>
+				<div class = "space-between">฿</div>
+			</div>
+			<div class="dropdown-divider"></div>
+			{% for item in request|cart %}
+				<a class="dropdown-item dropdown-cart-content" href="#">
+					<div class = "d-flex">
+						<img class = "" src = "static/images/detail/detail_01.jpg">
+						<div class = "">
+							<div class = "product-name space-between-detail" >
+								{{ item.product.name }}
+							</div>
+							<div>
+								<div class = "d-flex space-between-line">
+									<div class = "space-between-detail">COLOR</div>
+									<div class = "product-color product-border space-between-detail">Green</div>
+									<div class = "d-flex space-between-detail">
+										<div class = "space-between">Number :</div>
+										<div class = "space-between">{{ item.quantity }}</div>
+									</div>
+								</div>
+								<div class = "d-flex space-between-line">
+									<div class = "space-between-detail">SIZE</div>
+									<div class = "product-size product-border space-between-detail">M</div>
+									<div class = "d-flex space-between-detail">
+										<div class = "space-between">Total :</div>
+										<div class = "space-between">{{ item.total_price }}</div>
+										<div class = "space-between">฿</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+			{% endfor %}    
+			<div class = "div-cart-checkout">
+				<a class="btn btn-checkout" href= "/user/login">CHECKOUT</a>
+			</div>
+			{% endif %}
+	</div>

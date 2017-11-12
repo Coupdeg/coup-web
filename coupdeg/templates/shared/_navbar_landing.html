@@ -13,7 +13,7 @@
         </a>
     </div>
     <div class="col-4 text-center navbar-menu">
-        <div class="row">
+        <div class="row content-align-center">
             <a class="col-4 text-center navbar-menu navbar-color-text i-search" href="#">
 				<i class="fa fa-search" aria-hidden="true"></i>			
             </a>
@@ -23,10 +23,12 @@
                 <div class="col-4">
                     {% include "./_login_nav.html" %}
                 </div>
-            {% endif %}    
-			<a class="col-4 text-center navbar-menu navbar-color-text open-cart" href="#">
-				<i class="fa fa-shopping-cart i-cart" aria-hidden="true" ></i>			
-			</a>
+            {% endif %}
+            {% if request.session.email != None %}
+            <div class = "col-4">
+                {% include "./_cart.html" %}
+            </div>
+            {% endif %}
         </div>
     </div>
 </nav>

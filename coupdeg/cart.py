@@ -91,3 +91,9 @@ class Cart:
     def clear(self):
         for item in self.cart.item_set.all():
             item.delete()
+    
+    def total(self):
+        """
+        The total value of all items in the cart.
+        """
+        return sum([item.summary for item in self.items])
