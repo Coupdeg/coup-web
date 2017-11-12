@@ -3,6 +3,9 @@ import datetime
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.contenttypes.models import ContentType
+from django_imgur.storage import ImgurStorage
+
+STORAGE = ImgurStorage()
 
 class User(models.Model):
 	email = models.EmailField(max_length=50, unique=True)
@@ -42,7 +45,7 @@ class Image(models.Model):
 		('0', 'main image'),
 		('1', 'sub image')
 	)
-	image = models.ImageField(blank=True)
+	image = models.ImageField(upload_to='photos', storage=STORAGE, null=True, blank=True)
 	image_types = models.CharField(max_length=1, choices=types)
 	type_id = models.IntegerField()
 	role = models.CharField(max_length=1, choices=types_role, default=0)
