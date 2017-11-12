@@ -10,7 +10,7 @@
 				{% if "email" in error %}
 					<input class="error input-field" type="email" placeholder="Email*" name="email">				
 				{% else %}
-					<input class="input-field" type="email" placeholder="Email*" name="email">				
+					<input class="input-field" type="email" placeholder="Email*" name="email" value="{{ email }}">				
 				{% endif %}
 			</div>
 			<div>
@@ -33,43 +33,43 @@
 				{% if "first_name" in error %}
 					<input class="error sub-input-field" type="text" placeholder="Firstname*" name="firstname">
 				{% else %}
-					<input class="sub-input-field" type="text" placeholder="Firstname*" name="firstname">
+					<input class="sub-input-field" type="text" placeholder="Firstname*" name="firstname" value="{{ first_name }}">
 				{% endif %}
 				{% if "last_name" in error %}
 					<input class="error sub-input-field" type="text" placeholder="Lastname*" name="lastname">
 				{% else %}
-					<input class="sub-input-field" type="text" placeholder="Lastname*" name="lastname">
+					<input class="sub-input-field" type="text" placeholder="Lastname*" name="lastname" value="{{ last_name }}">
 				{% endif %}
 			</div>
 			<div>
 				{% if "address" in error %}
 					<textarea class="error input-field" cols="30" placeholder="Address*" name="address"></textarea>
 				{% else %}
-					<textarea class="input-field" cols="30" placeholder="Address*" name="address"></textarea>
+					<textarea class="input-field" cols="30" placeholder="Address*" name="address">{{ address }}</textarea>
 				{% endif %}
 			</div>
 			<div class="text-center">
 				{% if "city" in error %}
 					<input class="error sub-input-field" type="text" placeholder="City*" name="city">
 				{% else %}
-					<input class="sub-input-field" type="text" placeholder="City*" name="city">
+					<input class="sub-input-field" type="text" placeholder="City*" name="city" value="{{ city }}">
 				{% endif %}
 				{% if "state" in error %}
 					<input class="error sub-input-field" type="text" placeholder="State*" name="state">
 				{% else %}
-					<input class="sub-input-field" type="text" placeholder="State*" name="state">
+					<input class="sub-input-field" type="text" placeholder="State*" name="state" value="{{ state }}">
 				{% endif %}
 			</div>
 			<div class="text-center margin-divide">
 				{% if "country" in error %}
 					<input class="error sub-input-field" type="text" placeholder="Country/Region*" name="country">
 				{% else %}
-					<input class="sub-input-field" type="text" placeholder="Country/Region*" name="country">
+					<input class="sub-input-field" type="text" placeholder="Country/Region*" name="country" value="{{ country }}">
 				{% endif %}
 				{% if "zip_code" in error %}
 					<input class="error sub-input-field" type="text" placeholder="Zip/Postal Code*" name="zip">
 				{% else %}
-					<input class="sub-input-field" type="text" placeholder="Zip/Postal Code*" name="zip">
+					<input class="sub-input-field" type="text" placeholder="Zip/Postal Code*" name="zip" value="{{ zip_code }}">
 				{% endif %}
 			</div>
 			<div class="text-center margin-divide ">

@@ -71,7 +71,15 @@ def register(request):
 								address=address, city=city, state=state, country=country, zip_code=zip_code)
 		if error:
 			context = {
-				'error': error
+				'error': error,
+				'email': email or None,
+				'first_name': first_name or None,
+				'last_name': last_name or None,
+				'address': address or None,
+				'city': city or None,
+				'state': state or None,
+				'country': country or None,
+				'zip_code': zip_code or None
 			}	
 			return render(request, 'user/register.html', context) 
 		else:
