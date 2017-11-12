@@ -46,4 +46,15 @@ def times(number):
 @register.filter
 def cart(request):
     cart = Cart(request)
-    return cart    
+    return cart
+
+@register.filter
+def get_total_price(request):
+    cart = Cart(request)
+    return cart.summary()
+
+@register.filter
+def get_total_quantity(request):
+    cart = Cart(request)
+    return cart.count()
+                
