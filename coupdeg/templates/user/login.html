@@ -5,6 +5,11 @@
 			<div class="text-center head">
 				Login
 			</div>
+			{% if error %}
+			<div class="alert alert-danger" role="alert" style="margin-top:5%;">
+				<strong>{{ error }}</strong> 			
+			</div>
+			{% endif %}
 			<form action="{% url 'login' %}" method="post">
 				{% csrf_token %}				
 				<input type="text" placeholder="Email*" class="input-field" name="email">
