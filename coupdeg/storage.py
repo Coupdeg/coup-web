@@ -1,6 +1,9 @@
 import os.path
 import base64
-from io import StringIO
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 from django.core.cache import cache
 from django.core.files import File
 from django.core.files.storage import Storage
