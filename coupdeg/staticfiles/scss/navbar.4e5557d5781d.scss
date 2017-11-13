@@ -1,0 +1,67 @@
+.navbar-style {
+    height: 80px;
+    color: #FFFFFF;
+    font-family: 'News Cycle', sans-serif;
+    font-size: 22px;
+    .i-search {
+        font-size: 20px;
+    }
+    .i-cart {
+        font-size: 25px;
+    }
+    img {
+        height: 65px;
+        width: 65px;
+    }
+}
+
+.navbar-menu {
+    align-self: center;
+    input:focus {outline:0;}
+}
+
+.navbar-color-head {
+    background-color: rgba(0, 0, 0, 0.07);
+}
+
+a.navbar-color-text:hover {
+    color: rgb(189, 189, 189) !important;
+}
+
+.navbar-color-text {
+    color: rgb(255, 255, 255);
+    text-decoration: none !important;
+}
+
+.navbar-color-slide {
+    transition: background-color .5s ease-out;    
+    background-color: #737373;
+}
+
+.after-login {
+    ul,li {
+        text-align: center; 
+        a {
+            color: black;    
+            font-size: 18px;          
+        }
+        input {
+            border: 0px;
+            background-color: transparent;
+            font-size: 18px;
+            &:hover {
+                cursor: pointer;          
+            }                      
+        }
+        &:hover {
+            background-color: rgba(gray,0.2);
+            cursor: pointer;          
+        }
+    }
+}
+
+.content-align-center{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}

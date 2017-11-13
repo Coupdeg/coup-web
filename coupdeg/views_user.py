@@ -19,37 +19,93 @@ def login(request):
 				request.session['email'] = user[0].email
 				return redirect('/')
 			else :
-				return redirect('/user/register')
+				error = "Invalid email or password ."
+				context = {
+					'error': error
+				}	
+				return render(request, 'user/login.html', context)
 	elif request.method == 'DELETE':
 		request.session['email'] = None
 		return redirect('/')
 	else:
-		return render(request, 'user/login.html')
+		error = None
+		context = {
+			'error': error
+		}	
+		return render(request, 'user/login.html', context)
 
 def register(request):
-	return render(request, 'user/register.html')
-
-def user(request):
 	if request.method == 'POST':
+		error = []
+		email = request.POST['email']
+		if email == '':
+			error.append("email")
 		password = request.POST['password']
 		re_password = request.POST['re-password']
-
 		if password == re_password and password != '':
-			email = request.POST['email']
 			password = handler.hash(password)
-			first_name = request.POST['firstname']
-			last_name = request.POST['lastname']
-			address = request.POST['address']
-			city = request.POST['city']
-			state = request.POST['state']
-			country = request.POST['country']
-			zip_code = request.POST['zip']
-			user = User(email=email, password=password,first_name=first_name, last_name=last_name,
-									address=address, city=city, state=state, country=country, zip_code=zip_code)
+		else:
+			error.append("password")
+		first_name = request.POST['firstname']
+		if first_name == '':
+			error.append('first_name')
+		last_name = request.POST['lastname']
+		if last_name == '':
+			error.append('last_name')
+		address = request.POST['address']
+		if address == '':
+			error.append('address')
+		city = request.POST['city']
+		if city == '':
+			error.append('city')
+		state = request.POST['state']
+		if state == '':
+			error.append('state')
+		country = request.POST['country']
+		if country == '':
+			error.append('country')
+		zip_code = request.POST['zip']
+		if zip_code == '':
+			error.append('zip_code')
+		user = User(email=email, password=password,first_name=first_name, last_name=last_name,
+								address=address, city=city, state=state, country=country, zip_code=zip_code)
+		if error:
+			context = {
+				'error': error,
+				'email': email or None,
+				'first_name': first_name or None,
+				'last_name': last_name or None,
+				'address': address or None,
+				'city': city or None,
+				'state': state or None,
+				'country': country or None,
+				'zip_code': zip_code or None
+			}	
+			return render(request, 'user/register.html', context) 
+		else:
 			user.save()
 			return redirect('/user/login')
-		else :
-			return redirect('/')
+	else :
+			return render(request, 'user/register.html')
+
+def user(request):
+		user_id = User.objects.filter(email = request.session['email'])
+		user = get_object_or_404(User, pk=user_id[0].id)
+		context = {
+			'user': user
+		}		
+		if request.method == 'POST':
+			user.email = request.POST['email']
+			user.first_name = request.POST['firstname']
+			user.last_name = request.POST['lastname']
+			user.address = request.POST['address']
+			user.city = request.POST['city']
+			user.state = request.POST['state']
+			user.country = request.POST['country']
+			user.zip_code = request.POST['zip']
+			user.save()
+
+		return render(request, 'user/profile.html', context)
 
 def history(request):
 	if request.method == 'POST':

@@ -55,7 +55,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center space-medium-v">
-					<button type="button" class="btn btn-detail-cart add-to-cart">BUY</button>
+					<button type="button" class="btn btn-detail-cart add-to-cart">Add to cart</button>
 				</div>
 				<div class="collapse-resize">
 					<div id="accordion" role="tablist">
@@ -147,9 +147,9 @@
 	{% if request.session.email %}
 	<div class="cd-popup add-to-cart-pop" role="alert">
 		<div class="cd-popup-container">
-			<p>Confirm Buy ?</p>
+			<p>You want to add to cart ?</p>
 			<div class="confirm-buy-product">
-				<form action="{% url 'history' %}" method="post">
+				<form action="{% url 'cart' %}" method="post">
 					{% csrf_token %}
 					<input name="email" value="{{ request.session.email }}" hidden>
 					<input name="product_id" value="{{ product.id }}" hidden>					

@@ -1,5 +1,7 @@
 from django import template
 from ..models import Image
+from ..cart import Cart
+
 register = template.Library()
 
 @register.filter
@@ -39,4 +41,20 @@ def get_enum(i):
 
 @register.filter(name='times') 
 def times(number):
-    return range(1, number+1)        
+    return range(1, number+1)
+
+@register.filter
+def cart(request):
+    cart = Cart(request)
+    return cart
+
+@register.filter
+def get_total_price(request):
+    cart = Cart(request)
+    return cart.summary()
+
+@register.filter
+def get_total_quantity(request):
+    cart = Cart(request)
+    return cart.count()
+                

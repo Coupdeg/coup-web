@@ -1,0 +1,39 @@
+{% extends "../layout/application.html" %}
+{% block content %}
+<div class="container register">
+	<form action="{% url 'profile' %}" method="post" onsubmit="return confirm('Do you really want to update profile?');">
+		{% csrf_token %}
+		<div class="text-center title-register">Profile</div>
+		<div class="sub-register">- Personal information</div>
+		<div class="line-register"></div>
+		<div class="text-center">Email :
+			<input class="edit-input-field " type="email" placeholder="Email*" name="email" value="{{ user.email }}">
+		</div>			
+		<div class="text-center">Firstname :
+			<input class="edit-input-field" type="text" placeholder="Firstname*" name="firstname" value="{{ user.first_name }}">
+		</div>
+		<div class="text-center">Lastname :
+			<input class="edit-input-field" type="text" placeholder="Lastname*" name="lastname" value="{{ user.last_name }}">
+		</div>
+		<div class="text-center">Address :
+			<textarea class="edit-input-field" cols="30" rows="4" placeholder="Address*" name="address">{{ user.address }}</textarea>
+		</div>
+		<div class="text-center">City :
+			<input class="edit-input-field" type="text" placeholder="City*" name="city" value="{{ user.city }}">
+		</div>
+		<div class="text-center">State :				
+			<input class="edit-input-field" type="text" placeholder="State*" name="state" value="{{ user.state }}">
+		</div>
+		<div class="text-center">Country/Region :
+			<input class="edit-input-field" type="text" placeholder="Country/Region*" name="country" value="{{ user.country }}">
+		</div>
+		<div class="text-center margin-divide">Zip/Postal Code :				
+			<input class="edit-input-field" type="text" placeholder="Zip/Postal Code*" name="zip" value="{{ user.zip_code }}">
+		</div>
+		<div class="text-center margin-divide group-button">
+			<input class="button-submit" type="submit" value="Update profile">
+			<a class="btn" href=".">Cancel</a>				
+		</div>
+	</form>
+</div>
+{% endblock %}

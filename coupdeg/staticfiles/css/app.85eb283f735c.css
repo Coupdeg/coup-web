@@ -104,7 +104,7 @@ footer {
   font-family: 'News Cycle', sans-serif; }
 
 .landing-background-title {
-  background: url("../images/landing/landing_title.jpg");
+  background: url("../images/landing/landing_title.42662b1c1f50.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 875px;
@@ -319,7 +319,7 @@ h3.text-heading {
   min-height: 290px; }
 
 .container-login {
-  background: url("../images/login/background.png");
+  background: url("../images/login/background.d68eceff8ba8.png");
   -webkit-background-size: cover;
   /* For WebKit*/
   -moz-background-size: cover;
