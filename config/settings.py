@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_imgur',
+    'django_imgur.apps.ImgurConfig',
 ]
 
 MIDDLEWARE = [
