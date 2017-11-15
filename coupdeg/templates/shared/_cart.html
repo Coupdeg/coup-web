@@ -1,19 +1,4 @@
 {% load helper %}
-<!-- <div class="cd-popup open-cart" role="alert">
-	<div class="cd-popup-container">
-		<p>Cart</p>
-		<ul class="cd-buttons">
-			<li><a href="#0">Yes</a></li>
-			<li><a href="#0">No</a></li>
-		</ul>
-		{% for item in request|cart %}
-			{{ item.product.name }}
-			{{ item.quantity }}
-			{{ item.total_price }} บาท
-		{% endfor %}
-		<a href="#0" class="cd-popup-close img-replace"></a>
-	</div>cd-popup-container
-</div> cd-popup -->
 <div class="dropdown btn-group">
 	<button class="btn btn-dropdown-cart dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		<i class="fa fa-shopping-cart i-cart" aria-hidden="true" ></i>			
@@ -31,7 +16,7 @@
 			{% for item in request|cart %}
 				<a class="dropdown-item dropdown-cart-content" href="#">
 					<div class = "d-flex">
-						<img class = "" src = "static/images/detail/detail_01.jpg">
+						<img class = "" src = "{{ item.product.id|index_of_image_url }}">
 						<div class = "">
 							<div class = "product-name space-between-detail" >
 								{{ item.product.name }}
