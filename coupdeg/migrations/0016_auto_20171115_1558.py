@@ -16,6 +16,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='image',
             name='image',
-            field=models.ImageField(blank=True, null=True, storage=coupdeg.storage.ImgurStorage(), upload_to=b'photos'),
+            field=models.ImageField(blank=True, null=True, storage=django_imgur.storage.ImgurStorage(), upload_to=b'photos'),
         ),
     ]
