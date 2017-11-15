@@ -24,3 +24,5 @@ def add_product(request):
 
 		return render(request, 'user/admin/index.html')
 
+def product(request):
+	return render(request, 'user/admin/product.html')
