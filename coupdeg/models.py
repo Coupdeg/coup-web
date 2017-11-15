@@ -3,7 +3,7 @@ import datetime
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.contenttypes.models import ContentType
-from django_imgur.storage import ImgurStorage
+from .storage import ImgurStorage
 
 STORAGE = ImgurStorage()
 
