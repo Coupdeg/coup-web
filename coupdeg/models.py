@@ -8,6 +8,10 @@ from django_imgur.storage import ImgurStorage
 STORAGE = ImgurStorage()
 
 class User(models.Model):
+	types = (
+		('0', 'user'),
+		('1', 'admin')
+	)
 	email = models.EmailField(max_length=50, unique=True)
 	password = models.CharField(max_length=256)
 	first_name = models.CharField(max_length=50)
@@ -17,6 +21,7 @@ class User(models.Model):
 	state = models.CharField(max_length=50)
 	country = models.CharField(max_length=50)
 	zip_code = models.CharField(max_length=50)
+	role = models.CharField(max_length=1, choices=types, default=0)
 	def __str__(self):
 		return 'ID : %s -> Email : %s' % (self.id, self.email)
 
