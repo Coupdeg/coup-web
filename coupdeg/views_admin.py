@@ -22,7 +22,14 @@ def add_product(request):
 		print(product_types)
 		print(price)
 
-		return render(request, 'user/admin/index.html')
+	return render(request, 'user/admin/product/add.html')
+
+def show_product(request):
+	products = Product.objects.all()
+	context = {
+		'products': products,
+	}
+	return render(request, 'user/admin/product/show.html', context)
 
 def product(request):
-	return render(request, 'user/admin/product.html')
+	return render(request, 'user/admin/product/index.html')

@@ -1,6 +1,7 @@
-{% extends "../../layout/admin.html" %}
+{% extends "../../../layout/admin.html" %}
 {% block content %}
 <a href="/">back</a>
+<a href="/admin/product">back to product</a>
 <div class="text-center">
 	<form action="{% url 'add-product' %}" method="post" enctype="multipart/form-data">
 		{% csrf_token %}			

@@ -1,0 +1,11 @@
+{% extends "../../../layout/admin.html" %}
+{% block content %}
+<a href="/">back</a>
+<a href="/admin/product">back to product</a>
+<h1>Product</h1>
+{% for product in products %}
+</div>
+	{{ product }}
+<div>
+{% endfor %}
+{% endblock %}
