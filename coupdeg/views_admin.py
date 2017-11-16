@@ -16,11 +16,6 @@ def add_product(request):
 		product.save()
 		image = Image(image=image, image_types=1, type_id=product.id, role=0)
 		image.save()						
-		print(image)
-		print(name)
-		print(details)
-		print(product_types)
-		print(price)
 
 	return render(request, 'user/admin/product/add.html')
 
@@ -30,6 +25,20 @@ def show_product(request):
 		'products': products,
 	}
 	return render(request, 'user/admin/product/show.html', context)
+
+def delete_product(request):
+	products = Product.objects.all()
+	context = {
+		'products': products,
+	}
+	if request.method == 'GET':
+		return render(request, 'user/admin/product/delete.html', context)
+	else:
+		products = request.POST.getlist('product')
+		for pk in products:
+			Product.objects.get(pk=pk).delete()	
+		return render(request, 'user/admin/product/delete.html', context)
+
 
 def product(request):
 	return render(request, 'user/admin/product/index.html')

@@ -6,7 +6,8 @@ from . import views_admin as views
 urlpatterns = [
     url(r'^$', views.index, name="admin"),
     url(r'^product/add', views.add_product, name="add-product"),
-    url(r'^product/show', views.show_product, name="show-product"),            
+    url(r'^product/show', views.show_product, name="show-product"),
+    url(r'^product/delete', views.delete_product, name="delete-product"),                            
     url(r'^product/', views.product, name="admin-product"),
 ]
 
