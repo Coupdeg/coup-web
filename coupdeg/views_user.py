@@ -130,4 +130,4 @@ def history(request):
 			return redirect('/user/login')
 
 def checkout(request):
-	return render(request, 'user/checkout.html', context)
+	return render(request, 'user/checkout.html')
