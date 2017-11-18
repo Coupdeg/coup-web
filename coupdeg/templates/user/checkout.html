@@ -4,26 +4,30 @@
     <div class = "row">
         <h1>Checkout</h1>
         <div class = "checkout-panel">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
-                </li>
-            </ul>
+                <ul class="nav nav-tabs">
+                    <li class="col-4 pointer d-flex positioning-center"> 
+                        <div class = "circle">1</div>
+                        <div>Shopping Cart</div>
+                    </li>
+                    <li class="col-4 pointer2 d-flex positioning-center">
+                        <div>2</div>
+                        <div>Shopping Info</div>
+                    </li>
+                    <li class="col-4  d-flex positioning-center">
+                        <div>3</div>
+                        <div>Shopping PaymentMethod</div>
+                    </li>
+                </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    ...
+                <div class="tab-pane checkout-content fade show active" id="shopping_cart" >
+                    <h5>You have n items in your cart.</h5>
+                    <div class = "line-block-content"></div>
                 </div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    ...
+                <div class="tab-pane checkout-content fade" id="shopping_info">
+                    ...2
                 </div>
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                    ...
+                <div class="tab-pane checkout-content fade" id="shopping_paymentmethod">
+                    ...3
                 </div>
             </div>
         </div>
