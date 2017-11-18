@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^product/add', views.add_product, name="add-product"),
     url(r'^product/show', views.show_product, name="show-product"),
     url(r'^product/delete', views.delete_product, name="delete-product"),                            
-    url(r'^product/edit/(?P<product_id>[0-9]+)/$', views.edit_product, name="edit-product"),                        
+    url(r'^product/edit/(?P<product_id>[0-9]+)', views.edit_product, name="edit-product"),                        
     url(r'^product/', views.product, name="admin-product"),
 ]
 

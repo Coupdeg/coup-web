@@ -4,4 +4,34 @@
 <a href="/admin/product">back to product</a>
 <h1>Product edit</h1>
 {{ product }}
+<div class="text-center">
+	<form action="{% url 'edit-product' product.id %}" method="post" enctype="multipart/form-data">
+		{% csrf_token %}			
+		{% comment %} <input type="file" name="image">			 {% endcomment %}
+		<div>
+			<label for="">name</label>
+			<input type="text" name="name" value="{{ product.name }}">
+		</div>
+		<div>
+			<label for="">details</label>
+			<textarea cols="30" rows="3" name="details">{{ product.details }}</textarea>
+		</div>
+		<div>
+			<label for="">product type</label>
+			<select class="" name="type">
+				<option value="0" {% if product.product_types == '0' %} selected {% endif %}>Bags</option>
+				<option value="1" {% if product.product_types == '1' %} selected {% endif %}>Soaps</option>
+				<option value="2" {% if product.product_types == '2' %} selected {% endif %}>Dresses</option>
+				<option value="3" {% if product.product_types == '3' %} selected {% endif %}>Shirts</option>
+				<option value="4" {% if product.product_types == '4' %} selected {% endif %}>Scarves</option>
+				<option value="5" {% if product.product_types == '5' %} selected {% endif %}>Accessories</option>
+			</select>			
+		</div>
+		<div>
+			<label for="">price</label>
+			<input type="text" name="price" value="{{ product.price }}">
+		</div>
+		<input type="submit" class="btn btn-primary">
+	</form>
+</div>
 {% endblock %}
