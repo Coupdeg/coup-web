@@ -36,7 +36,8 @@ def delete_product(request):
 	else:
 		products = request.POST.getlist('product')
 		for pk in products:
-			Product.objects.get(pk=pk).delete()	
+			Product.objects.get(pk=pk).delete()
+			Image.objects.filter(image_types = 1, type_id = pk).delete()	
 		return render(request, 'user/admin/product/delete.html', context)
 
 
