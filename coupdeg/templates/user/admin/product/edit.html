@@ -2,10 +2,6 @@
 {% block content %}
 <a href="/">back</a>
 <a href="/admin/product">back to product</a>
-<h1>Product</h1>
-{% for product in products %}
-<div>
-	<a href="/admin/product/edit/{{ product.id }}">{{ product }}</a>
-</div>
-{% endfor %}
+<h1>Product edit</h1>
+{{ product }}
 {% endblock %}

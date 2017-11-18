@@ -40,6 +40,10 @@ def delete_product(request):
 			Image.objects.filter(image_types = 1, type_id = pk).delete()	
 		return render(request, 'user/admin/product/delete.html', context)
 
+def edit_product(request, product_id):
+	product = get_object_or_404(Product, pk=product_id)
+	return render(request, 'user/admin/product/edit.html', { 'product': product })
+
 
 def product(request):
 	return render(request, 'user/admin/product/index.html')
