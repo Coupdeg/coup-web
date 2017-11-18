@@ -42,13 +42,15 @@ def delete_product(request):
 
 def edit_product(request, product_id):
 	product = get_object_or_404(Product, pk=product_id)
+	image = Image.objects.get(image_types = 1, type_id = product_id)
+	print(image)
 	if request.method == 'POST':
 		product.name = request.POST.get('name', False)	
 		product.details = request.POST.get('details', False)
 		product.product_types = request.POST.get('type', False)
 		product.price = request.POST.get('price', False)
 		product.save()
-	return render(request, 'user/admin/product/edit.html', { 'product': product })
+	return render(request, 'user/admin/product/edit.html', { 'product': product, 'image':image })
 
 
 def product(request):
