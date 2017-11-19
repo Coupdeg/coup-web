@@ -42,8 +42,32 @@
                         </div>
                     </div>
                     <div class = "line-block-content"></div>
-                    <div class = "items-content">
-
+                    <div class = "items-content d-flex positioning-center padding-content">
+                        <div class = "col-6">
+                            NAME
+                        </div>
+                        <div class = "col-2">
+                            PRICE
+                        </div>
+                        <div class = "col-2">
+                            <div class "input-group quantity-wrapper">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default btn-number btn-sm" disabled="disabled" data-type="minus" data-field="quant[0]">
+                                        <span class="glyphicon glyphicon-minus"></span>
+                                    </button>
+                                </span>       
+                                <input type="text" name="quant[0]" class="form-control input-number input-sm quantity-style" value="0" min="0" max="15">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default btn-number btn-sm" data-type="plus" data-field="quant[0]">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                    </button>
+                                </span>
+                            </div>    
+                        </div>
+                        <div class = "col-2">
+                            TOTAL
+                        </div>
+                        <div class = "line-block-content"></div>
                     </div>
                 </div>
                 <div class="tab-pane checkout-content fade" id="shopping_info">
