@@ -1,5 +1,5 @@
 from django import template
-from ..models import Image
+from ..models import Image, User
 from ..cart import Cart
 
 register = template.Library()
@@ -57,4 +57,8 @@ def get_total_price(request):
 def get_total_quantity(request):
     cart = Cart(request)
     return cart.count()
-                
+
+@register.filter
+def get_role(email):
+    user = User.objects.filter(email=email)
+    return user[0].role                

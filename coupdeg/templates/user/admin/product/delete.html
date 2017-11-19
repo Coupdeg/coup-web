@@ -1,0 +1,16 @@
+{% extends "../../../layout/admin.html" %}
+{% block content %}
+<a href="/">back</a>
+<a href="/admin/product">back to product</a>
+<h1>Product delete</h1>
+
+<form action="{% url 'delete-product' %}" method="post" enctype="multipart/form-data">
+	{% csrf_token %}			
+	{% for product in products %}
+	<div >
+		<label class="col"><input type="checkbox" name="product" value='{{ product.id }}'>{{ product }}</label>	
+	</div>
+	{% endfor %}
+	<input type="submit" name="" value="delete" class="btn btn-danger">
+</form>
+{% endblock %}
