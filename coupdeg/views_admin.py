@@ -1,6 +1,6 @@
 from django.http import Http404, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
-from models import Image, Product
+from models import Image, Product, Item, Cart
 
 def index(request):
 	return render(request, 'user/admin/index.html')
@@ -36,6 +36,7 @@ def delete_product(request):
 	else:
 		products = request.POST.getlist('product')
 		for pk in products:
+			Cart.objects.all().delete()
 			Product.objects.get(pk=pk).delete()
 			Image.objects.filter(image_types = 1, type_id = pk).delete()	
 		return render(request, 'user/admin/product/delete.html', context)
