@@ -131,6 +131,18 @@
             width: 100%;
             height: 100%;
         }
+        .checkout-detail{
+            margin: auto;
+            .detail-space-herizontal-main{
+                margin: 0rem 1rem;
+            }
+            .detail-space-herizontal-sub{
+                margin: 0rem 0.3rem;
+            }
+            .detail-space-vertical{
+                margin: 0.6rem 0rem;
+            }
+        }
     }
 }
 .quantity-style{
