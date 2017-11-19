@@ -1,4 +1,5 @@
 {% extends "../layout/application.html" %}
+{% load static %} 
 {% block content %}
 <div class="container">
     <div class = "row">
@@ -43,8 +44,26 @@
                     </div>
                     <div class = "line-block-content"></div>
                     <div class = "items-content d-flex positioning-center padding-content">
-                        <div class = "col-6">
-                            NAME
+                        <div class = "col-6 d-flex">
+                            <div class = "col-4">
+                                <img class = "checkout-images-product" src="{% static "images/product/product_02.jpg" %}" >
+                            </div>
+                            <div class = "col-8">
+                                <div class = "row">
+                                    <div>
+                                        Short-Sleeve Over Size Tops Lace Cotton 
+                                        <br>Soi-Fah Green Color .
+                                    </div>
+                                </div>
+                                <div class = "row">
+                                    <div class = "">
+                                        
+                                    </div>
+                                    <div class = "">
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class = "col-2">
                             PRICE
