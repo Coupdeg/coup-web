@@ -4,11 +4,32 @@
 .checkout-panel{
     width: 100%;
     border: solid 2px #979799;
-    height: 1000px;
     .positioning-center{
         justify-content: center;
         text-align: center;
         align-items: center;
+    }
+    .line-block-content{
+        height: 1px;
+        background-color: #979797;
+    }
+    .btn-back{
+        margin-left: 3.5rem;
+        color: #979797;
+    }
+    .btn-next{
+        margin-right: 3.5rem;
+        min-width: 12rem;
+        min-height: 3rem;
+        font-size: 1rem;
+        border: 1px solid #737373;
+    }
+    .display-none{
+        display: none
+    } 
+    .row-btn{
+        margin-top: 4rem;
+        margin-bottom: 2rem;
     }
 }
 .nav-checkout{
@@ -31,6 +52,10 @@
     }
     .text-gray{
         color: #C4C4C4;
+        font-size: 1.5rem;
+    }
+    .text-gray{
+        color:  black;
         font-size: 1.5rem;
     }
     .check-symbol-green{
@@ -112,19 +137,20 @@
     }
 }
 .tab-content{
-    .line-block-content{
-        height: 1px;
-        background-color: black;
+    .title-columns{
+        color: #979797;
     }
+}
+.checkout-shopping-cart{
+    height: 80%;
     .padding-content{
         padding: 0rem 2rem;
     } 
-    .checkout-shopping-cart{
-        .number-items{
-            margin-left: 3rem;
-            margin-top: 2rem;
-            margin-bottom: 4rem;
-        }
+    .number-items{
+        margin-left: 3rem;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+        font-size: 1rem;
     }
     .items-content{
         .checkout-images-product{
@@ -143,6 +169,39 @@
                 margin: 0.6rem 0rem;
             }
         }
+        .btn-quantity-border{
+            border: 1px solid rgba(0,0,0,.15);
+        }
+        .btn-quantity-number{
+            min-width: 3rem;
+            text-align: center;
+        }
+    }
+    .space-vertical{
+        margin: 2rem 0rem;
+    }
+    .line-end{
+        margin-top: 3rem;
+    }
+}
+.checkout-shopping-info{
+    padding-top: 2rem;
+    .text-head{
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        margin-left: 3rem;
+        margin-bottom: 1.5rem;
+    }
+    .input-style{
+        min-height: 3rem !important;
+        height: 3.5rem;
+        min-width: 20rem !important;
+        width: 25rem !important; 
+        margin-bottom: 2rem;
+        display: initial !important;
+    }
+    .border-right{
+        border-right: 1px solid;
     }
 }
 .quantity-style{
