@@ -1,5 +1,5 @@
 .checkout-head-title{
-    margin: 3rem 4rem;
+    margin: 3rem 0rem;
 }
 .checkout-panel{
     width: 100%;
@@ -30,6 +30,12 @@
     .row-btn{
         margin-top: 4rem;
         margin-bottom: 2rem;
+    }
+    .text-head{
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        margin-left: 3rem;
+        margin-bottom: 1.5rem;
     }
 }
 .nav-checkout{
@@ -186,12 +192,7 @@
 }
 .checkout-shopping-info{
     padding-top: 2rem;
-    .text-head{
-        font-size: 1.5rem;
-        margin-top: 1.5rem;
-        margin-left: 3rem;
-        margin-bottom: 1.5rem;
-    }
+    
     .input-style{
         min-height: 3rem !important;
         height: 3.5rem;
@@ -202,6 +203,24 @@
     }
     .border-right{
         border-right: 1px solid;
+    }
+}
+.checkout-shopping-payment{
+    padding-top: 2rem;
+    .padding-info{
+        padding: 0rem 8rem;
+        padding-bottom: 3rem;
+    }
+    .input-style{
+        min-height: 3rem !important;
+        height: 3.5rem;
+        margin-bottom: 2rem;
+        display: initial !important;
+    }
+    .input-style-sub{
+        min-height: 3rem !important;
+        height: 3.5rem;
+        display: initial !important;
     }
 }
 .quantity-style{

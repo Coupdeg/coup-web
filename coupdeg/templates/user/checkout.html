@@ -26,7 +26,7 @@
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-panel checkout-shopping-cart fade display-none" id="shopping_cart" >
+                <div class="tab-panel checkout-shopping-cart fade show active" id="shopping_cart" >
                     <div class = "number-items">You have <b>n items</b> in your cart.</div>
                     <div class = "title-columns d-flex positioning-center padding-content">
                         <div class = "col-6">
@@ -104,7 +104,7 @@
                         <button type="button" class="btn btn-default btn-next">NEXT &gt;</button>    
                     </div>
                 </div>
-                <div class="tab-pane checkout-shopping-info fade show active" id="shopping_info">
+                <div class="tab-pane checkout-shopping-info fade display-none" id="shopping_info">
                     <div class = "row">
                         <div class = "col-6 border-right">
                             <div class = "text-head">
@@ -135,8 +135,33 @@
                             <button type="button" class="btn btn-default btn-next">NEXT &gt;</button>    
                     </div>
                 </div>
-                <div class="tab-pane checkout-content fade" id="shopping_paymentmethod">
-                    ...3
+                <div class="tab-pane checkout-shopping-payment fade display-none" id="shopping_paymentmethod">
+                    <div class = "text-head">
+                        <b>Payment</b> Info
+                    </div>
+                    <div class = "padding-info">
+                        <input type="cardnumber" class="form-control input-style" id="" placeholder="Card Number">
+                        <input type="cardholder" class="form-control input-style" id="" placeholder="Cardholder Name">
+                        <div class = "d-flex align-items-center">
+                            <div class = "col-3">
+                                <h3><b>EXPIRE</b></h3>
+                            </div>
+                            <div class = "col-3">
+                                <input type="month" class="form-control input-style-sub" id="" placeholder="Month">
+                            </div>
+                            <div class = "col-3">
+                                <input type="year" class="form-control input-style-sub" id="" placeholder="Year">    
+                            </div>
+                            <div class = "col-3">
+                                <input type="cvv" class="form-control input-style-sub" id="" placeholder="CVV">    
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "row-btn d-flex justify-content-between">
+                            <button type="button" class="btn btn-default btn-back">&lt; back</button>    
+                            <button type="button" class="btn btn-default btn-next">FINISH</button>    
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>
