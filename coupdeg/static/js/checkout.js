@@ -26,6 +26,11 @@ $(document).ready(function() {
         $('ul.setup-panel li:eq(1)').removeClass('disabled');
         $('ul.setup-panel li a[href="#step-2"]').trigger('click');
         $(this).remove();
-    })    
+    })
+    
+    $("#btn-next-to-second").click(function(){
+        $("#tab-second").removeClass("pointer-inner-white");
+        $("#tab-second").addClass("pointer-inner-gray");
+    });
 });
 
