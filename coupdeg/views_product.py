@@ -45,15 +45,11 @@ def detail(request, product_id):
 	image = Image.objects.filter(type_id = product_id)[0]
 	return render(request, 'product/detail.html', { 'product': product, 'image': image })
 
-def cart(request):
-	if request.method == 'POST' :	
-		product_id = request.POST['product_id']
-		product = get_object_or_404(Product, pk=product_id)
-		cart = Cart(request)
-		cart.add(product, product.price)
-		return redirect('/product/'+product_id)
-	else :
-		return redirect('/user/login')
+def add_to_cart(request, product_id):
+	product = get_object_or_404(Product, pk=product_id)
+	cart = Cart(request)
+	cart.add(product, product.price)
+	return redirect('/product/'+product_id)
 
 def remove_from_cart(request, product_id):
 	product = get_object_or_404(Product, pk=product_id)
