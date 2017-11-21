@@ -42,9 +42,12 @@
 							</div>
 						</div>
 						<div class="ml-auto">
-							<button type="button" class="close" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
+							<form action="{% url 'remove_from_cart' item.product.id %}" method="post" enctype="multipart/form-data">
+								{% csrf_token %}				                        
+								<button type="submit" class="close" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</form>
 						</div>																		
 					</div>
 				</a>

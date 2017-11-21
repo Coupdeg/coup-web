@@ -54,3 +54,9 @@ def cart(request):
 		return redirect('/product/'+product_id)
 	else :
 		return redirect('/user/login')
+
+def remove_from_cart(request, product_id):
+	product = get_object_or_404(Product, pk=product_id)
+	cart = Cart(request)
+	cart.remove(product)
+	return redirect('/product/'+product_id)
