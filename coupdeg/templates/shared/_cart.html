@@ -14,7 +14,7 @@
 			</div>
 			<div class="dropdown-divider"></div>
 			{% for item in request|cart %}
-				<a class="dropdown-item dropdown-cart-content" href="#">
+				<a class="dropdown-item dropdown-cart-content" href="/product/{{ item.product.id }}">
 					<div class = "d-flex">
 						<img class = "" src = "{{ item.product.id|index_of_image_url }}">
 						<div class = "">
@@ -31,8 +31,8 @@
 									</div>
 								</div>
 								<div class = "d-flex space-between-line">
-									<!-- <div class = "space-between-detail">SIZE</div>
-									<div class = "product-size product-border space-between-detail">M</div> -->
+									{% comment %} <div class = "space-between-detail">SIZE</div>
+									<div class = "product-size product-border space-between-detail">M</div> {% endcomment %}
 									<div class = "d-flex space-between-detail">
 										<div class = "space-between">Total :</div>
 										<div class = "space-between">{{ item.total_price }}</div>
@@ -41,6 +41,14 @@
 								</div>
 							</div>
 						</div>
+						<div class="ml-auto">
+							<form action="{% url 'remove_from_cart' item.product.id %}" method="post" enctype="multipart/form-data" onsubmit="return confirm('Do you really want to remove product?');">
+								{% csrf_token %}				                        
+								<button type="submit" class="close" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</form>
+						</div>																		
 					</div>
 				</a>
 			{% endfor %}    
