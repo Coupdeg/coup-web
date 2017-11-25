@@ -1,11 +1,81 @@
 {% extends "../layout/application.html" %}
+{% load static %}
 {% block content %}
 <div class = "history-container">
-	<h1>History</h1>
+	<h1 class = "head-title">History</h1>
 	{% for h in history %}
 	<div>
 		{{ h.product.name }} {{ h.product.price }}.00 Bath {{ h.date}}			
 	</div>	
 	{% endfor %}	
+	<table class="table table-hover table-responsive">
+		<thead>
+		  <tr>
+			<th scope="col">PRODUCT</th>
+			<th scope="col">PRICE</th>
+			<th scope="col">QUANITY</th>
+			<th scope="col">TOTAL</th>
+			<th scope="col">DATE</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+			<th scope="row">
+				<div class = "d-flex flex-wrap">
+					<div>
+						<img class="product-img" src='{% static "images/product/product_01.jpg" %}'>
+					</div>
+					<div class = "d-flex flex-column table-product-detail justify-content-center">
+						<div class = "text-table-product-name">
+							Nuttapatprom Chongamorkulprapa
+						</div>
+						<div class = "d-flex">
+							<div class = "text-table-categories">
+								Categories :
+							</div>
+							<div class = "text-table-categories-type">
+								Shirts
+							</div>
+						</div>
+					</div>
+				</div>
+			</th>
+			<td class = "justify-content-center">
+				<div>
+					Mark
+				</div>
+			</td>
+			<td class = "justify-content-center"> 
+				<div>
+					Mark
+				</div>
+			</td>
+			<td class = "justify-content-center">
+				<div>
+					Mark
+				</div>
+			</td>
+			<td class = "justify-content-center">
+				<div>
+					Mark
+				</div>
+			</td>
+		  </tr>
+		  <tr>
+			<th scope="row">2</th>
+			<td>Jacob</td>
+			<td></td>
+			<td>@fat</td>
+			<td>@fat</td>
+		  </tr>
+		  <tr>
+			<th scope="row">3</th>
+			<td>Larry</td>
+			<td>the Bird</td>
+			<td>@twitter</td>
+			<td>@twitter</td>
+		  </tr>
+		</tbody>
+	  </table>
 </div>
 {% endblock %}
