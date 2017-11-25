@@ -2,12 +2,7 @@
 {% load static %}
 {% block content %}
 <div class = "history-container">
-	<h1 class = "head-title">History</h1>
-	{% for h in history %}
-	<div>
-		{{ h.product.name }} {{ h.product.price }}.00 Bath {{ h.date}}			
-	</div>	
-	{% endfor %}	
+	<h1 class = "head-title">History</h1>	
 	<table class="table table-hover table-responsive">
 		<thead>
 		  <tr>
@@ -20,7 +15,7 @@
 		</thead>
 		<tbody>
 		  <tr>
-			<th scope="row">
+			<!-- <th scope="row">
 				<div class = "d-flex">
 					<div>
 						<img class="product-img" src='{% static "images/product/product_01.jpg" %}'>
@@ -60,7 +55,8 @@
 					11/11/2017
 				</div>
 			</td>
-		  </tr>
+		  </tr> -->
+		  {% for h in history %}
 		  <th scope="row">
 				<div class = "d-flex">
 					<div>
@@ -102,6 +98,7 @@
 				</div>
 			</td>
 		  </tr>
+		  {% endfor %}
 		</tbody>
 	  </table>
 </div>
