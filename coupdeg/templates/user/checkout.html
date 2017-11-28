@@ -1,0 +1,173 @@
+{% extends "../layout/application.html" %}
+{% load static %} 
+{% block content %}
+<div class="container">
+    <div class = "row">
+        <h1 id = "header-test" class = "checkout-head-title">Checkout</h1>
+        <div class = "checkout-panel">
+            <ul class="nav nav-checkout">
+                <li class="col-4 pointer-outer d-flex positioning-center"> 
+                    <div id = "tab-first" class = "pointer-inner-gray d-flex positioning-center text-white">
+                        <div id = "tab-first-number" class = "circle-hollow border-white">1</div>
+                        <div>Shopping Cart</div>
+                    </div>
+                </li>
+                <li class="col-4 pointer-outer d-flex positioning-center"> 
+                    <div id = "tab-second" class = "pointer-inner-white d-flex positioning-center text-gray">
+                        <div id = "tab-second-number" class = "circle-hollow border-gray">2</div>
+                        <div>Shopping Info</div>
+                    </div>
+                </li>
+                <li class="col-4 pointer-outer-last d-flex positioning-center"> 
+                    <div id = "tab-third" class = "pointer-inner-last-white d-flex positioning-center text-gray">
+                        <div id = "tab-third-number" class = "circle-hollow border-gray">3</div>
+                        <div>Payment Menthod</div>
+                    </div>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-panel checkout-shopping-cart fade show active" id="shopping_cart" >
+                    <div class = "number-items">You have 
+                        <b>n items</b> 
+                        in your cart.
+                    </div>
+                    <div class = "title-columns d-flex positioning-center padding-content">
+                        <div class = "col-6">
+                            NAME
+                        </div>
+                        <div class = "col-2">
+                            PRICE
+                        </div>
+                        <div class = "col-2">
+                            QUANTITY
+                        </div>
+                        <div class = "col-2">
+                            TOTAL
+                        </div>
+                    </div>
+                    <div class = "line-block-content"></div>
+                    <div class = "items-content padding-content">
+                        <div class = " d-flex positioning-center  space-vertical">
+                            <div class = "col-6 d-flex">
+                                <div class = "col-4">
+                                    <img class = "checkout-images-product" src="{% static "images/product/product_02.jpg" %}" >
+                                </div>
+                                <div class = "col-8 checkout-detail">
+                                    <div class = "d-flex positioning-center detail-space-vertical">
+                                        <b>Short-Sleeve Over Size Tops Lace Cotton 
+                                        <br>Soi-Fah Green Color.</b>
+                                    </div>
+                                    <div class = "d-flex  detail-space-vertical positioning-center">
+                                        <div class = "d-flex checkout-details-color detail-space-herizontal-main">
+                                            <div class = "detail-space-herizontal-sub">
+                                                COLOR :
+                                            </div>
+                                            <div class = "detail-space-herizontal-sub">
+                                                Green
+                                            </div> 
+                                        </div>
+                                        <div class = "d-flex checkout-details-size detail-space-herizontal-main">
+                                            <div class = "detail-space-herizontal-sub">
+                                                SIZE :
+                                            </div>
+                                            <div class = "detail-space-herizontal-sub">
+                                                M
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "col-2">
+                                1200$
+                            </div>
+                            <div class = "col-2">
+                                <div class = "input-group">
+                                    <span class="input-group-btn">
+                                        <button type="button " class="btn btn-quantity-border" data-type="minus" data-field="quant[0]">
+                                            <span class="">-</span>
+                                        </button>
+                                    </span>       
+                                    <input type="text" name="quant[0]" class="form-control input-number btn-quantity-number" value="0" min="0" max="15">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-quantity-border" data-type="plus" data-field="quant[0]">
+                                            <span class="">+</span>
+                                        </button>
+                                    </span>
+                                </div>    
+                            </div>
+                            <div class = "col-2">
+                                1200$
+                            </div>
+                            
+                        </div>
+                        <div class = "line-block-content"></div>
+                    </div>
+                    <div class = "line-block-content line-end"></div>
+                    <div class = "row-btn d-flex flex-row-reverse">
+                        <button id = "btn-next-to-second" type="button" class="btn btn-default btn-next">NEXT &gt;</button>    
+                    </div>
+                </div>
+                <div class="tab-pane checkout-shopping-info fade display-none" id="shopping_info">
+                    <div class = "row">
+                        <div class = "col-6 border-right">
+                            <div class = "text-head">
+                                <b>Shipping</b> Address
+                            </div>
+                            <div class = "group-input positioning-center">
+                                <input type="country" class="form-control input-style" id="" placeholder="Country">
+                                <input type="city" class="form-control input-style" id="" placeholder="City">
+                                <input type="state" class="form-control input-style" id="" placeholder="State / Region / Province">
+                                <input type="zip" class="form-control input-style" id="" placeholder="Zip / Postal code">
+                                <input type="Adress" class="form-control input-style" id="" placeholder="Address">
+                            </div>
+                        </div>
+                        <div class = "col-6">
+                            <div class = "text-head">
+                                <b>Contact</b> Info
+                            </div>
+                            <div class = "group-input positioning-center">
+                                <input type="firstname" class="form-control input-style" id="" placeholder="Firstname">
+                                <input type="lastname" class="form-control input-style" id="" placeholder="Lastname">
+                                <input type="email" class="form-control input-style" id="" placeholder="Email">
+                                <input type="phone" class="form-control input-style" id="" placeholder="Phone">
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "row-btn d-flex justify-content-between">
+                            <button id = "btn-back-to-first" type="button" class="btn btn-default btn-back">&lt; back</button>    
+                            <button id = "btn-next-to-third" type="button" class="btn btn-default btn-next">NEXT &gt;</button>    
+                    </div>
+                </div>
+                <div class="tab-pane checkout-shopping-payment fade display-none" id="shopping_payment">
+                    <div class = "text-head">
+                        <b>Payment</b> Info
+                    </div>
+                    <div class = "padding-info">
+                        <input type="cardnumber" class="form-control input-style" id="" placeholder="Card Number">
+                        <input type="cardholder" class="form-control input-style" id="" placeholder="Cardholder Name">
+                        <div class = "d-flex align-items-center">
+                            <div class = "col-3">
+                                <h3><b>EXPIRE</b></h3>
+                            </div>
+                            <div class = "col-3">
+                                <input type="month" class="form-control input-style-sub" id="" placeholder="Month">
+                            </div>
+                            <div class = "col-3">
+                                <input type="year" class="form-control input-style-sub" id="" placeholder="Year">    
+                            </div>
+                            <div class = "col-3">
+                                <input type="cvv" class="form-control input-style-sub" id="" placeholder="CVV">    
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "row-btn d-flex justify-content-between">
+                            <button id = "btn-back-to-second" type="button" class="btn btn-default btn-back">&lt; back</button>    
+                            <button type="button" class="btn btn-default btn-next">FINISH</button>    
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
