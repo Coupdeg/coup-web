@@ -1,8 +1,13 @@
+{% load helper %}
 <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:white;"><i class="fa fa-user-circle-o" aria-hidden="true" style="background-color:transparent;color:white;font-size:30px;"></i><b class="caret" ></b></a>
 <ul class="dropdown-menu after-login" style="padding: 0px">
 	{% comment %} <li><a href="">{{ request.session.email }}</a></li> {% endcomment %}
+	{% if request.session.email|get_role == '0' %}
 	<li><a href="/user/profile">Profile</a></li>	
 	<li><a href="/user/history">History</a></li>
+	{% else %}
+	<li><a href="/admin">Admin</a></li>		
+	{% endif %}
 	<li>
 		<form action="{% url 'login' %}" method="post">
 			{% csrf_token %}				                        

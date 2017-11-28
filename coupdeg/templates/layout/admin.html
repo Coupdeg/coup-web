@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% include "shared/_head.html" %}
+	{% include "shared/_tools.html" %}
+	{% include "shared/_fonts.html" %}
+</head>
+<body>
+	<div class = "content">
+		{% block content %}{% endblock %}
+	</div>    			
+	{% include "shared/_app_js.html" %}
+</body>
+</html>

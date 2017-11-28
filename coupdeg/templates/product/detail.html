@@ -149,10 +149,9 @@
 		<div class="cd-popup-container">
 			<p>You want to add to cart ?</p>
 			<div class="confirm-buy-product">
-				<form action="{% url 'cart' %}" method="post">
+				<form action="{% url 'add_to_cart' product.id %}" method="post">
 					{% csrf_token %}
 					<input name="email" value="{{ request.session.email }}" hidden>
-					<input name="product_id" value="{{ product.id }}" hidden>					
 					<input value="Yes" class="btn btn-primary btn-yes"type="submit">
 					<a href="#" class="btn btn-danger cd-popup-no">No</a>				
 				</form>
