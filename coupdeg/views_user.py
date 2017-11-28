@@ -128,3 +128,6 @@ def history(request):
 			return render(request, 'user/history.html', context)
 		else :
 			return redirect('/user/login')
+
+def checkout(request):
+	return render(request, 'user/checkout.html')
