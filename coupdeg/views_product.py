@@ -49,7 +49,7 @@ def add_to_cart(request, product_id):
 	product = get_object_or_404(Product, pk=product_id)
 	cart = Cart(request)
 	cart.add(product, product.price)
-	return redirect('/product/'+product_id)
+	return redirect(request.META['HTTP_REFERER'])
 
 def remove_from_cart(request, product_id):
 	product = get_object_or_404(Product, pk=product_id)

@@ -16,6 +16,9 @@
     .btn-back{
         margin-left: 3.5rem;
         color: #979797;
+        &:hover{
+            cursor: pointer;
+        }
     }
     .btn-next{
         margin-right: 3.5rem;
@@ -23,6 +26,10 @@
         min-height: 3rem;
         font-size: 1rem;
         border: 1px solid #737373;
+        background-color: red;
+        &:hover{
+            cursor: pointer;
+        }
     }
     .display-none{
         display: none
