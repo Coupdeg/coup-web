@@ -3,7 +3,7 @@ import json
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Image
-from .models import Product
+from .models import Product, Item
 from .cart import Cart
 
 def product(request, type_number):
@@ -49,7 +49,7 @@ def add_to_cart(request, product_id):
 	product = get_object_or_404(Product, pk=product_id)
 	cart = Cart(request)
 	cart.add(product, product.price)
-	return redirect('/product/'+product_id)
+	return redirect(request.META['HTTP_REFERER'])
 
 def remove_from_cart(request, product_id):
 	product = get_object_or_404(Product, pk=product_id)
@@ -57,3 +57,12 @@ def remove_from_cart(request, product_id):
 	cart.remove(product)
 	return redirect(request.META['HTTP_REFERER'])
 
+def update_from_cart(request, product_id):
+	product = get_object_or_404(Product, pk=product_id)
+	cart = Cart(request)
+	if request.POST.get('type', False) == "+" :
+		quantity = cart.get_quantity_item(product) + 1
+	else :
+		quantity = cart.get_quantity_item(product) - 1
+	cart.update(product, quantity)
+	return redirect(request.META['HTTP_REFERER'])

@@ -61,4 +61,10 @@ def get_total_quantity(request):
 @register.filter
 def get_role(email):
     user = User.objects.filter(email=email)
-    return user[0].role                
+    return user[0].role
+
+@register.filter
+@register.simple_tag(name='get_user')
+def get_user(email):
+    user = User.objects.filter(email=email)
+    return user[0]                
