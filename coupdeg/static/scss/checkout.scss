@@ -26,7 +26,6 @@
         min-height: 3rem;
         font-size: 1rem;
         border: 1px solid #737373;
-        background-color: red;
         &:hover{
             cursor: pointer;
         }
@@ -238,4 +237,9 @@
 
 .quantity-wrapper{
   width: 38px; 
+}
+.edit-item{
+    &:hover{
+        cursor: pointer;
+    }
 }
