@@ -1,5 +1,6 @@
 {% extends "../layout/application.html" %}
 {% load static %} 
+{% load helper %}
 {% block content %}
 <div class="container">
     <div class = "row">
@@ -46,26 +47,18 @@
                         </div>
                     </div>
                     <div class = "line-block-content"></div>
+                    {% for item in request|cart %}
                     <div class = "items-content padding-content">
                         <div class = " d-flex positioning-center  space-vertical">
                             <div class = "col-6 d-flex">
                                 <div class = "col-4">
-                                    <img class = "checkout-images-product" src="{% static "images/product/product_02.jpg" %}" >
+                                    <img class = "checkout-images-product" src="{{ item.product.id|index_of_image_url }}">
                                 </div>
                                 <div class = "col-8 checkout-detail">
                                     <div class = "d-flex positioning-center detail-space-vertical">
-                                        <b>Short-Sleeve Over Size Tops Lace Cotton 
-                                        <br>Soi-Fah Green Color.</b>
+                                        {{ item.product.name }}
                                     </div>
                                     <div class = "d-flex  detail-space-vertical positioning-center">
-                                        <div class = "d-flex checkout-details-color detail-space-herizontal-main">
-                                            <div class = "detail-space-herizontal-sub">
-                                                COLOR :
-                                            </div>
-                                            <div class = "detail-space-herizontal-sub">
-                                                Green
-                                            </div> 
-                                        </div>
                                         <div class = "d-flex checkout-details-size detail-space-herizontal-main">
                                             <div class = "detail-space-herizontal-sub">
                                                 SIZE :
@@ -78,7 +71,7 @@
                                 </div>
                             </div>
                             <div class = "col-2">
-                                1200$
+                                {{ item.product.price }}฿
                             </div>
                             <div class = "col-2">
                                 <div class = "input-group">
@@ -87,7 +80,7 @@
                                             <span class="">-</span>
                                         </button>
                                     </span>       
-                                    <input type="text" name="quant[0]" class="form-control input-number btn-quantity-number" value="0" min="0" max="15">
+                                    <input type="text" name="quant[0]" class="form-control input-number btn-quantity-number" value="{{ item.quantity }}" min="0" max="15">
                                     <span class="input-group-btn">
                                         <button type="button" class="btn btn-quantity-border" data-type="plus" data-field="quant[0]">
                                             <span class="">+</span>
@@ -96,12 +89,13 @@
                                 </div>    
                             </div>
                             <div class = "col-2">
-                                1200$
+                                {{  item.total_price }}฿
                             </div>
                             
                         </div>
                         <div class = "line-block-content"></div>
                     </div>
+                    {% endfor %}
                     <div class = "line-block-content line-end"></div>
                     <div class = "row-btn d-flex flex-row-reverse">
                         <button id = "btn-next-to-second" type="button" class="btn btn-default btn-next">NEXT &gt;</button>    
@@ -113,12 +107,13 @@
                             <div class = "text-head">
                                 <b>Shipping</b> Address
                             </div>
+                            {% get_user request.session.email as user %}
                             <div class = "group-input positioning-center">
-                                <input type="country" class="form-control input-style" id="" placeholder="Country">
-                                <input type="city" class="form-control input-style" id="" placeholder="City">
-                                <input type="state" class="form-control input-style" id="" placeholder="State / Region / Province">
-                                <input type="zip" class="form-control input-style" id="" placeholder="Zip / Postal code">
-                                <input type="Adress" class="form-control input-style" id="" placeholder="Address">
+                                <input type="country" class="form-control input-style" id="" placeholder="Country" value="{{ user.country }}">
+                                <input type="city" class="form-control input-style" id="" placeholder="City" value="{{ user.city }}">
+                                <input type="state" class="form-control input-style" id="" placeholder="State / Region / Province" value="{{ user.state }}">
+                                <input type="zip" class="form-control input-style" id="" placeholder="Zip / Postal code" value="{{ user.zip_code }}">
+                                <input type="Adress" class="form-control input-style" id="" placeholder="Address" value="{{ user.address }}">
                             </div>
                         </div>
                         <div class = "col-6">
@@ -126,10 +121,10 @@
                                 <b>Contact</b> Info
                             </div>
                             <div class = "group-input positioning-center">
-                                <input type="firstname" class="form-control input-style" id="" placeholder="Firstname">
-                                <input type="lastname" class="form-control input-style" id="" placeholder="Lastname">
-                                <input type="email" class="form-control input-style" id="" placeholder="Email">
-                                <input type="phone" class="form-control input-style" id="" placeholder="Phone">
+                                <input type="firstname" class="form-control input-style" id="" placeholder="Firstname" value="{{ user.first_name }}">
+                                <input type="lastname" class="form-control input-style" id="" placeholder="Lastname" value="{{ user.last_name }}">
+                                <input type="email" class="form-control input-style" id="" placeholder="Email" value="{{ user.email }}">
+                                <input type="phone" class="form-control input-style" id="" placeholder="Phone" >
                             </div>
                         </div>
                     </div>
