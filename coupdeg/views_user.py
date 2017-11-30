@@ -1,9 +1,8 @@
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from .models import User
-from .models import Product
-from .models import History
+from .models import User, Product, History, Payment
+from .cart import Cart
 from django.utils import timezone
 from passlib.hash import django_pbkdf2_sha256 as handler
 
@@ -117,10 +116,8 @@ def history(request):
 	if request.method == 'POST':
 		user_id = User.objects.filter(email = request.POST['email'])
 		user = get_object_or_404(User, pk=user_id[0].id)		
-		product_id = request.POST['product_id']
-		product = get_object_or_404(Product, pk=product_id)
 		now = timezone.now()
-		history = History(user=user, product= product, date=now)
+		history = History(user=user, date=now)
 		history.save()
 		return redirect('/product/'+product_id)
 	else:
@@ -136,9 +133,17 @@ def history(request):
 			return redirect('/user/login')
 
 def checkout(request):
-	cart = Cart(request)
-	user = User.objects.get(email = request.session['email'])
-	# for  item in cart:
-	# 	product = Product.objects.get()
-	
-	return render(request, 'user/checkout.html')
+	if request.method == 'POST':
+		cart = Cart(request)
+		user = User.objects.get(email = request.session['email'])
+		now = timezone.now()
+		history = History(user=user, date=now)
+		history.save()
+		for item in cart:
+			product = Product.objects.get(name = item.product.name)
+			quantity = item.quantity
+			payment = Payment(history=history, product=product, quantity=quantity)
+			payment.save()
+		return HttpResponse('Success')
+	else :
+		return render(request, 'user/checkout.html')
