@@ -6,12 +6,16 @@
 	{% include "shared/_fonts.html" %}
 	{% include "shared/_app_css.html" %}
 </head>
-<body>
-	{% include "shared/_navbar_admin.html" %}
-	<div class = "content">
-		{% block content %}{% endblock %}
+<body class = "admin-body">
+	<div class = "d-flex admin-layout">
+		<div class = "col-2 padding-zero">
+			{% include "shared/_navbar_admin.html" %}
+		</div>
+		<div class = "col-10 content padding-zero">
+			{% block content %}{% endblock %}
+		</div>
 	</div>
-	{% include "shared/_footer.html" %}
-	{% include "shared/_app_js.html" %}
 </body>
+{% include "shared/_footer.html" %}
+{% include "shared/_app_js.html" %}
 </html>

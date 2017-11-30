@@ -1,12 +1,13 @@
 {% load static %}
-<nav class="navbar navbar-lit bg-faded navbar-style navbar-color-slide">
-	<div class="col-4 navbar-menu">
-		<a class="navbar-menu" href="">
-			<img src='{% static "images/navbar_logo.png" %}' href="#">
-		</a>
-	</div>
-	<div class="col-4 text-center navbar-menu ">
-	</div>
-	<div class="col-4 text-center navbar-menu">
-	</div>
-</nav>
+<div class="side-nav">
+	<ul>
+		<li>
+			<a href="/admin/">
+				<img class="navbar-menu-image" src='{% static "images/navbar_logo.png" %}'>
+			</a>
+		</li>
+		<li><a href="/admin/product">Product</a></li>
+		<li><a href="/admin/user">User</a></li>
+	</ul>
+</div>
+
