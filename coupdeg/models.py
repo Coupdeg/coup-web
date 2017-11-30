@@ -21,6 +21,7 @@ class User(models.Model):
 	state = models.CharField(max_length=50)
 	country = models.CharField(max_length=50)
 	zip_code = models.CharField(max_length=50)
+	phone = models.CharField(max_length=20, default=0)
 	role = models.CharField(max_length=1, choices=types, default=0)
 	def __str__(self):
 		return 'ID : %s -> Email : %s' % (self.id, self.email)
