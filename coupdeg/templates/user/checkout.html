@@ -79,8 +79,8 @@
                                         <form action="{% url 'update_from_cart' item.product.id %}" method="post" enctype="multipart/form-data" >
                                             {% csrf_token %}
                                             <input type="text" value="-" name="type" hidden>                                                                                            
-                                            <button type="submit" class="btn btn-quantity-border" data-type="minus" data-field="quant[0]">
-                                                <span class="edit-item">-</span>
+                                            <button type="submit" class="btn btn-quantity-border edit-item" data-type="minus" data-field="quant[0]">
+                                                <span>-</span>
                                             </button>
                                         </form>       
                                     </span>
@@ -89,8 +89,8 @@
                                         <form action="{% url 'update_from_cart' item.product.id %}" method="post" enctype="multipart/form-data" >
                                             {% csrf_token %}
                                             <input type="text" value="+" name="type" hidden>                                            
-                                            <button type="submit" class="btn btn-quantity-border">
-                                                <span class="edit-item">+</span>
+                                            <button type="submit" class="btn btn-quantity-border edit-item">
+                                                <span>+</span>
                                             </button>
                                         </form>
                                     </span>

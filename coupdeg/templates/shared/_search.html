@@ -1,0 +1,11 @@
+<div class="wrap">
+	<div class="search">
+		<form action="{% url 'search' %}" method="post">
+			{% csrf_token %}
+			<input type="text" class="searchTerm" placeholder="Search" name="search_input">
+			<button type="submit" class="searchButton">
+			 <i class="fa fa-arrow-left" aria-hidden="true"></i>
+			</button>
+		</form>
+	</div>
+</div>

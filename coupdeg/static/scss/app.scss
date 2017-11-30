@@ -1,14 +1,15 @@
-@import 'navbar.scss';
-@import 'footer.scss';
-@import 'landing-page.scss';
-@import 'login.scss';
-@import 'product.scss';
-@import 'detail.scss';
-@import 'register.scss';
-@import 'history.scss';
-@import 'checkout.scss';
+@import 'navbar';
+@import 'footer';
+@import 'landing-page';
+@import 'login';
+@import 'product';
+@import 'detail';
+@import 'register';
+@import 'history';
+@import 'checkout';
 @import 'about';
 @import 'cart';
+@import 'search';
 html, body {
     height: 100%;
     margin: 0;

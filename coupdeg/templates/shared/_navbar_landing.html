@@ -14,18 +14,16 @@
     </div>
     <div class="col-4 text-center navbar-menu">
         <div class="row content-align-center">
-            <a class="col-4 text-center navbar-menu navbar-color-text i-search" href="#">
-				<i class="fa fa-search" aria-hidden="true"></i>			
-            </a>
+            {% include "./_search.html" %}            
             {% if request.session.email == None %}            
-                <a class="col-4 text-center navbar-menu navbar-color-text" href="/user/login">LOGIN</a>
+                <a class="col-4 text-center navbar-menu navbar-color-text" href="/user/login" id="login">LOGIN</a>
             {% else %}
-                <div class="col-4">
+                <div class="col-4" id="login">
                     {% include "./_login_nav.html" %}
                 </div>
             {% endif %}
             {% if request.session.email != None %}
-            <div class = "col-4">
+            <div class = "col-4" id="cart">
                 {% include "./_cart.html" %}
             </div>
             {% endif %}
