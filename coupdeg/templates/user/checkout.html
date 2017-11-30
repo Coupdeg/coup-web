@@ -148,22 +148,15 @@
                         <b>Payment</b> Info
                     </div>
                     <div class = "padding-info">
-                        <input type="cardnumber" class="form-control input-style" id="" placeholder="Card Number">
-                        <input type="cardholder" class="form-control input-style" id="" placeholder="Cardholder Name">
-                        <div class = "d-flex align-items-center">
-                            <div class = "col-3">
-                                <h3><b>EXPIRE</b></h3>
-                            </div>
-                            <div class = "col-3">
-                                <input type="month" class="form-control input-style-sub" id="" placeholder="Month">
-                            </div>
-                            <div class = "col-3">
-                                <input type="year" class="form-control input-style-sub" id="" placeholder="Year">    
-                            </div>
-                            <div class = "col-3">
-                                <input type="cvv" class="form-control input-style-sub" id="" placeholder="CVV">    
-                            </div>
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <span class="btn btn-default btn-file">
+                                    Browse… <input type="file" id="imgInp">
+                                </span>
+                            </span>
+                            <input type="text" class="form-control" readonly>
                         </div>
+                        <img id='img-upload'/>
                     </div>
                     <div class = "row-btn d-flex justify-content-between">
                             <button id = "btn-back-to-second" type="button" class="btn btn-default btn-back">&lt; back</button>    
