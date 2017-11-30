@@ -66,7 +66,7 @@ class History(models.Model):
 	admin_confirm = models.BooleanField(default=False)
 
 	def __str__(self):
-		return 'User : %s -> Product : %s -> Date : %s' % (self.user.email, self.product.name, self.date)
+		return 'User : %s -> Date : %s' % (self.user.email, self.date)
 
 	def was_published_recently(self):
 		now = timezone.now()
