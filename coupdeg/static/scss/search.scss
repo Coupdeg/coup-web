@@ -9,24 +9,24 @@
 		.searchTerm {
 			float: left;
 			width: 100%;
-			border: 3px solid #00B4CC;
+			border: 3px solid #888;
 			padding: 5px;
 			height: 36px;
 			border-radius: 5px 0 0 5px;
 			outline: none;
-			color: #9DBFAF;
+			color: #888;
 		}
 		
 		.searchTerm:focus{
-			color: #00B4CC;
+			color: #888;
 		}
 		
 		.searchButton {
 			position: absolute;  
 			width: 40px;
 			height: 36px;
-			border: .5px solid #00B4CC;
-			background: #00B4CC;
+			border: .5px solid #888;
+			background: #888;
 			text-align: center;
 			color: #fff;
 			border-radius: 0 5px 5px 0;
