@@ -11,7 +11,7 @@ $filler: #E74C3C;
         height: 100%
     }
     .text-title{
-        margin-top: 2rem;
+        margin: 4rem 0rem;
     }
     .position-center{
         text-align: center;
@@ -20,6 +20,9 @@ $filler: #E74C3C;
     }
     .padding-zero{
         padding: 0px 0px;
+    }
+    .padding-content{
+        padding: 0rem 10rem;
     }
     // Page Layout
     .flex-page {
