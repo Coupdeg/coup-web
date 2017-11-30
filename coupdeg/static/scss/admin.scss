@@ -8,11 +8,17 @@ $filler: #E74C3C;
     background: white;
     font-family: 'News Cycle', sans-serif;
     .admin-layout{
-        height: 100%
+        min-height: 100%;
     }
     .text-title{
-        padding: 4rem 0rem;
+        padding: 3rem 0rem;
         background: rgba(128, 128, 128, 0.363);
+    }
+    .bottom-btn-margin-top{
+        margin-top: 7rem;
+    }
+    .btn-summit-add-product{
+        padding: 0.6rem 4rem;
     }
     .position-center{
         text-align: center;
@@ -21,6 +27,9 @@ $filler: #E74C3C;
     }
     .padding-zero{
         padding: 0px 0px;
+    }
+    .padding-type{
+        padding: 2rem 0rem;
     }
     .padding-content{
         padding: 0rem 10rem;
@@ -74,9 +83,6 @@ $filler: #E74C3C;
         // flex-wrap: wrap;
         // justify-content: space-around;
     }
-    .product-main{
-        
-    }
     .width-full-page{
         width: 100%;
     }
@@ -121,6 +127,54 @@ $filler: #E74C3C;
                 cursor: pointer;            
             }
         }
+    }
+    .add-product-dropdown{
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 30px;
+    }
+    select::-ms-expand {
+        display: none;
+    }
+    input.input-field{
+        width: 50%;
+        height: 60px;
+        border: 1px solid #979797;
+        border-radius: 3px;
+        box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+        padding: 0% 2% 0% 2%;
+        margin: 2% auto 0% auto;
+        display: block;
+    }
+    input.input-field-detail{
+        width: 50%;
+        height: 60px;
+        border: 1px solid #979797;
+        border-radius: 3px;
+        box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+        padding: 0% 2% 0% 2%;
+        margin: 2% auto 0% auto;
+        display: block;
+    }
+    .space-small-v{
+        margin: 30px 0px;
+    }
+    hr{
+        background: black;
+    }
+    .line-padding{
+        padding: 0% 30%;
+    }
+    textarea.width-box{
+        width: 50%;
+        height: 150px;
+        border: 1px solid #979797;
+        border-radius: 3px;
+        box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+        padding: 2% 2% 0% 2%;
+        margin: 5% auto 0% auto;
+        display: block;
     }
 }
 

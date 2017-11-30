@@ -7,15 +7,15 @@
 	{% include "shared/_app_css.html" %}
 </head>
 <body class = "admin-body">
-	<div class = "d-flex admin-layout">
-		<div class = "col-2 padding-zero">
-			{% include "shared/_navbar_admin.html" %}
-		</div>
-		<div class = "col-10 padding-zero">
-			{% block content %}{% endblock %}
-		</div>
+	<div class = "row admin-layout">
+			<div class = "col-2 padding-zero">
+				{% include "shared/_navbar_admin.html" %}
+			</div>
+			<div class = "col-10 padding-zero">
+				{% block content %}{% endblock %}
+			</div>
 	</div>
+	{% include "shared/_footer.html" %}
 </body>
-{% include "shared/_footer.html" %}
 {% include "shared/_app_js.html" %}
 </html>
