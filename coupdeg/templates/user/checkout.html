@@ -87,7 +87,8 @@
                                         </form>       
                                     </span>
                                     <input type="text" name="quant[0]" class="form-control input-number btn-quantity-number" value="{{ item.quantity }}" min="0" max="15">
-                                    <span class="input-group-btn">                                            
+                                    <span class="input-group-btn">
+                                        {% if item.quantity < item.product.stock %}                                            
                                         <form action="{% url 'update_from_cart' item.product.id %}" method="post" enctype="multipart/form-data" >
                                             {% csrf_token %}
                                             <input type="text" value="+" name="type" hidden>                                            
@@ -95,6 +96,7 @@
                                                 <span>+</span>
                                             </button>
                                         </form>
+                                        {% endif %}
                                     </span>
                                 </div>    
                             </div>
