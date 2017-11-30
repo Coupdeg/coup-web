@@ -129,3 +129,6 @@ class Payment(models.Model):
 	history = models.ForeignKey(History, on_delete=models.CASCADE)
 	product = models.ForeignKey(Product)
 	quantity = models.PositiveIntegerField(verbose_name=_('quantity'))
+
+	def __str__(self):
+		return 'ID : %s -> Product : %s -> Quantity : %s' % (self.id, self.product, self.quantity)
