@@ -1,7 +1,7 @@
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from .models import User, Product, History, Payment
+from .models import User, Product, History, Payment, Image
 from .cart import Cart
 from django.utils import timezone
 from passlib.hash import django_pbkdf2_sha256 as handler
@@ -136,6 +136,7 @@ def checkout(request):
 	if request.method == 'POST':
 		cart = Cart(request)
 		user = User.objects.get(email = request.session['email'])
+		image = request.FILES.get('image_payment', False)
 		now = timezone.now()
 		history = History(user=user, date=now)
 		history.save()
@@ -145,6 +146,6 @@ def checkout(request):
 			payment = Payment(history=history, product=product, quantity=quantity)
 			payment.save()
 		cart.clear()
-		return HttpResponse('Success')
-	else :
-		return render(request, 'user/checkout.html')
+		image = Image(image=image, image_types=2, type_id=history.id, role=0)
+		image.save()
+	return render(request, 'user/checkout.html')

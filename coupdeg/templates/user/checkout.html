@@ -145,9 +145,9 @@
                     <div class = "text-head">
                         <b>Payment</b> Info
                     </div>
-                    <form action="{% url 'checkout' %}" method="post">
+                    <form action="{% url 'checkout' %}" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
-                        <input type="file">
+                        <input type="file" name="image_payment">
                         <div class = "row-btn d-flex justify-content-between">
                                 <button id = "btn-back-to-second" type="button" class="btn btn-default btn-back">&lt; back</button>    
                                 <button type="submit" class="btn btn-default btn-next">FINISH</button>    
