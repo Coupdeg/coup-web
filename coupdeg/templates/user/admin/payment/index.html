@@ -1,0 +1,26 @@
+{% extends "../../../layout/admin.html" %}
+{% block content %}
+<a href="/">back</a>
+<div>
+	<a href="/admin">back to admin</a>
+</div>
+<div>
+	<div>
+		unconfirm
+	</div>
+	{% for item in unconfirm %}
+		<div>
+			<a href="/admin/confirm/{{ item.id }}">{{ item.user.email }} {{ item.date }}</a>
+		</div>
+	{% endfor %}
+	<div>
+		confirm
+		{% for item in confirm %}
+		<div>
+			<a href="/admin/confirm/{{ item.id }}">{{ item.user.email }} {{ item.date }}</a>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+{% endblock %}

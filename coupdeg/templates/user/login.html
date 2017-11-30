@@ -20,8 +20,8 @@
 					<a class="btn button-submit" href="/user/register">Register</a>
 				</div>
 				<div class="line-border"></div>
-				<div class="login-by group-button">Login by</div>
-				<div class="group-button">
+				{% comment %} <div class="login-by group-button">Login by</div> {% endcomment %}
+				{% comment %} <div class="group-button">
 						{% load static %}
 						<a class="btn button-submit">
 							<img src='{% static "images/login/facebook.png" %}' href="#">
@@ -35,7 +35,7 @@
 							<img src='{% static "images/login/twitter.png" %}' href="#">														
 							Twitter
 						</a>					
-				</div>
+				</div> {% endcomment %}
 			</form>
 		</div>
 	</div>

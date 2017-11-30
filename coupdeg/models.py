@@ -21,6 +21,7 @@ class User(models.Model):
 	state = models.CharField(max_length=50)
 	country = models.CharField(max_length=50)
 	zip_code = models.CharField(max_length=50)
+	phone = models.CharField(max_length=20, default=0)
 	role = models.CharField(max_length=1, choices=types, default=0)
 	def __str__(self):
 		return 'ID : %s -> Email : %s' % (self.id, self.email)
@@ -44,7 +45,8 @@ class Product(models.Model):
 class Image(models.Model):
 	types = (
 		('0', 'user'),
-		('1', 'product')
+		('1', 'product'),
+		('2', 'history')
 	)
 	types_role = (
 		('0', 'main image'),
@@ -60,11 +62,11 @@ class Image(models.Model):
 
 class History(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
-	product = models.ForeignKey(Product)
 	date = models.DateTimeField('date published',null=True)
+	admin_confirm = models.BooleanField(default=False)
 
 	def __str__(self):
-		return 'User : %s -> Product : %s -> Date : %s' % (self.user.email, self.product.name, self.date)
+		return 'User : %s -> Date : %s' % (self.user.email, self.date)
 
 	def was_published_recently(self):
 		now = timezone.now()
@@ -122,3 +124,11 @@ class Item(models.Model):
 		self.object_id = product.pk
 	
 	product = property(get_product, set_product)
+
+class Payment(models.Model):
+	history = models.ForeignKey(History, on_delete=models.CASCADE)
+	product = models.ForeignKey(Product)
+	quantity = models.PositiveIntegerField(verbose_name=_('quantity'))
+
+	def __str__(self):
+		return 'ID : %s -> Product : %s -> Quantity : %s' % (self.id, self.product, self.quantity)
