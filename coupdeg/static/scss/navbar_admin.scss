@@ -6,8 +6,17 @@ $filler: #E74C3C;
 .admin-body {
     margin: 0;
     background: white;
+    font-family: 'News Cycle', sans-serif;
     .admin-layout{
         height: 100%
+    }
+    .text-title{
+        margin-top: 2rem;
+    }
+    .position-center{
+        text-align: center;
+        align-items: center;
+        justify-content: center;
     }
     .padding-zero{
         padding: 0px 0px;
