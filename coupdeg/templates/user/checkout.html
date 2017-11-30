@@ -55,15 +55,17 @@
                                     <img class = "checkout-images-product" src="{{ item.product.id|index_of_image_url }}">
                                 </div>
                                 <div class = "col-8 checkout-detail">
-                                    <div class = "d-flex detail-space-vertical">
+                                    <div class = "d-flex detail-space-vertical ">
+                                        <div class = "text-product-main detail-space-herizontal-main">
                                         {{ item.product.name }}
+                                        </div>
                                     </div>
                                     <div class = "d-flex  detail-space-vertical">
                                         <div class = "d-flex checkout-details-size detail-space-herizontal-main">
-                                            <div class = "detail-space-herizontal-sub">
+                                            <div class = "detail-space-herizontal-sub text-product-detail">
                                                 SIZE :
                                             </div>
-                                            <div class = "detail-space-herizontal-sub">
+                                            <div class = "detail-space-herizontal-sub text-product-detail">
                                                 M
                                             </div> 
                                         </div>
