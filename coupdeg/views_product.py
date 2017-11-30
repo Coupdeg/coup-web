@@ -66,3 +66,22 @@ def update_from_cart(request, product_id):
 		quantity = cart.get_quantity_item(product) - 1
 	cart.update(product, quantity)
 	return redirect(request.META['HTTP_REFERER'])
+
+def search(request):
+	type_number = 1
+	name = request.POST.get('search_input')
+	products = Product.objects.filter(name__contains=name)
+	paginator = Paginator(products, 12)
+	page = request.GET.get('page')
+	try:
+			products = paginator.page(page)
+	except PageNotAnInteger:
+			products = paginator.page(1)
+	except EmptyPage:
+			products = paginator.page(paginator.num_pages)
+	context = {
+		'products': products,
+		'product_types': type_number-1
+	}
+	return render(request, 'product/index.html', context)
+ 
