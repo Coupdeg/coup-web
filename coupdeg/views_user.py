@@ -125,11 +125,14 @@ def history(request):
 			user_id = User.objects.filter(email = request.session['email'])
 			user = get_object_or_404(User, pk=user_id[0].id)
 			history = History.objects.filter(user = user)
-			for h in history:
-				payment = Payment.objects.filter(history = h)
+			payment = []
+			for h in history :
+				payment.append(Payment.objects.filter(history=h))
+
 			context = {
 				'payment': payment,
 			}	
+			print(payment[0])
 			return render(request, 'user/history.html', context)
 		else :
 			return redirect('/user/login')
