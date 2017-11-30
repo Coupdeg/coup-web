@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^product/edit/(?P<product_id>[0-9]+)', views.edit_product, name="edit-product"),                        
     url(r'^product/', views.product, name="admin-product"),
     url(r'^payment/', views.payment, name="admin-payment"),    
+    url(r'^confirm/(?P<history_id>[0-9]+)', views.confirm, name="admin-confirm"),        
 ]
 
 if settings.DEBUG:

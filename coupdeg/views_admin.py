@@ -64,3 +64,17 @@ def payment(request):
 		'history' : history
 	}
 	return render(request, 'user/admin/payment/index.html', context)
+
+def confirm(request, history_id):
+	history = get_object_or_404(History, pk=history_id)
+	if request.method == 'POST':
+		confirm = request.POST.get('confirm_payment', False)
+		if confirm == 'on':
+			history.admin_confirm = True
+		else:
+			history.admin_confirm = False
+		history.save()
+	context = {
+		'history' : history
+	}
+	return render(request, 'user/admin/payment/confirm.html', context)

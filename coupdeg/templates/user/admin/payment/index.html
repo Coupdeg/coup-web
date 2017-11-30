@@ -10,7 +10,7 @@
 	</div>
 	{% for item in history %}
 		<div>
-			<a href="">{{ item.user.email }} {{ item.date }}</a>
+			<a href="/admin/confirm/{{ item.id }}">{{ item.user.email }} {{ item.date }}</a>
 		</div>
 	{% endfor %}
 	<div>

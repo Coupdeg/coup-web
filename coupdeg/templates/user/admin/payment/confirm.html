@@ -1,0 +1,18 @@
+{% extends "../../../layout/admin.html" %}
+{% block content %}
+<a href="/">back</a>
+<div>
+	<a href="/admin">back to admin</a>
+</div>
+<div class="text-center">
+	{{ history }}
+	<form action="{% url 'admin-confirm' history.id %}" method="post">
+		{% csrf_token %}
+		<div>Confirm <input type="checkbox" name="confirm_payment"></div>
+		<div>
+			<input type="submit" name="" >
+		</div>
+	</form>
+</div>
+
+{% endblock %}
