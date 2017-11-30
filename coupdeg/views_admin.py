@@ -59,9 +59,11 @@ def product(request):
 	return render(request, 'user/admin/product/index.html')
 
 def payment(request):
-	history = History.objects.filter(admin_confirm = False)
+	unconfirm = History.objects.filter(admin_confirm = False)
+	confirm = History.objects.filter(admin_confirm = True)
 	context = {
-		'history' : history
+		'unconfirm' : unconfirm,
+		'confirm' : confirm
 	}
 	return render(request, 'user/admin/payment/index.html', context)
 

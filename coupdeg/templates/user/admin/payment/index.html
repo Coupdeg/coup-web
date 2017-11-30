@@ -8,13 +8,18 @@
 	<div>
 		unconfirm
 	</div>
-	{% for item in history %}
+	{% for item in unconfirm %}
 		<div>
 			<a href="/admin/confirm/{{ item.id }}">{{ item.user.email }} {{ item.date }}</a>
 		</div>
 	{% endfor %}
 	<div>
 		confirm
+		{% for item in confirm %}
+		<div>
+			<a href="/admin/confirm/{{ item.id }}">{{ item.user.email }} {{ item.date }}</a>
+		</div>
+		{% endfor %}
 	</div>
 </div>
 
