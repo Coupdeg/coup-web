@@ -1,11 +1,15 @@
-<div class="wrap">
+<a class="col-4 text-center navbar-menu navbar-color-text i-search" href="#" id="search-button">
+		<i class="fa fa-search" aria-hidden="true"></i>			
+</a>
+<div class="wrap" id="search-input">
 	<div class="search">
 		<form action="{% url 'search' %}" method="post">
 			{% csrf_token %}
 			<input type="text" class="searchTerm" placeholder="Search" name="search_input">
-			<button type="submit" class="searchButton">
+			<button type="button" class="searchButton" id="close-search">
 			 <i class="fa fa-arrow-left" aria-hidden="true"></i>
 			</button>
+			<input type="submit" hidden>
 		</form>
 	</div>
 </div>
