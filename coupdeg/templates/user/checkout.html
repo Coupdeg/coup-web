@@ -148,15 +148,13 @@
                         <b>Payment</b> Info
                     </div>
                     <div class = "padding-info">
-                        <div class="input-group">
-                            <span class="input-group-btn">
-                                <span class="btn btn-default btn-file">
-                                    Browse… <input type="file" id="imgInp">
-                                </span>
-                            </span>
-                            <input type="text" class="form-control" readonly>
-                        </div>
-                        <img id='img-upload'/>
+                        <div class = "positioning-center d-flex flex-column">
+                            <img class = "product-image padding-bottom-image" id="product-image" src="{{ image.image.url }}" alt="">			
+                            <label for="image-upload" class="custom-file-upload">
+                                <i class="fa fa-cloud-upload"></i>Upload slip image 
+                            </label>
+                            <input class = "btn btn-next slip-upload" type="file" name="image" id="image-upload">
+                        </div>                            
                     </div>
                     <div class = "row-btn d-flex justify-content-between">
                             <button id = "btn-back-to-second" type="button" class="btn btn-default btn-back">&lt; back</button>    
