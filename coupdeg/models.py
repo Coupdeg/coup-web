@@ -44,7 +44,8 @@ class Product(models.Model):
 class Image(models.Model):
 	types = (
 		('0', 'user'),
-		('1', 'product')
+		('1', 'product'),
+		('2', 'history')
 	)
 	types_role = (
 		('0', 'main image'),
@@ -62,6 +63,7 @@ class History(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
 	product = models.ForeignKey(Product)
 	date = models.DateTimeField('date published',null=True)
+	admin_confirm = models.BooleanField(default=False)
 
 	def __str__(self):
 		return 'User : %s -> Product : %s -> Date : %s' % (self.user.email, self.product.name, self.date)

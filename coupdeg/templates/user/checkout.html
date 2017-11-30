@@ -145,7 +145,7 @@
                     <div class = "text-head">
                         <b>Payment</b> Info
                     </div>
-                    <div class = "padding-info">
+                    {% comment %} <div class = "padding-info">
                         <input type="cardnumber" class="form-control input-style" id="" placeholder="Card Number">
                         <input type="cardholder" class="form-control input-style" id="" placeholder="Cardholder Name">
                         <div class = "d-flex align-items-center">
@@ -162,7 +162,8 @@
                                 <input type="cvv" class="form-control input-style-sub" id="" placeholder="CVV">    
                             </div>
                         </div>
-                    </div>
+                    </div> {% endcomment %}
+                    <input type="file">
                     <div class = "row-btn d-flex justify-content-between">
                             <button id = "btn-back-to-second" type="button" class="btn btn-default btn-back">&lt; back</button>    
                             <button type="button" class="btn btn-default btn-next">FINISH</button>    
