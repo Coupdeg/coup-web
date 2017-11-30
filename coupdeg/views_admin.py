@@ -68,6 +68,7 @@ def payment(request):
 	return render(request, 'user/admin/payment/index.html', context)
 
 def confirm(request, history_id):
+	image = Image.objects.get(image_types = 2, type_id = history_id)
 	history = get_object_or_404(History, pk=history_id)
 	if request.method == 'POST':
 		confirm = request.POST.get('confirm_payment', False)
@@ -77,6 +78,7 @@ def confirm(request, history_id):
 			history.admin_confirm = False
 		history.save()
 	context = {
-		'history' : history
+		'history' : history,
+		'image' : image
 	}
 	return render(request, 'user/admin/payment/confirm.html', context)
