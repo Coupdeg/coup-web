@@ -72,4 +72,8 @@ def get_user(email):
 @register.filter
 def get_price_history(quantity, price):
     return quantity*price
-                
+
+@register.filter
+def get_cart_size(cart):
+    return cart.count()
+                                

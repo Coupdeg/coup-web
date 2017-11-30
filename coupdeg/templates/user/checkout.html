@@ -29,7 +29,7 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-panel checkout-shopping-cart fade show active" id="shopping_cart" >
                     <div class = "number-items">You have 
-                        <b>n items</b> 
+                        <b>{{ request|cart|get_cart_size }} items</b> 
                         in your cart.
                     </div>
                     <div class = "title-columns d-flex positioning-center padding-content">
