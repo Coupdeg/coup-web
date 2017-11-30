@@ -39,8 +39,9 @@ class Product(models.Model):
 	details = models.CharField(max_length=150)
 	product_types = models.CharField(max_length=1, choices=types)
 	price = models.IntegerField()
+	stock = models.PositiveIntegerField(default=0)
 	def __str__(self):
-		return 'ID : %s -> Name : %s' % (self.id, self.name)
+		return 'ID : %s -> Name : %s -> Stock : %s' % (self.id, self.name, self.stock)
 
 class Image(models.Model):
 	types = (
