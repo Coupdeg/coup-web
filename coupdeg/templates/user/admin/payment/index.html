@@ -1,25 +1,35 @@
 {% extends "../../../layout/admin.html" %}
 {% block content %}
-<a href="/">back</a>
-<div>
-	<a href="/admin">back to admin</a>
-</div>
-<div>
-	<div>
-		unconfirm
+<div class = "payment-main">
+	<div class = "position-center text-title">
+		<h1>Payment</h1>
 	</div>
-	{% for item in unconfirm %}
-		<div>
-			<a href="/admin/confirm/{{ item.id }}">{{ item.user.email }} {{ item.date }}</a>
+	<div class = "d-flex d-flex justify-content-between row-back-to-product">
+		<a href="/admin/product">back to admin</a>
+	</div>
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-6 content-border">
+				<h3 class = "underline">
+					Unconfirm
+				</h3>
+				{% for item in unconfirm %}
+					<div>
+						<a href="/admin/confirm/{{ item.id }}">{{ item.user.email }} {{ item.date }}</a>
+					</div>
+				{% endfor %}
+			</div>
+			<div class = "col-6 content-border">
+				<h3 class = "underline">
+					Confirm
+				</h3>
+				{% for item in confirm %}
+					<div>
+						<a href="/admin/confirm/{{ item.id }}">{{ item.user.email }} {{ item.date }}</a>
+					</div>
+				{% endfor %}
+			</div>
 		</div>
-	{% endfor %}
-	<div>
-		confirm
-		{% for item in confirm %}
-		<div>
-			<a href="/admin/confirm/{{ item.id }}">{{ item.user.email }} {{ item.date }}</a>
-		</div>
-		{% endfor %}
 	</div>
 </div>
 

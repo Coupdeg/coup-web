@@ -258,6 +258,17 @@ $filler: #E74C3C;
     .row-back-to-product{
         margin: 15px;
     }
-    
+    .payment-main{
+        
+        .content-border{
+            border: 1px solid #737373;
+            border-radius: 10px;
+            min-height: 500px;
+            padding: 20px;
+        }
+        .underline{
+            text-decoration: underline;
+        }
+    }
 }
 
