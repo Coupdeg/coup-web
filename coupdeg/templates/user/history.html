@@ -16,7 +16,8 @@
 		</thead>
 		<tbody>
 		  <tr>
-		  {% for p in payment %}
+			{% for set in payment %}
+		  {% for p in set %}
 		  <th scope="row">
 				<div class = "d-flex">
 					<div>
@@ -58,7 +59,8 @@
 				</div>
 			</td>
 		  </tr>
-		  {% endfor %}
+			{% endfor %}
+			{% endfor %}
 		</tbody>
 	  </table>
 </div>
