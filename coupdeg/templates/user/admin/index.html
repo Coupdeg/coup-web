@@ -4,8 +4,41 @@
 	<div class = "position-center text-title">
 		<h1>Hello Admin</h1>
 	</div>
-</div>
-<div>
-	<a href="/admin/payment">payment</a>
+	<div class = "padding-content d-flex flex-column align-items-center">
+		<div class = "d-flex justify-content-around width-full-page space-above-content">
+			<a href="/admin/product/add">
+				<button type="button" class="btn btn-light btn-border btn-product-size">
+					<div class = "d-flex flex-column postion-center">
+						<i class="fa fa-shopping-bag fa-5x" aria-hidden="true"></i> 
+						<div>
+							Manage product
+						</div>
+					</div>
+				</button>
+			</a>
+			<a href="/admin/product/delete">
+				<button type="button" class="btn btn-light btn-border btn-product-size">
+					<div class = "d-flex flex-column postion-center">
+						<i class="fa fa fa-address-card-o fa-5x" aria-hidden="true"></i> 
+						<div>
+							Manage User
+						</div>
+					</div>
+				</button>
+			</a>
+		</div>
+		<div class = "d-flex justify-content-around width-full-page space-above-content">
+			<a href="/admin/product/show">
+				<button type="button" class="btn btn-light btn-border btn-product-size">
+					<div class = "d-flex flex-column postion-center">
+						<i class="fa fa-usd fa-5x" aria-hidden="true"></i> 
+						<div>
+							Payment
+						</div>
+					</div>
+				</button>
+			</a>
+		</div>
+	</div>
 </div>
 {% endblock %}
