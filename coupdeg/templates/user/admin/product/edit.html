@@ -43,7 +43,9 @@
 	<div class = "position-center text-title">
 		<h1>Edit Product</h1>
 	</div>
-	<a href="/admin/product">back to product</a>
+	<div class = "d-flex d-flex justify-content-between row-back-to-product">
+		<a href="/admin/product">back to product</a>
+	</div>
 	<!-- {{ product }} -->
 	<form action="{% url 'edit-product' product.id %}" method="post" enctype="multipart/form-data">
 		{% csrf_token %}

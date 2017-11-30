@@ -15,7 +15,7 @@ $filler: #E74C3C;
         background: rgba(128, 128, 128, 0.363);
     }
     .bottom-btn-margin-top{
-        margin-top: 7rem;
+        margin-top: 5rem;
         margin-bottom: 4rem;
     }
     .btn-summit-add-product{
@@ -226,15 +226,15 @@ $filler: #E74C3C;
     //         margin-right: 0px !important;
     //     }
     // }
-    // .delete-product{
-    //     .container{
-    //         margin-left: 0px !important;
-    //         margin-right: 0px !important;
-    //     }
-    //     .btn-danger{
-    //         margin-right: 30px;
-    //     }
-    // }
+    .delete-product{
+        // .container{
+        //     margin-left: 0px !important;
+        //     margin-right: 0px !important;
+        // }
+        .btn-danger{
+            margin-right: 30px;
+        }
+    }
     .product-checkbox{
         img{
             object-fit: cover;
@@ -255,7 +255,9 @@ $filler: #E74C3C;
         display: none;
         }
     }
-
+    .row-back-to-product{
+        margin: 15px;
+    }
     
 }
 

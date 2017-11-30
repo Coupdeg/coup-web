@@ -6,11 +6,10 @@
 	<div class = "position-center text-title">
 		<h1>Delete Product</h1>
 	</div>
-	<div class = "d-flex d-flex justify-content-between">
-	<a href="/admin/product">back to product</a>
-	<input type="submit" name="" value="delete" class="btn btn-danger">
+	<div class = "d-flex d-flex justify-content-between row-back-to-product">
+		<a href="/admin/product">back to product</a>
+		<input type="submit" name="" value="delete" class="btn btn-danger">
 	</div>
-
 	<form action="{% url 'delete-product' %}" method="post" enctype="multipart/form-data">
 		{% csrf_token %}
 		<div class = "container">
@@ -18,7 +17,7 @@
 				{% for product in products %}
 				<div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3">
 					<div class = "product-checkbox">
-						<label class=""><input type="checkbox" name="product" value='{{ product.id }}'>{{ product }}
+						<label class=""><input type="checkbox" name="product" value='{{ product.id }}'>
 						<img class = "img-responsive image-product" src='{{ product.id|index_of_image_url }}'>
 						<h5 class = "text-center space-extra-small-h">{{ product.name }}.</h5>
 					</label>		
