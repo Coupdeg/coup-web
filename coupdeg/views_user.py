@@ -125,7 +125,8 @@ def history(request):
 			user_id = User.objects.filter(email = request.session['email'])
 			user = get_object_or_404(User, pk=user_id[0].id)
 			history = History.objects.filter(user = user)
-			payment = Payment.objects.filter(history = history)
+			for h in history:
+				payment = Payment.objects.filter(history = h)
 			context = {
 				'payment': payment,
 			}	
@@ -137,7 +138,7 @@ def checkout(request):
 	if request.method == 'POST':
 		cart = Cart(request)
 		user = User.objects.get(email = request.session['email'])
-		image = request.FILES.get('image_payment', False)
+		image = request.FILES.get('image-payment', False)
 		now = timezone.now()
 		history = History(user=user, date=now)
 		history.save()
