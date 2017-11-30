@@ -74,6 +74,11 @@ def confirm(request, history_id):
 		confirm = request.POST.get('confirm_payment', False)
 		if confirm == 'on':
 			history.admin_confirm = True
+			payment = Payment.objects.filter(history=history)
+			for p in payment:
+				product = get_object_or_404(Product, pk = p.product.id)
+				product.stock = product.stock - p.quantity
+				product.save()
 		else:
 			history.admin_confirm = False
 		history.save()
