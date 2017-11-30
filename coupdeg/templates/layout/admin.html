@@ -4,11 +4,14 @@
 	{% include "shared/_head.html" %}
 	{% include "shared/_tools.html" %}
 	{% include "shared/_fonts.html" %}
+	{% include "shared/_app_css.html" %}
 </head>
 <body>
+	{% include "shared/_navbar_admin.html" %}
 	<div class = "content">
 		{% block content %}{% endblock %}
-	</div>    			
+	</div>
+	{% include "shared/_footer.html" %}
 	{% include "shared/_app_js.html" %}
 </body>
 </html>
