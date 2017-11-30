@@ -1,16 +1,24 @@
 {% extends "../../../layout/admin.html" %}
 {% block content %}
-<div>
+{% load helper %}
+{% load static %}
+<div class = "show-product">
 	<div class = "position-center text-title">
 		<h1>All Product</h1>
 	</div>
 	<a href="/admin/product">back to product</a>
-	{% for product in products %}
-	<div>
-		<a href="/admin/product/edit/{{ product.id }}">{{ product.image }}
-			<img class = "product-image padding-bottom-image" id="product-image" src="{{ image.image.url }}" alt="">
-		</a>
+	
+	<div class = "container">
+		<div class = "row">
+		{% for product in products %}
+			<div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3">
+				<a class = "product-card-container" href="/admin/product/edit/{{ product.id }}">
+					<img class = "img-responsive image-product" src='{{ product.id|index_of_image_url }}'>
+					<h4 class = "text-center space-extra-small-h">{{ product.name }}.</h4>	
+				</a>
+			</div>
+		{% endfor %}
+		</div>
 	</div>
 </div>
-{% endfor %}
 {% endblock %}
