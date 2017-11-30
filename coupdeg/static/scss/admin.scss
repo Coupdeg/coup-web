@@ -94,8 +94,12 @@ $filler: #E74C3C;
         margin-top: 4rem;
     }
     .product-image{
-        max-width: 500px;
-        max-height: 500px;
+        max-width: 450px;
+        max-height: 450px;
+    }
+    .product-image-sub{
+        max-width: 150px;
+        max-height: 150px;
     }
     input[type="file"] {
         display: none;
