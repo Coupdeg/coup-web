@@ -11,7 +11,8 @@ $filler: #E74C3C;
         height: 100%
     }
     .text-title{
-        margin: 4rem 0rem;
+        padding: 4rem 0rem;
+        background: rgba(128, 128, 128, 0.363);
     }
     .position-center{
         text-align: center;
@@ -75,6 +76,22 @@ $filler: #E74C3C;
     }
     .product-main{
         
+    }
+    .width-full-page{
+        width: 100%;
+    }
+    .btn-border{
+        border: 1px solid rgba(0, 0, 0, 0.192);
+    }
+    .btn-product-size{
+        height: 15rem;
+        width: 15rem;
+    }
+    .full-page{
+        height: 100%
+    }
+    .space-above-content{
+        margin-top: 4rem;
     }
 }
 
