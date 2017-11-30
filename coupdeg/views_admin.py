@@ -52,7 +52,8 @@ def edit_product(request, product_id):
 		product.price = request.POST.get('price', False)
 		product.stock = request.POST.get('stock', False)
 		product.save()
-		image.save()
+		if request.FILES.get('image', False) != False :
+			image.save() 
 	return render(request, 'user/admin/product/edit.html', { 'product': product, 'image':image })
 
 
