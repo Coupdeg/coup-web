@@ -44,7 +44,7 @@
 		<h1>Edit Product</h1>
 	</div>
 	<a href="/admin/product">back to product</a>
-	{{ product }}
+	<!-- {{ product }} -->
 	<form action="{% url 'edit-product' product.id %}" method="post" enctype="multipart/form-data">
 		{% csrf_token %}
 		<div class = "position-center padding-type ">
@@ -99,12 +99,16 @@
 						<hr>
 					</div>
 					<input class="input-field" type="text" placeholder="Product price*" name="price" value="{{ product.price }}">
+					<div class = "line-padding space-small-v">
+							<hr>
+						</div>
+					<input class="input-field" type="text" placeholder="Product stocks*" name="stock" value="{{ product.stock }}">
 				</div>
 				<textarea class="width-box space-small-v" placeholder="Product detail*" cols="30" rows="3" name="details">{{ product.details }}</textarea>
 			</div>
 		</div>
 		<div class = "position-center bottom-btn-margin-top">
-			<input type="submit" class="btn btn-primary btn-summit-add-product">
+			<input type="submit" class="btn btn-primary btn-summit-add-product" onclick="location.href='/admin/product/show';">
 		</div>
 	</form>
 </div>
