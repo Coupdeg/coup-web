@@ -67,8 +67,12 @@ def register(request):
 		zip_code = request.POST['zip']
 		if zip_code == '':
 			error.append('zip_code')
+		phone = request.POST['phone']
+		if phone == '':
+			error.append('phone')
 		user = User(email=email, password=password,first_name=first_name, last_name=last_name,
-								address=address, city=city, state=state, country=country, zip_code=zip_code)
+								address=address, city=city, state=state, country=country, zip_code=zip_code,
+								phone=phone)
 		if error:
 			context = {
 				'error': error,
@@ -79,7 +83,8 @@ def register(request):
 				'city': city or None,
 				'state': state or None,
 				'country': country or None,
-				'zip_code': zip_code or None
+				'zip_code': zip_code or None,
+				'phone': phone or None
 			}	
 			return render(request, 'user/register.html', context) 
 		else:
@@ -103,6 +108,7 @@ def user(request):
 			user.state = request.POST['state']
 			user.country = request.POST['country']
 			user.zip_code = request.POST['zip']
+			user.phone = request.POST['phone']
 			user.save()
 
 		return render(request, 'user/profile.html', context)
