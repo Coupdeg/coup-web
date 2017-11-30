@@ -62,7 +62,6 @@ class Image(models.Model):
 
 class History(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
-	product = models.ForeignKey(Product)
 	date = models.DateTimeField('date published',null=True)
 	admin_confirm = models.BooleanField(default=False)
 
@@ -125,3 +124,8 @@ class Item(models.Model):
 		self.object_id = product.pk
 	
 	product = property(get_product, set_product)
+
+class Payment(models.Model):
+	history = models.ForeignKey(History, on_delete=models.CASCADE)
+	product = models.ForeignKey(Product)
+	quantity = models.PositiveIntegerField(verbose_name=_('quantity'))

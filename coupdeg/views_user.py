@@ -136,4 +136,9 @@ def history(request):
 			return redirect('/user/login')
 
 def checkout(request):
+	cart = Cart(request)
+	user = User.objects.get(email = request.session['email'])
+	# for  item in cart:
+	# 	product = Product.objects.get()
+	
 	return render(request, 'user/checkout.html')
