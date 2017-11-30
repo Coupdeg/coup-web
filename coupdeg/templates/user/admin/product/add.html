@@ -1,9 +1,7 @@
 {% extends "../../../layout/admin.html" %}
 {% block content %}
-<a href="/">back</a>
-<a href="/admin/product">back to product</a>
-<div class="text-center">
-	<form action="{% url 'add-product' %}" method="post" enctype="multipart/form-data">
+<div class="">
+	<!-- <form action="{% url 'add-product' %}" method="post" enctype="multipart/form-data">
 		{% csrf_token %}			
 		<input type="file" name="image">			
 		<div>
@@ -30,6 +28,16 @@
 			<input type="text" name="price">
 		</div>
 		<input type="submit" class="btn btn-primary">
-	</form>
+	</form> -->
+	<div class = "position-center text-title">
+		<h1>Add Product</h1>
+	</div>
+	<a href="/admin/product">back to product</a>
+	<div class = "col-6">
+
+	</div>
+	<div class = "col-6">
+			
+	</div>
 </div>
 {% endblock %}
