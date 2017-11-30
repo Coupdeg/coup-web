@@ -1,9 +1,8 @@
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from .models import User
-from .models import Product
-from .models import History
+from .models import User, Product, History, Payment, Image
+from .cart import Cart
 from django.utils import timezone
 from passlib.hash import django_pbkdf2_sha256 as handler
 
@@ -67,8 +66,12 @@ def register(request):
 		zip_code = request.POST['zip']
 		if zip_code == '':
 			error.append('zip_code')
+		phone = request.POST['phone']
+		if phone == '':
+			error.append('phone')
 		user = User(email=email, password=password,first_name=first_name, last_name=last_name,
-								address=address, city=city, state=state, country=country, zip_code=zip_code)
+								address=address, city=city, state=state, country=country, zip_code=zip_code,
+								phone=phone)
 		if error:
 			context = {
 				'error': error,
@@ -79,7 +82,8 @@ def register(request):
 				'city': city or None,
 				'state': state or None,
 				'country': country or None,
-				'zip_code': zip_code or None
+				'zip_code': zip_code or None,
+				'phone': phone or None
 			}	
 			return render(request, 'user/register.html', context) 
 		else:
@@ -103,6 +107,7 @@ def user(request):
 			user.state = request.POST['state']
 			user.country = request.POST['country']
 			user.zip_code = request.POST['zip']
+			user.phone = request.POST['phone']
 			user.save()
 
 		return render(request, 'user/profile.html', context)
@@ -111,10 +116,8 @@ def history(request):
 	if request.method == 'POST':
 		user_id = User.objects.filter(email = request.POST['email'])
 		user = get_object_or_404(User, pk=user_id[0].id)		
-		product_id = request.POST['product_id']
-		product = get_object_or_404(Product, pk=product_id)
 		now = timezone.now()
-		history = History(user=user, product= product, date=now)
+		history = History(user=user, date=now)
 		history.save()
 		return redirect('/product/'+product_id)
 	else:
@@ -122,12 +125,28 @@ def history(request):
 			user_id = User.objects.filter(email = request.session['email'])
 			user = get_object_or_404(User, pk=user_id[0].id)
 			history = History.objects.filter(user = user)
+			payment = Payment.objects.filter(history = history)
 			context = {
-				'history': history
+				'payment': payment,
 			}	
 			return render(request, 'user/history.html', context)
 		else :
 			return redirect('/user/login')
 
 def checkout(request):
+	if request.method == 'POST':
+		cart = Cart(request)
+		user = User.objects.get(email = request.session['email'])
+		image = request.FILES.get('image_payment', False)
+		now = timezone.now()
+		history = History(user=user, date=now)
+		history.save()
+		for item in cart:
+			product = Product.objects.get(name = item.product.name)
+			quantity = item.quantity
+			payment = Payment(history=history, product=product, quantity=quantity)
+			payment.save()
+		cart.clear()
+		image = Image(image=image, image_types=2, type_id=history.id, role=0)
+		image.save()
 	return render(request, 'user/checkout.html')
