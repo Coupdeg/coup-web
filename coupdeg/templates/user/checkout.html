@@ -147,6 +147,20 @@
                     <div class = "text-head">
                         <b>Payment</b> Info
                     </div>
+                    <div class = "padding-info">
+                        <div class = "positioning-center d-flex flex-column">
+                            <img class = "product-image padding-bottom-image" id="product-image" src="{{ image.image.url }}" alt="">			
+                            <label for="image-upload" class="custom-file-upload">
+                                Upload slip image 
+                            </label>
+                            <input class = "btn btn-next slip-upload" type="file" name="image" id="image-upload">
+                        </div>                            
+                    </div>
+                    <div class = "row-btn d-flex justify-content-between">
+                            <button id = "btn-back-to-second" type="button" class="btn btn-default btn-back">&lt; back</button>    
+                            <button type="button" class="btn btn-default btn-next">FINISH</button>    
+                    </div>
+                    </div>
                     <form action="{% url 'checkout' %}" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         <input type="file" name="image_payment">

@@ -95,5 +95,6 @@ $(document).ready(function() {
         $("#shopping_payment").removeClass("show active");
         $("#shopping_payment").addClass("display-none");
     });
+    $('#my-imageupload').imageupload(options);
 });
 
