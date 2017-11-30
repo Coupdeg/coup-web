@@ -1,6 +1,6 @@
 from django.http import Http404, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
-from models import Image, Product, Item, Cart
+from models import Image, Product, Item, Cart, History, Payment
 
 def index(request):
 	return render(request, 'user/admin/index.html')
@@ -57,3 +57,28 @@ def edit_product(request, product_id):
 
 def product(request):
 	return render(request, 'user/admin/product/index.html')
+
+def payment(request):
+	unconfirm = History.objects.filter(admin_confirm = False)
+	confirm = History.objects.filter(admin_confirm = True)
+	context = {
+		'unconfirm' : unconfirm,
+		'confirm' : confirm
+	}
+	return render(request, 'user/admin/payment/index.html', context)
+
+def confirm(request, history_id):
+	image = Image.objects.get(image_types = 2, type_id = history_id)
+	history = get_object_or_404(History, pk=history_id)
+	if request.method == 'POST':
+		confirm = request.POST.get('confirm_payment', False)
+		if confirm == 'on':
+			history.admin_confirm = True
+		else:
+			history.admin_confirm = False
+		history.save()
+	context = {
+		'history' : history,
+		'image' : image
+	}
+	return render(request, 'user/admin/payment/confirm.html', context)

@@ -134,7 +134,7 @@
                                 <input type="firstname" class="form-control input-style" id="" placeholder="Firstname" value="{{ user.first_name }}">
                                 <input type="lastname" class="form-control input-style" id="" placeholder="Lastname" value="{{ user.last_name }}">
                                 <input type="email" class="form-control input-style" id="" placeholder="Email" value="{{ user.email }}">
-                                <input type="phone" class="form-control input-style" id="" placeholder="Phone" >
+                                <input type="phone" class="form-control input-style" id="" placeholder="Phone" value="{{ user.phone }}">
                             </div>
                         </div>
                     </div>
@@ -148,28 +148,27 @@
                         <b>Payment</b> Info
                     </div>
                     <div class = "padding-info">
-                        <input type="cardnumber" class="form-control input-style" id="" placeholder="Card Number">
-                        <input type="cardholder" class="form-control input-style" id="" placeholder="Cardholder Name">
-                        <div class = "d-flex align-items-center">
-                            <div class = "col-3">
-                                <h3><b>EXPIRE</b></h3>
-                            </div>
-                            <div class = "col-3">
-                                <input type="month" class="form-control input-style-sub" id="" placeholder="Month">
-                            </div>
-                            <div class = "col-3">
-                                <input type="year" class="form-control input-style-sub" id="" placeholder="Year">    
-                            </div>
-                            <div class = "col-3">
-                                <input type="cvv" class="form-control input-style-sub" id="" placeholder="CVV">    
-                            </div>
-                        </div>
+                        <div class = "positioning-center d-flex flex-column">
+                            <img class = "product-image padding-bottom-image" id="product-image" src="{{ image.image.url }}" alt="">			
+                            <label for="image-upload" class="custom-file-upload">
+                                Upload slip image 
+                            </label>
+                            <input class = "btn btn-next slip-upload" type="file" name="image" id="image-upload">
+                        </div>                            
                     </div>
                     <div class = "row-btn d-flex justify-content-between">
                             <button id = "btn-back-to-second" type="button" class="btn btn-default btn-back">&lt; back</button>    
                             <button type="button" class="btn btn-default btn-next">FINISH</button>    
                     </div>
                     </div>
+                    <form action="{% url 'checkout' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="file" name="image_payment">
+                        <div class = "row-btn d-flex justify-content-between">
+                                <button id = "btn-back-to-second" type="button" class="btn btn-default btn-back">&lt; back</button>    
+                                <button type="submit" class="btn btn-default btn-next">FINISH</button>    
+                        </div>  
+                    </form>
                 </div>
             </div>
         </div>

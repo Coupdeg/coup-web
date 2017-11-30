@@ -60,7 +60,7 @@
 					<input class="sub-input-field" type="text" placeholder="State*" name="state" value="{{ state }}">
 				{% endif %}
 			</div>
-			<div class="text-center margin-divide">
+			<div class="text-center">
 				{% if "country" in error %}
 					<input class="error sub-input-field" type="text" placeholder="Country/Region*" name="country">
 				{% else %}
@@ -72,6 +72,11 @@
 					<input class="sub-input-field" type="text" placeholder="Zip/Postal Code*" name="zip" value="{{ zip_code }}">
 				{% endif %}
 			</div>
+			{% if "phone" in error %}
+				<input class="error input-field margin-divide" type="text" placeholder="Phone*" name="phone">				
+			{% else %}
+				<input class="input-field margin-divide" type="text" placeholder="Phone*" name="phone" value="{{ phone }}">				
+			{% endif %}
 			<div class="text-center margin-divide ">
 				<input class="button-submit" type="submit" value="Register">
 				<button class="button-submit">Cancel</button>				
