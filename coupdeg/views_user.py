@@ -125,8 +125,9 @@ def history(request):
 			user_id = User.objects.filter(email = request.session['email'])
 			user = get_object_or_404(User, pk=user_id[0].id)
 			history = History.objects.filter(user = user)
+			payment = Payment.objects.filter(history = history)
 			context = {
-				'history': history
+				'payment': payment,
 			}	
 			return render(request, 'user/history.html', context)
 		else :

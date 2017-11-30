@@ -67,4 +67,9 @@ def get_role(email):
 @register.simple_tag(name='get_user')
 def get_user(email):
     user = User.objects.filter(email=email)
-    return user[0]                
+    return user[0]
+
+@register.filter
+def get_price_history(quantity, price):
+    return quantity*price
+                
