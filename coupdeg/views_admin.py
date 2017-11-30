@@ -50,8 +50,10 @@ def edit_product(request, product_id):
 		product.details = request.POST.get('details', False)
 		product.product_types = request.POST.get('type', False)
 		product.price = request.POST.get('price', False)
+		product.stock = request.POST.get('stock', False)
 		product.save()
-		image.save()
+		if request.FILES.get('image', False) != False :
+			image.save() 
 	return render(request, 'user/admin/product/edit.html', { 'product': product, 'image':image })
 
 
@@ -74,6 +76,11 @@ def confirm(request, history_id):
 		confirm = request.POST.get('confirm_payment', False)
 		if confirm == 'on':
 			history.admin_confirm = True
+			payment = Payment.objects.filter(history=history)
+			for p in payment:
+				product = get_object_or_404(Product, pk = p.product.id)
+				product.stock = product.stock - p.quantity
+				product.save()
 		else:
 			history.admin_confirm = False
 		history.save()

@@ -55,7 +55,11 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center space-medium-v">
-					<button type="button" class="btn btn-detail-cart add-to-cart">Add to cart</button>
+					{% if product.stock == 0 %}
+						<button type="button" class="btn btn-detail-cart add-to-cart" disabled>Out of stock</button>					
+					{% else %}
+						<button type="button" class="btn btn-detail-cart add-to-cart">Add to cart</button>
+					{% endif %}
 				</div>
 				<div class="collapse-resize">
 					<div id="accordion" role="tablist">
