@@ -144,6 +144,7 @@ def checkout(request):
 			quantity = item.quantity
 			payment = Payment(history=history, product=product, quantity=quantity)
 			payment.save()
+		cart.clear()
 		return HttpResponse('Success')
 	else :
 		return render(request, 'user/checkout.html')
