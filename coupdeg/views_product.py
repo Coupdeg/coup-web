@@ -43,7 +43,8 @@ def product(request, type_number):
 def detail(request, product_id):
 	product = get_object_or_404(Product, pk=product_id)
 	image = Image.objects.filter(type_id = product_id)[0]
-	return render(request, 'product/detail.html', { 'product': product, 'image': image })
+	product_related = Product.objects.filter(product_types = product.product_types).order_by('-id')[:6]
+	return render(request, 'product/detail.html', { 'product': product, 'image': image, 'product_related': product_related })
 
 def add_to_cart(request, product_id):
 	product = get_object_or_404(Product, pk=product_id)
