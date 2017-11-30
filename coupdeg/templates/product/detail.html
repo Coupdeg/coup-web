@@ -1,5 +1,6 @@
 {% extends "../layout/application.html" %}{% load helper %}
 {% load static %}
+{% load helper %}
 {% block content %}
 	<h1 class = "text-center text-head">{{ product.product_types|get_enum }}</h1>
 	<div class = "detail-content ">
@@ -96,9 +97,11 @@
 				<h3 class = "">Related Products</h3>
 			</div>
 			<div class = "underline-related-products"></div>
-			<div class = "row space-small-v">
+			{% comment %} <div class = "row space-small-v">
 				<div class = "col-4 d-flex justify-content-center">
-					<img class="img-related-product" src='{% static "images/product/product_04.jpg" %}'>
+					<a href="">
+						<img class="img-related-product" src='{% static "images/product/product_04.jpg" %}'>
+					</a>
 				</div>
 				<div class = "col-4 d-flex justify-content-center">
 					<img class="img-related-product" src='{% static "images/product/product_05.jpg" %}'>
@@ -106,17 +109,30 @@
 				<div class = "col-4 d-flex justify-content-center">
 					<img class="img-related-product" src='{% static "images/product/product_06.jpg" %}'>
 				</div>
+			</div> {% endcomment %}
+			<div class = "row space-small-v">
+				{% for i in '012' %}
+					{% if product_related|index_of_length:i == True %}
+					{% index_of_product product_related i as product %}                                    
+						<div class = "col-4 d-flex justify-content-center">	
+							<a href="/product/{{ product.id }}">
+								<img class="img-related-product" src='{{ product.id|index_of_image_url }}'>
+							</a>
+						</div>
+					{% endif %}
+				{% endfor %}
 			</div>
 			<div class = "row space-small-v">
-				<div class = "col-4 d-flex justify-content-center">	
-					<img class="img-related-product" src='{% static "images/product/product_04.jpg" %}'>
-				</div>
-				<div class = "col-4 d-flex justify-content-center">
-					<img class="img-related-product" src='{% static "images/product/product_05.jpg" %}'>
-				</div>
-				<div class = "col-4 d-flex justify-content-center">
-					<img class="img-related-product" src='{% static "images/product/product_06.jpg" %}'>
-				</div>
+				{% for i in '345' %}
+					{% if product_related|index_of_length:i == True %}
+					{% index_of_product product_related i as product %}                                    
+						<div class = "col-4 d-flex justify-content-center">	
+							<a href="/product/{{ product.id }}">
+								<img class="img-related-product" src='{{ product.id|index_of_image_url }}'>
+							</a>
+						</div>
+					{% endif %}
+				{% endfor %}
 			</div>
 		</div>
 	</div>
