@@ -1,6 +1,6 @@
 {% extends "../../../layout/admin.html" %}
 {% block content %}
-<div>
+<div class = "confirm-payment"> 
 	<div class = "position-center text-title">
 		<h1>Confirm Payment</h1>
 	</div>
@@ -8,15 +8,17 @@
 		<a href="/admin/product">back to admin</a>
 	</div>
 	<div class = "d-flex flex-column position-center">
-		<img id="product-image" src="{{ image.image.url }}" alt="">	
+		<img class = "product-image padding-bottom-image space-small-v" id="product-image" src="{{ image.image.url }}" alt="">	
 		{{ history }}
 		<form action="{% url 'admin-confirm' history.id %}" method="post">
 			{% csrf_token %}
-			<div>
-				<input type="checkbox" name="confirm_payment">Confirm 
+			<div class="form-check form-check-inline space-small-v">
+				<label class="form-check-label">
+					<input class = "form-check-input" type="checkbox" name="confirm_payment"> Confirm 
+				</label>
 			</div>
-			<div>
-				<input type="submit">
+			<div class="space-small-v">
+				<input class = "btn btn-primary btn-summit-add-product" type="submit">
 			</div>
 		</form>
 	</div>
