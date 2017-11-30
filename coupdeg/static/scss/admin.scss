@@ -195,8 +195,8 @@ $filler: #E74C3C;
         display: block;
         .price {
             padding-bottom: 8%;
-        }    
-        
+        }
+
         &:hover {
             img {
                 opacity: 0.5;
@@ -220,12 +220,42 @@ $filler: #E74C3C;
             font-size: 30px;
         }
     }
-    .show-product{
-        .container{
-            margin-left: 0px !important;
-            margin-right: 0px !important;
+    // .show-product{
+    //     .container{
+    //         margin-left: 0px !important;
+    //         margin-right: 0px !important;
+    //     }
+    // }
+    // .delete-product{
+    //     .container{
+    //         margin-left: 0px !important;
+    //         margin-right: 0px !important;
+    //     }
+    //     .btn-danger{
+    //         margin-right: 30px;
+    //     }
+    // }
+    .product-checkbox{
+        img{
+            object-fit: cover;
+            box-shadow: 0 0 0 5px white;
+            transition: box-shadow ease 200ms;
+            margin: 4px;
+        }
+        &:hover{
+            img{
+                
+            }
+            opacity: 0.5;
+        }
+        input:checked + img {
+            box-shadow: 0 0 0 2px white, 0 0 0 5px red;
+        }
+        input {
+        display: none;
         }
     }
+
     
 }
 

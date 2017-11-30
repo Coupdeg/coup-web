@@ -1,16 +1,32 @@
 {% extends "../../../layout/admin.html" %}
 {% block content %}
-<a href="/">back</a>
-<a href="/admin/product">back to product</a>
-<h1>Product delete</h1>
-
-<form action="{% url 'delete-product' %}" method="post" enctype="multipart/form-data">
-	{% csrf_token %}			
-	{% for product in products %}
-	<div >
-		<label class="col"><input type="checkbox" name="product" value='{{ product.id }}'>{{ product }}</label>	
+{% load helper %}
+{% load static %}
+<div class = "delete-product">
+	<div class = "position-center text-title">
+		<h1>Delete Product</h1>
 	</div>
-	{% endfor %}
+	<div class = "d-flex d-flex justify-content-between">
+	<a href="/admin/product">back to product</a>
 	<input type="submit" name="" value="delete" class="btn btn-danger">
-</form>
+	</div>
+
+	<form action="{% url 'delete-product' %}" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class = "container">
+			<div class = "row">			
+				{% for product in products %}
+				<div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3">
+					<div class = "product-checkbox">
+						<label class=""><input type="checkbox" name="product" value='{{ product.id }}'>{{ product }}
+						<img class = "img-responsive image-product" src='{{ product.id|index_of_image_url }}'>
+						<h5 class = "text-center space-extra-small-h">{{ product.name }}.</h5>
+					</label>		
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</form>
+</div>
 {% endblock %}
