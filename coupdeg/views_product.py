@@ -71,7 +71,7 @@ def update_from_cart(request, product_id):
 def search(request):
 	type_number = 1
 	name = request.POST.get('search_input')
-	products = Product.objects.filter(name__contains=name)
+	products = Product.objects.filter(name__icontains=name)
 	paginator = Paginator(products, 12)
 	page = request.GET.get('page')
 	try:
