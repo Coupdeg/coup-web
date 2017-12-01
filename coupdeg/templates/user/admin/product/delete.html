@@ -6,10 +6,7 @@
 	<div class = "position-center text-title">
 		<h1>Delete Product</h1>
 	</div>
-	<div class = "d-flex d-flex justify-content-between row-back-to-product">
-		<a href="/admin/product">back to product</a>
-		<input type="submit" name="" value="delete" class="btn btn-danger">
-	</div>
+	<a href="/admin/product">back to product</a>
 	<form action="{% url 'delete-product' %}" method="post" enctype="multipart/form-data">
 		{% csrf_token %}
 		<div class = "container">
@@ -25,6 +22,9 @@
 				</div>
 				{% endfor %}
 			</div>
+		</div>
+		<div class = "text-center">
+			<input type="submit" name="" value="delete" class="btn btn-danger">		
 		</div>
 	</form>
 </div>
