@@ -1,39 +1,78 @@
 {% extends "../../../layout/admin.html" %}
 {% block content %}
-<a href="/">back</a>
-<a href="/admin/product">back to product</a>
-<div class="text-center">
+<div class="">
+	<div class = "position-center text-title">
+		<h1>Add Product</h1>
+	</div>
+	<div class = "d-flex d-flex justify-content-between row-back-to-product">
+		<a href="/admin/product">back to product</a>
+	</div>
 	<form action="{% url 'add-product' %}" method="post" enctype="multipart/form-data">
-		{% csrf_token %}			
-		<input type="file" name="image">			
-		<div>
-			<label for="">name</label>
-			<input type="text" name="name">
-		</div>
-		<div>
-			<label for="">details</label>
-			<textarea cols="30" rows="3" name="details"></textarea>
-		</div>
-		<div>
-			<label for="">product type</label>
-			<select class="" name="type">
+		{% csrf_token %}
+		<div class = "position-center padding-type ">
+			<select class="ui dropdown add-product-dropdown caret" name="type">
+				<option value="">Type</option>
 				<option value="0">Bags</option>
 				<option value="1">Soaps</option>
 				<option value="2">Dresses</option>
 				<option value="3">Shirts</option>
 				<option value="4">Scarves</option>
 				<option value="5">Accessories</option>
-			</select>			
+			</select>
 		</div>
-		<div>
-			<label for="">price</label>
-			<input type="text" name="price">
+		<div class = "row">
+			<div class = "col-6">
+				<div class = "main-image position-center">
+					<div class = "d-flex flex-column position-center">
+						<img class = "product-image padding-bottom-image" id="product-image" src="{{ image.image.url }}" alt="">			
+						<label for="image-upload" class="custom-file-upload">
+							Upload main image 
+						</label>
+						<input class = "btn btn-next slip-upload" type="file" name="image" id="image-upload">
+					</div>
+				</div>
+				<!-- <div class = "sub-image d-flex justify-content-between">
+					<div class = "d-flex flex-column position-center">
+						<img class = "product-image-sub padding-bottom-image" id="product-image" src="{{ image.image.url }}" alt="">			
+						<label for="image-sub-upload-one" class="custom-file-upload">
+							Upload sub image #1
+						</label>
+						<input class = "btn btn-next slip-upload" type="file" name="image" id="image-sub-upload-one">
+					</div>
+					<div class = "d-flex flex-column position-center">
+						<img class = "product-image padding-bottom-image" id="product-image" src="{{ image.image.url }}" alt="">			
+						<label for="image-sub-upload-two" class="custom-file-upload">
+							Upload sub image #2
+						</label>
+						<input class = "btn btn-next slip-upload" type="file" name="image" id="image-sub-upload-two">
+					</div>
+					<div class = "d-flex flex-column position-center">
+						<img class = "product-image padding-bottom-image" id="product-image" src="{{ image.image.url }}" alt="">			
+						<label for="image-sub-upload-three" class="custom-file-upload">
+							Upload sub image #3
+						</label>
+						<input class = "btn btn-next slip-upload" type="file" name="image" id="image-sub-upload-three">
+					</div>
+				</div> -->
+			</div>
+			<div class = "col-6 position-center">
+				<div class = "">
+					<input class="input-field" type="text" placeholder="Product name*" name="name" value="">
+					<div class = "line-padding space-small-v">
+						<hr>
+					</div>
+					<input class="input-field" type="text" placeholder="Product price*" name="price" value="">
+					<div class = "line-padding space-small-v">
+						<hr>
+					</div>
+					<input class="input-field" type="text" placeholder="Product stocks*" name="stock" value="{{ product.stock }}">
+				</div>
+				<textarea class="width-box space-small-v" placeholder="Product detail*" cols="30" rows="3" name="details"></textarea>
+			</div>
 		</div>
-		<div>
-			<label for="">stock</label>
-			<input type="text" name="stock">
-		</div>
-		<input type="submit" class="btn btn-primary">
+		<div class = "position-center bottom-btn-margin-top">
+			<input type="submit" class="btn btn-primary btn-summit-add-product">
+		</div>	
 	</form>
 </div>
 {% endblock %}
