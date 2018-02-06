@@ -10,7 +10,8 @@ urlpatterns = [
     url(r'^product/delete', views.delete_product, name="delete-product"),                            
     url(r'^product/edit/(?P<product_id>[0-9]+)', views.edit_product, name="edit-product"),                        
     url(r'^product/', views.product, name="admin-product"),
-    url(r'^payment/', views.payment, name="admin-payment"),    
+    url(r'^payment/', views.payment, name="admin-payment"), 
+    url(r'^user/', views.user, name="admin-user"),
     url(r'^confirm/(?P<history_id>[0-9]+)', views.confirm, name="admin-confirm"),        
 ]
 
