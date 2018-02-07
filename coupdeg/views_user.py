@@ -132,7 +132,6 @@ def history(request):
 			context = {
 				'payment': payment,
 			}	
-			print(payment[0])
 			return render(request, 'user/history.html', context)
 		else :
 			return redirect('/user/login')
