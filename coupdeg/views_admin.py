@@ -1,6 +1,6 @@
 from django.http import Http404, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
-from models import Image, Product, Item, Cart, History, Payment
+from models import Image, Product, Item, Cart, History, Payment, User
 
 def index(request):
 	return render(request, 'user/admin/index.html')
@@ -26,6 +26,13 @@ def show_product(request):
 		'products': products,
 	}
 	return render(request, 'user/admin/product/show.html', context)
+
+def user(request):
+	users = User.objects.all()
+	context={
+		'users': users,
+	}
+	return render(request,'user/admin/user/index.html',context)
 
 def delete_product(request):
 	products = Product.objects.all()
